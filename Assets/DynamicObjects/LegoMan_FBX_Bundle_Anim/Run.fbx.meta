@@ -1,0 +1,197 @@
+fileFormatVersion: 2
+guid: 716454e0c34ea4f44b274b45dce0787d
+timeCreated: 1476302192
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Amkle_L
+    100002: Ankle_R
+    100004: Calf_L
+    100006: Calf_R
+    100008: Chest
+    100010: Elbow_L
+    100012: Elbow_R
+    100014: Hip_L
+    100016: Hip_R
+    100018: ikHandle1
+    100020: ikHandle1 1
+    100022: ikHandle2
+    100024: ikHandle2 1
+    100026: ikHandle3
+    100028: ikHandle3 1
+    100030: ikHandle4
+    100032: ikHandle5
+    100034: ikHandle6
+    100036: IndexFinger_L
+    100038: IndexFingerTip_L
+    100040: joint1
+    100042: joint10
+    100044: joint10 1
+    100046: joint11
+    100048: joint11 1
+    100050: joint12
+    100052: joint12 1
+    100054: joint13
+    100056: joint14
+    100058: joint15
+    100060: joint16
+    100062: joint17
+    100064: joint18
+    100066: joint19
+    100068: joint2
+    100070: joint20
+    100072: joint21
+    100074: joint22
+    100076: joint23
+    100078: joint5
+    100080: joint6
+    100082: joint7
+    100084: joint8
+    100086: joint9
+    100088: MiddleFinger_L
+    100090: MiddleFingerTip_L
+    100092: nurbsCircle4
+    100094: nurbsCircle5
+    100096: nurbsCircle6
+    100098: PalmTip_L
+    100100: Pelvis
+    100102: Root
+    100104: //RootNode
+    100106: Shoulder_L
+    100108: Shoulder_R
+    100110: Thumb_L
+    100112: ThumbTip_L
+    100114: Top_Tip
+    100116: transform7
+    100118: transform8
+    100120: Wrist_L
+    100122: Wrist_R
+    400000: Amkle_L
+    400002: Ankle_R
+    400004: Calf_L
+    400006: Calf_R
+    400008: Chest
+    400010: Elbow_L
+    400012: Elbow_R
+    400014: Hip_L
+    400016: Hip_R
+    400018: ikHandle1
+    400020: ikHandle1 1
+    400022: ikHandle2
+    400024: ikHandle2 1
+    400026: ikHandle3
+    400028: ikHandle3 1
+    400030: ikHandle4
+    400032: ikHandle5
+    400034: ikHandle6
+    400036: IndexFinger_L
+    400038: IndexFingerTip_L
+    400040: joint1
+    400042: joint10
+    400044: joint10 1
+    400046: joint11
+    400048: joint11 1
+    400050: joint12
+    400052: joint12 1
+    400054: joint13
+    400056: joint14
+    400058: joint15
+    400060: joint16
+    400062: joint17
+    400064: joint18
+    400066: joint19
+    400068: joint2
+    400070: joint20
+    400072: joint21
+    400074: joint22
+    400076: joint23
+    400078: joint5
+    400080: joint6
+    400082: joint7
+    400084: joint8
+    400086: joint9
+    400088: MiddleFinger_L
+    400090: MiddleFingerTip_L
+    400092: nurbsCircle4
+    400094: nurbsCircle5
+    400096: nurbsCircle6
+    400098: PalmTip_L
+    400100: Pelvis
+    400102: Root
+    400104: //RootNode
+    400106: Shoulder_L
+    400108: Shoulder_R
+    400110: Thumb_L
+    400112: ThumbTip_L
+    400114: Top_Tip
+    400116: transform7
+    400118: transform8
+    400120: Wrist_L
+    400122: Wrist_R
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

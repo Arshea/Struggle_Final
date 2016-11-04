@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: 27109f2fe16fcb146b30e089db862bec
+timeCreated: 1476898153
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: carpetTreeHairAnim:curve1
+    100002: carpetTreeHairAnim:curve2
+    100004: carpetTreeHairAnim:FurFeedback
+    100006: carpetTreeHairAnim:joint1
+    100008: carpetTreeHairAnim:joint2
+    100010: carpetTreeHairAnim:joint3
+    100012: carpetTreeHairAnim:joint4
+    100014: carpetTreeHairAnim:joint5
+    100016: carpetTreeHairAnim:nurbsCircle1
+    100018: carpetTreeHairAnim:nurbsCircle2
+    100020: carpetTreeHairAnim:nurbsCircle3
+    100022: carpetTreeHairAnim:nurbsToPoly10
+    100024: carpetTreeHairAnim:nurbsToPoly12
+    100026: carpetTreeHairAnim:nurbsToPoly15
+    100028: carpetTreeHairAnim:nurbsToPoly16
+    100030: carpetTreeHairAnim:nurbsToPoly17
+    100032: carpetTreeHairAnim:nurbsToPoly18
+    100034: carpetTreeHairAnim:nurbsToPoly19
+    100036: carpetTreeHairAnim:nurbsToPoly21
+    100038: carpetTreeHairAnim:nurbsToPoly22
+    100040: carpetTreeHairAnim:nurbsToPoly23
+    100042: carpetTreeHairAnim:nurbsToPoly24
+    100044: carpetTreeHairAnim:nurbsToPoly25
+    100046: carpetTreeHairAnim:nurbsToPoly27
+    100048: carpetTreeHairAnim:nurbsToPoly28
+    100050: carpetTreeHairAnim:nurbsToPoly29
+    100052: carpetTreeHairAnim:nurbsToPoly30
+    100054: carpetTreeHairAnim:transform10
+    100056: carpetTreeHairAnim:transform11
+    100058: carpetTreeHairAnim:transform12
+    100060: carpetTreeHairAnim:transform13
+    100062: carpetTreeHairAnim:transform14
+    100064: carpetTreeHairAnim:transform15
+    100066: carpetTreeHairAnim:transform16
+    100068: carpetTreeHairAnim:transform17
+    100070: carpetTreeHairAnim:transform18
+    100072: carpetTreeHairAnim:transform19
+    100074: carpetTreeHairAnim:transform20
+    100076: carpetTreeHairAnim:transform7
+    100078: carpetTreeHairAnim:transform8
+    100080: carpetTreeHairAnim:transform9
+    100082: //RootNode
+    400000: carpetTreeHairAnim:curve1
+    400002: carpetTreeHairAnim:curve2
+    400004: carpetTreeHairAnim:FurFeedback
+    400006: carpetTreeHairAnim:joint1
+    400008: carpetTreeHairAnim:joint2
+    400010: carpetTreeHairAnim:joint3
+    400012: carpetTreeHairAnim:joint4
+    400014: carpetTreeHairAnim:joint5
+    400016: carpetTreeHairAnim:nurbsCircle1
+    400018: carpetTreeHairAnim:nurbsCircle2
+    400020: carpetTreeHairAnim:nurbsCircle3
+    400022: carpetTreeHairAnim:nurbsToPoly10
+    400024: carpetTreeHairAnim:nurbsToPoly12
+    400026: carpetTreeHairAnim:nurbsToPoly15
+    400028: carpetTreeHairAnim:nurbsToPoly16
+    400030: carpetTreeHairAnim:nurbsToPoly17
+    400032: carpetTreeHairAnim:nurbsToPoly18
+    400034: carpetTreeHairAnim:nurbsToPoly19
+    400036: carpetTreeHairAnim:nurbsToPoly21
+    400038: carpetTreeHairAnim:nurbsToPoly22
+    400040: carpetTreeHairAnim:nurbsToPoly23
+    400042: carpetTreeHairAnim:nurbsToPoly24
+    400044: carpetTreeHairAnim:nurbsToPoly25
+    400046: carpetTreeHairAnim:nurbsToPoly27
+    400048: carpetTreeHairAnim:nurbsToPoly28
+    400050: carpetTreeHairAnim:nurbsToPoly29
+    400052: carpetTreeHairAnim:nurbsToPoly30
+    400054: carpetTreeHairAnim:transform10
+    400056: carpetTreeHairAnim:transform11
+    400058: carpetTreeHairAnim:transform12
+    400060: carpetTreeHairAnim:transform13
+    400062: carpetTreeHairAnim:transform14
+    400064: carpetTreeHairAnim:transform15
+    400066: carpetTreeHairAnim:transform16
+    400068: carpetTreeHairAnim:transform17
+    400070: carpetTreeHairAnim:transform18
+    400072: carpetTreeHairAnim:transform19
+    400074: carpetTreeHairAnim:transform20
+    400076: carpetTreeHairAnim:transform7
+    400078: carpetTreeHairAnim:transform8
+    400080: carpetTreeHairAnim:transform9
+    400082: //RootNode
+    4300000: carpetTreeHairAnim:nurbsToPoly17
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: carpetTreeHairAnim:nurbsToPoly17
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: carpetTreeHairAnim:curve1
+        weight: 1
+      - path: carpetTreeHairAnim:curve2
+        weight: 1
+      - path: carpetTreeHairAnim:FurFeedback
+        weight: 1
+      - path: carpetTreeHairAnim:joint1
+        weight: 1
+      - path: carpetTreeHairAnim:joint1/carpetTreeHairAnim:joint2
+        weight: 1
+      - path: carpetTreeHairAnim:joint1/carpetTreeHairAnim:joint2/carpetTreeHairAnim:joint3
+        weight: 1
+      - path: carpetTreeHairAnim:joint1/carpetTreeHairAnim:joint2/carpetTreeHairAnim:joint3/carpetTreeHairAnim:joint4
+        weight: 1
+      - path: carpetTreeHairAnim:joint1/carpetTreeHairAnim:joint2/carpetTreeHairAnim:joint3/carpetTreeHairAnim:joint4/carpetTreeHairAnim:joint5
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsCircle1
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsCircle1/carpetTreeHairAnim:nurbsCircle2
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsCircle1/carpetTreeHairAnim:nurbsCircle2/carpetTreeHairAnim:nurbsCircle3
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsCircle1/carpetTreeHairAnim:nurbsCircle2/carpetTreeHairAnim:nurbsCircle3/carpetTreeHairAnim:transform20
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsCircle1/carpetTreeHairAnim:nurbsCircle2/carpetTreeHairAnim:transform19
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsCircle1/carpetTreeHairAnim:transform18
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly10
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly10/carpetTreeHairAnim:transform7
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly12
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly12/carpetTreeHairAnim:transform8
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly15
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly15/carpetTreeHairAnim:transform10
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly16
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly16/carpetTreeHairAnim:transform9
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly17
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly18
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly18/carpetTreeHairAnim:transform13
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly19
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly19/carpetTreeHairAnim:transform12
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly21
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly21/carpetTreeHairAnim:transform11
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly22
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly22/carpetTreeHairAnim:transform17
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly23
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly23/carpetTreeHairAnim:transform16
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly24
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly24/carpetTreeHairAnim:transform15
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly25
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly25/carpetTreeHairAnim:transform14
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly27
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly28
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly29
+        weight: 1
+      - path: carpetTreeHairAnim:nurbsToPoly30
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
