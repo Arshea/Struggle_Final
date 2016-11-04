@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: b881bb47cd5f7ef4b920bcb48337aab2
+timeCreated: 1476701376
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Amkle_L
+    100002: Ankle_R
+    100004: back
+    100006: bottom
+    100008: Calf_L
+    100010: Calf_R
+    100012: Chest
+    100014: Elbow_L
+    100016: Elbow_R
+    100018: //RootNode
+    100020: Hip_L
+    100022: Hip_R
+    100024: ikHandle1
+    100026: ikHandle1 1
+    100028: ikHandle2
+    100030: ikHandle2 1
+    100032: ikHandle3
+    100034: ikHandle3 1
+    100036: ikHandle4
+    100038: ikHandle5
+    100040: ikHandle6
+    100042: IndexFinger_L
+    100044: IndexFingerTip_L
+    100046: joint1
+    100048: joint10
+    100050: joint10 1
+    100052: joint11
+    100054: joint11 1
+    100056: joint12
+    100058: joint12 1
+    100060: joint13
+    100062: joint14
+    100064: joint15
+    100066: joint16
+    100068: joint17
+    100070: joint18
+    100072: joint19
+    100074: joint2
+    100076: joint20
+    100078: joint21
+    100080: joint22
+    100082: joint23
+    100084: joint5
+    100086: joint6
+    100088: joint7
+    100090: joint8
+    100092: joint9
+    100094: locator1
+    100096: locator2
+    100098: MiddleFinger_L
+    100100: MiddleFingerTip_L
+    100102: nurbsCircle1
+    100104: nurbsCircle10
+    100106: nurbsCircle2
+    100108: nurbsCircle3
+    100110: nurbsCircle4
+    100112: nurbsCircle5
+    100114: nurbsCircle6
+    100116: nurbsCircle7
+    100118: nurbsCircle8
+    100120: nurbsCircle9
+    100122: PalmTip_L
+    100124: pCube2
+    100126: pCube4
+    100128: pCube5
+    100130: pCylinder5
+    100132: Pelvis
+    100134: pSphere1
+    100136: Root
+    100138: Shoulder_L
+    100140: Shoulder_R
+    100142: stagger:back
+    100144: stagger:bottom
+    100146: stagger:pCube2
+    100148: stagger:pCube4
+    100150: stagger:pCylinder5
+    100152: stagger:transform6
+    100154: Thumb_L
+    100156: ThumbTip_L
+    100158: Top_Tip
+    100160: transform6
+    100162: transform7
+    100164: transform8
+    100166: Wrist_L
+    100168: Wrist_R
+    400000: Amkle_L
+    400002: Ankle_R
+    400004: back
+    400006: bottom
+    400008: Calf_L
+    400010: Calf_R
+    400012: Chest
+    400014: Elbow_L
+    400016: Elbow_R
+    400018: //RootNode
+    400020: Hip_L
+    400022: Hip_R
+    400024: ikHandle1
+    400026: ikHandle1 1
+    400028: ikHandle2
+    400030: ikHandle2 1
+    400032: ikHandle3
+    400034: ikHandle3 1
+    400036: ikHandle4
+    400038: ikHandle5
+    400040: ikHandle6
+    400042: IndexFinger_L
+    400044: IndexFingerTip_L
+    400046: joint1
+    400048: joint10
+    400050: joint10 1
+    400052: joint11
+    400054: joint11 1
+    400056: joint12
+    400058: joint12 1
+    400060: joint13
+    400062: joint14
+    400064: joint15
+    400066: joint16
+    400068: joint17
+    400070: joint18
+    400072: joint19
+    400074: joint2
+    400076: joint20
+    400078: joint21
+    400080: joint22
+    400082: joint23
+    400084: joint5
+    400086: joint6
+    400088: joint7
+    400090: joint8
+    400092: joint9
+    400094: locator1
+    400096: locator2
+    400098: MiddleFinger_L
+    400100: MiddleFingerTip_L
+    400102: nurbsCircle1
+    400104: nurbsCircle10
+    400106: nurbsCircle2
+    400108: nurbsCircle3
+    400110: nurbsCircle4
+    400112: nurbsCircle5
+    400114: nurbsCircle6
+    400116: nurbsCircle7
+    400118: nurbsCircle8
+    400120: nurbsCircle9
+    400122: PalmTip_L
+    400124: pCube2
+    400126: pCube4
+    400128: pCube5
+    400130: pCylinder5
+    400132: Pelvis
+    400134: pSphere1
+    400136: Root
+    400138: Shoulder_L
+    400140: Shoulder_R
+    400142: stagger:back
+    400144: stagger:bottom
+    400146: stagger:pCube2
+    400148: stagger:pCube4
+    400150: stagger:pCylinder5
+    400152: stagger:transform6
+    400154: Thumb_L
+    400156: ThumbTip_L
+    400158: Top_Tip
+    400160: transform6
+    400162: transform7
+    400164: transform8
+    400166: Wrist_L
+    400168: Wrist_R
+    2300000: pSphere1
+    3300000: pSphere1
+    4300000: pSphere1
+    4300002: pCube5
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pCube5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

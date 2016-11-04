@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e22b65c154c3d584494c6c341a091de9
+timeCreated: 1476307664
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - player: {instanceID: 0}
+  - lantern: {instanceID: 0}
+  - victoryText: {instanceID: 0}
+  - pickupAnim: {instanceID: 0}
+  - ambient: {instanceID: 0}
+  - smallPickupAudio: {fileID: 8300000, guid: 73220de4ec34ea54b9646f33ed7e46b6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
