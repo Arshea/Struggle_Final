@@ -27,6 +27,7 @@ public class WaterAbsorb : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
     {
 
+    	//if a sponge enters, start to shrink
         if (other.gameObject.CompareTag("Sponge"))
         {
         	shrink = true;
