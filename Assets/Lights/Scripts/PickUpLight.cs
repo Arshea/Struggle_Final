@@ -135,7 +135,7 @@ public class PickUpLight : MonoBehaviour {
 				// Keep trying next week.
 
 
-				Debug.Log ("pos: " + LocalLantCentre.x/* + ", " + LocalLantCentre.y, + ", " + LocalLantCentre.z*/);
+				//Debug.Log ("pos: " + LocalLantCentre.x/* + ", " + LocalLantCentre.y, + ", " + LocalLantCentre.z*/);
 				for (int i = 0; i < numLanternDustParticles; i++) {
 					lanternSwirlParticles [i].position = Vector3.Lerp (
 						lanternSwirlParticles [i].position, LocalLantCentre, 

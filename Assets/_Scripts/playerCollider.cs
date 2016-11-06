@@ -4,31 +4,19 @@ using System.Collections;
 public class playerCollider : MonoBehaviour
 {
 	public GameObject player;
-    public GameObject lantern;
-    public GameObject victoryText;
     public float pushPower = 2.0F; // Push force of player
     public GameObject[] carpetHair;
     public float distTriggerCarpetHair = 2.0f; // Distance to start carpet hair animation
     public float maxAngle = 80; // Max angle of carpet hair tilt
 	//public AudioClip pickupClip;
-	public float animationDelay = 3.3f; // Secs delay before lerping light towards player on pickup
 	public float speed = 2.5f; // Speed at which pickup moves to player
-	public float distWindEffect = 5f; // Distance for pickup wind effect
-	public float blowOutTime = 0.5f; // Time for pickup wind effect
-	public float blowBackTime = 5.0f; // Time for pickup wind effect cooldown
-	public GameObject ambient;
 	public static bool pickedUp = false;	//Is true if a light is picked up, false after pick up animation	
     private Light lanternLight = null;
-	private bool finished = false;
 	public AudioClip smallPickupAudio;
-	public static bool animateLightPickupWind = false;
-	public GameObject lanternCentre;
-
 
     // Use this for initialization
     void Start()
     {
-        lanternLight = lantern.GetComponent<Light>();
     }
 
     // Update is called once per frame
@@ -50,10 +38,6 @@ public class playerCollider : MonoBehaviour
 				else activeCarpetHairs[i].transform.eulerAngles = new Vector3(0, 0, 0);
 			}
         }
-		if (animateLightPickupWind) {
-			animateLightPickupWind = false;
-			StartCoroutine (lightPickupWindEffect ());
-		}
     }
 
     // Animate carpet hairs
@@ -112,6 +96,9 @@ public class playerCollider : MonoBehaviour
             //other.gameObject.SetActive(false);
 
             playPickupAnim(otherObject.transform.parent.gameObject);
+
+			float percent = GameManager.getGameCompletion ();
+
         }
 
 		if (other.gameObject.CompareTag("PickUp"))
@@ -140,43 +127,12 @@ public class playerCollider : MonoBehaviour
 				pickup.transform.position = Vector3.Lerp (posA, transform.position-playerToCam, (Time.time - startTime)*speed);
 				yield return null;
 			}
-
-			// If game over
-
-			if (finished) {
-				victoryText.SetActive (true);
-				//Light ambientLight = ambient.GetComponent<Light>();
-
-				//ambientLight.intensity += 0.35f;
-				finished = !finished;
-			}
+		
 			pickup.SetActive (false);
 		}
 		pickedUp = false;
 	}
 
 
-	// Wind effect on surrounding carpet hairs
-	IEnumerator lightPickupWindEffect() {
-		yield return new WaitForSeconds (3.2f);
-
-		// Using distTriggerCarpetHair (from player movement pushing carpet hairs aside) to produce wind
-		float start = distTriggerCarpetHair;
-		float max = distWindEffect;
-		float startTime = Time.time;
-
-
-		while (Time.time - startTime < blowOutTime + blowBackTime) {
-			if (Time.time - startTime < blowOutTime) {
-				distTriggerCarpetHair = Mathf.Lerp (start, max, (Time.time - startTime));
-			} else {
-				distTriggerCarpetHair = max;
-				distTriggerCarpetHair = Mathf.Lerp (max, start, (Time.time - startTime - blowOutTime));
-			}
-			//Debug.Log ("New step effect range: " + distTriggerCarpetHair);
-			yield return null;
-		}
-
-	}
 
 }
