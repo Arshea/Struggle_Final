@@ -4,7 +4,8 @@ using System.Collections;
 public class PickUpLight : MonoBehaviour {
 
 	public GameObject lanternCentre;
-	public ParticleSystem dust; // Moves to player
+	public ParticleSystem dustDeactivate; // Moves to player
+	public ParticleSystem dustActivate; // Moves to player
 	public ParticleSystem explosion; // Explosion effect
 
 	public ParticleSystem lanternSwirl; // Dust swirls around lantern to trigger (yel, blu, gre, red - enum from lanternManager)
@@ -32,9 +33,9 @@ public class PickUpLight : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		lanternCentreTrans = lanternCentre.transform;
-		if(dust != null)
-		if (particles == null || particles.Length < dust.maxParticles)
-			particles = new ParticleSystem.Particle[dust.maxParticles]; 
+		if(dustActivate != null)
+		if (particles == null || particles.Length < dustActivate.maxParticles)
+			particles = new ParticleSystem.Particle[dustActivate.maxParticles]; 
 
 		if(lanternSwirl != null)
 		if (lanternSwirlParticles == null || lanternSwirlParticles.Length < lanternSwirl.maxParticles)
@@ -86,19 +87,24 @@ public class PickUpLight : MonoBehaviour {
 	}
 
 	IEnumerator moveLightToPlayer() {
+		// Deactivate original swirl dust
+		var emit = dustDeactivate.emission;
+		emit.enabled = false;
+		dustActivate.Play (); // Doesn't work yet - already playing
+
 		timeAnimStart = Time.time; // Time animation initialised
 		bool triggeredAdd = false;
 		bool triggeredLanternSwirl = false;
 
 		// Triggered: make faster; decrease lifetime; spawn more?
-		int numParticles = dust.GetParticles (particles);
+		int numParticles = dustActivate.GetParticles (particles);
 		int numLanternDustParticles = lanternSwirl.GetParticles (lanternSwirlParticles);
 		for (int i = 0; i < numParticles; i++) {
 			particles [i].startLifetime = 3.2f; // Do not allow to linger
 		}
 
 		while (playingAnim) {
-			numParticles = dust.GetParticles (particles);
+			numParticles = dustActivate.GetParticles (particles);
 			numLanternDustParticles = lanternSwirl.GetParticles (lanternSwirlParticles);
 
 			if (Time.time - timeAnimStart < climaxTime) { // During animation
@@ -111,7 +117,7 @@ public class PickUpLight : MonoBehaviour {
 					if (Vector3.Distance (particles[i].position, lanternCentreTrans.position) < 0.25f)
 						particles [i].lifetime = 0.0f;
 				}
-				dust.SetParticles (particles, numParticles);
+				dustActivate.SetParticles (particles, numParticles);
 
 			} else { // End of animation -- push quickly into lantern
 				// Dust towards lantern from light source
@@ -119,9 +125,9 @@ public class PickUpLight : MonoBehaviour {
 					particles [i].position = Vector3.Lerp (
 						particles [i].position, lanternCentreTrans.position, 
 						speedEndAnim * (Time.deltaTime));
-					particles [i].startLifetime = 0.2f; // Do not allow to linger
+					particles [i].startLifetime = 0.0f; // Doesn't work yet. Change this when it's fixed. something to do with local/global space rendering
 				}
-				dust.SetParticles (particles, numParticles);
+				dustActivate.SetParticles (particles, numParticles);
 
 				// Dust swirl around lantern
 				Vector3 LocalLantCentre = lanternSwirl.transform.localPosition; // These are rendered in local space - need to reverse pos for orirgin
