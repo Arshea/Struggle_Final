@@ -599,8 +599,8 @@ GameObject:
   - 65: {fileID: 65000010732494844}
   - 23: {fileID: 23000010484029044}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Collider
+  m_TagString: FreggoCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2441,7 +2441,7 @@ Transform:
   m_GameObject: {fileID: 1000011812002498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6571336, y: 5.703477, z: 3.2102425}
+  m_LocalScale: {x: 5.6571336, y: 5.703477, z: 3.774846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010681919640}
@@ -2595,8 +2595,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9999999, y: 1, z: 1.1022083}
+  m_Center: {x: -0.00018405284, y: 0, z: 0.051329613}
 --- !u!95 &95000011637369428
 Animator:
   serializedVersion: 3
@@ -2627,6 +2627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemyRoot: {fileID: 1000012151236386}
+  running_speed: 8
   enemy_health: 0
 --- !u!114 &114000014052823278
 MonoBehaviour:

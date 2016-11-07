@@ -13,7 +13,9 @@ public class playerCollider : MonoBehaviour
 	public static bool pickedUp = false;	//Is true if a light is picked up, false after pick up animation	
     private Light lanternLight = null;
 	public AudioClip smallPickupAudio;
-
+	public static bool hit_by_enemy = false;
+	public float max_health_overlay_intensity = 3.0f;
+	public float health_overlay_increment = 0.5f;
     // Use this for initialization
     void Start()
     {
@@ -38,6 +40,7 @@ public class playerCollider : MonoBehaviour
 				else activeCarpetHairs[i].transform.eulerAngles = new Vector3(0, 0, 0);
 			}
         }
+
     }
 
     // Animate carpet hairs
@@ -71,6 +74,9 @@ public class playerCollider : MonoBehaviour
             hit.gameObject.GetComponent<BoxCollider>().enabled = false;
             hit.transform.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
         }
+		if (hit.gameObject.CompareTag ("FreggoCollider")) {
+			enemyHit (hit.transform.position);
+		}
 
         Rigidbody body = hit.collider.attachedRigidbody;
         if (body == null || body.isKinematic)
@@ -109,7 +115,18 @@ public class playerCollider : MonoBehaviour
 		}
     }
 
-	
+	// Got hit by enemy -- bounce backwards
+	void enemyHit(Vector3 enemyPos) {
+		Vector3 pushDir = player.transform.position - enemyPos;
+		pushDir.y = 0;
+		pushDir.Normalize();
+		player.transform.position += (pushDir * 3.0f);
+		if (UnityStandardAssets.ImageEffects.ScreenOverlay.intensity < max_health_overlay_intensity) {
+			UnityStandardAssets.ImageEffects.ScreenOverlay.intensity += health_overlay_increment;
+		}
+		Debug.Log ("Enemy hit");
+	}
+	 
 	void playPickupAnim(GameObject pickup) {
 //		pickup.GetComponent<Animation>().Play ();
 		//currentLight = pickup;
