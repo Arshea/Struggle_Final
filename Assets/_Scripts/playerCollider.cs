@@ -117,13 +117,21 @@ public class playerCollider : MonoBehaviour
 
 	// Got hit by enemy -- bounce backwards
 	void enemyHit(Vector3 enemyPos) {
+
+
 		Vector3 pushDir = player.transform.position - enemyPos;
 		pushDir.y = 0;
 		pushDir.Normalize();
 		player.transform.position += (pushDir * 3.0f);
+
+
+
 		if (UnityStandardAssets.ImageEffects.ScreenOverlay.intensity < max_health_overlay_intensity) {
 			UnityStandardAssets.ImageEffects.ScreenOverlay.intensity += health_overlay_increment;
 		}
+
+
+
 		Debug.Log ("Enemy hit");
 	}
 	 
