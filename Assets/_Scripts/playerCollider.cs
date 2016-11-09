@@ -81,6 +81,9 @@ public class playerCollider : MonoBehaviour
             hit.gameObject.GetComponent<BoxCollider>().enabled = false;
             hit.transform.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
         }
+		if (hit.gameObject.CompareTag ("DominoTrigger")) {
+			hit.transform.parent.GetComponent<Animator> ().SetTrigger ("FallTrigger");
+		}
 		if (hit.gameObject.CompareTag ("FreggoCollider")) {
 			if(hit.transform.parent.parent.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName("Run"))
 				enemyHit (hit.transform.position);

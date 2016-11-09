@@ -15,6 +15,7 @@ TagManager:
   - PlayingCard
   - Sponge
   - FreggoCollider
+  - DominoTrigger
   layers:
   - Default
   - TransparentFX
