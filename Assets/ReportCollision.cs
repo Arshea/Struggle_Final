@@ -9,8 +9,6 @@ public CapsuleCollider myCollider;
 #if UNITY_EDITOR
 	void Update () 
 	{
-		// Debug.Log("Report Collision Update");
-
 		if(UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) 
 		{
 			this.enabled = false;
@@ -36,31 +34,8 @@ public CapsuleCollider myCollider;
         			// DestroyImmediate(this.gameObject);
 				}
 			}
-		
 		}
 	}
-
-	void OnTriggerEnter(Collider other) {
-
-		Debug.Log("report collision on trigger enter");
-
-		if(UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) 
-		{
-			this.enabled = false;
-		} 
-		else 
-		{
-			// editor code here!
-
-			
-		}
-    }
-
-    void OnTriggerStay(Collider other) {
-    	Debug.Log("report collision on trigger stay");
-
-    }
-
 	
 #endif
 
