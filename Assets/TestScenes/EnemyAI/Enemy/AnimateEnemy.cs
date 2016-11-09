@@ -90,7 +90,7 @@ public class AnimateEnemy: MonoBehaviour {
 					Debug.Log (MusicManager.enemy_name);
 				}
 				/*******************************************/
-				transform.LookAt (new Vector3 (player.transform.position.x, 0, player.transform.position.z));
+				transform.LookAt (new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z));
 				current_state = (int)transitions.IDLERUN;
 			}
 //			Debug.Log ("IDLE");
@@ -107,7 +107,7 @@ public class AnimateEnemy: MonoBehaviour {
 			//float z_value = 3 * Time.deltaTime;
 			Vector3 current_position = transform.position;
 			if (!atBoundary (current_position)) {
-				transform.LookAt (new Vector3 (player.transform.position.x, 0, player.transform.position.z));
+				transform.LookAt (new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z));
 				if (closest_distance_to_player >= Vector3.Distance (player.transform.position, this.transform.position)) {
 					current_enemy_position = transform.position;
 					player.SendMessage ("enemyHit", current_enemy_position,SendMessageOptions.DontRequireReceiver);
@@ -193,7 +193,7 @@ public class AnimateEnemy: MonoBehaviour {
 		case (int)states.RETURN:
 			playerCollider.hit_by_enemy = false;
 			if (Vector3.SqrMagnitude (initial_position - transform.position) > 0.1f) {
-				transform.LookAt (new Vector3 (initial_position.x, 0, initial_position.z));
+				transform.LookAt (new Vector3 (initial_position.x, transform.position.y, initial_position.z));
 				transform.Translate (new Vector3 (0, 0, 3 * Time.deltaTime));
 			} 
 			if (playerInTerritory()) {
