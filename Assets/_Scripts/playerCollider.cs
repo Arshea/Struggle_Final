@@ -11,11 +11,16 @@ public class playerCollider : MonoBehaviour
 	//public AudioClip pickupClip;
 	public float speed = 2.5f; // Speed at which pickup moves to player
 	public static bool pickedUp = false;	//Is true if a light is picked up, false after pick up animation	
-    private Light lanternLight = null;
 	public AudioClip smallPickupAudio;
 	public static bool hit_by_enemy = false;
+
+
+	public bool isOverlay = false;
+	public float overlayStartTime;
+	private float overlayCooldownTime = 500.0f;
 	public float max_health_overlay_intensity = 3.0f;
 	public float health_overlay_increment = 0.5f;
+	public float health_overlay_decrement = 0.0000000000005f;
 
 	// Enemy push back params
 	private float pushSpeed = 0.7f, pushTime = 0.5f;
@@ -128,9 +133,13 @@ public class playerCollider : MonoBehaviour
 		StartCoroutine (hitKnockBack (knockBackDirection));
 
 		if (UnityStandardAssets.ImageEffects.ScreenOverlay.intensity < max_health_overlay_intensity) {
-		//	UnityStandardAssets.ImageEffects.ScreenOverlay.intensity += health_overlay_increment;
+			UnityStandardAssets.ImageEffects.ScreenOverlay.intensity += health_overlay_increment;
 		}
-
+		overlayStartTime = Time.time;
+		if (!isOverlay) {
+			isOverlay = true;
+			StartCoroutine (screenOverlayCooldown());
+		}
 		//player.GetComponent<CharacterController> ().attachedRigidbody.AddForce (knockBackDirection * 10.0f);
 		//player.GetComponent<CharacterController>().Move(knockBackDirection * 10.0f);
 
@@ -147,7 +156,21 @@ public class playerCollider : MonoBehaviour
 			yield return null;
 		}
 	}
-	 
+
+	IEnumerator screenOverlayCooldown() {
+
+		while (UnityStandardAssets.ImageEffects.ScreenOverlay.intensity > 0) {
+			float complete = (Time.time - overlayStartTime) / (overlayCooldownTime); // 0 at start of cooldown; 1 at end (proportion of completion)
+			UnityStandardAssets.ImageEffects.ScreenOverlay.intensity = Mathf.Lerp(UnityStandardAssets.ImageEffects.ScreenOverlay.intensity, 0.0f, complete);
+
+			Debug.Log (complete);
+			yield return null;
+		}
+		UnityStandardAssets.ImageEffects.ScreenOverlay.intensity = 0;
+		isOverlay = false;
+
+	} 
+
 	void playPickupAnim(GameObject pickup) {
 //		pickup.GetComponent<Animation>().Play ();
 		//currentLight = pickup;
