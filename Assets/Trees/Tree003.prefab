@@ -39,6 +39,7 @@ GameObject:
   - 4: {fileID: 4000013539566266}
   - 205: {fileID: 205000010004839422}
   - 136: {fileID: 136000011873404104}
+  - 114: {fileID: 114000014079877726}
   m_Layer: 11
   m_Name: Tree003
   m_TagString: CarpetHair
@@ -109,6 +110,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013174012290}
   m_Mesh: {fileID: 4300000, guid: eb12aca030529d94a8cd7d8f099c7c5c, type: 3}
+--- !u!114 &114000014079877726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013877559700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f1a7d76b02b38429346b0a83de2810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCollider: {fileID: 0}
 --- !u!136 &136000011873404104
 CapsuleCollider:
   m_ObjectHideFlags: 1
