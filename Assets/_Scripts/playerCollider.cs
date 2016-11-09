@@ -20,6 +20,8 @@ public class playerCollider : MonoBehaviour
 	private float max_health_overlay_intensity = 3.0f;
 	public float health_overlay_increment = 0.5f;
 
+	public ParticleSystem greenBeacon; // Turn off spiral after domino animation (else will be at angle)
+
 	// Enemy push back params
 	private float pushSpeed = 0.7f, pushTime = 0.5f;
 
@@ -83,8 +85,12 @@ public class playerCollider : MonoBehaviour
         }
 		if (hit.gameObject.CompareTag ("DominoTrigger")) {
 			hit.transform.parent.GetComponent<Animator> ().SetTrigger ("FallTrigger");
+
+			// Turn off beacon for green
+			var temp = greenBeacon.emission;
+			temp.enabled = false;
 		}
-		if (hit.gameObject.CompareTag ("FreggoCollider")) {
+		if (hit.gameObject.CompareTag ("FreggoCollider") || hit.gameObject.CompareTag ("FreggoCollider2") || hit.gameObject.CompareTag ("FreggoCollider3")) {
 			if(hit.transform.parent.parent.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName("Run"))
 				enemyHit (hit.transform.position);
 		}

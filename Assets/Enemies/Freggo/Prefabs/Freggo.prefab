@@ -1873,9 +1873,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010824308466}
   m_LocalRotation: {x: -0, y: 0.004133137, z: -0, w: 0.9999915}
-  m_LocalPosition: {x: -74.7, y: 0, z: -100.9}
-  m_LocalScale: {x: 0.50000036, y: 0.5, z: 0.50000036}
-  m_LocalEulerAnglesHint: {x: 0, y: 0.46, z: 0}
+  m_LocalPosition: {x: -54.1, y: 0, z: -48.5}
+  m_LocalScale: {x: 0.5000002, y: 0.5, z: 0.5000002}
+  m_LocalEulerAnglesHint: {x: 0, y: -115.40401, z: 0}
   m_Children:
   - {fileID: 4000012280804464}
   - {fileID: 4000011883216712}
@@ -2606,7 +2606,7 @@ Animator:
   m_GameObject: {fileID: 1000010824308466}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 88c9fe05c06c8a04d9468bb7bcae6bfc, type: 3}
-  m_Controller: {fileID: 9100000, guid: d5126ed6b2887524d818e5ccb15687c5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0e1c967dbcce302488af7fd9eab7ead4, type: 2}
   m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2622,7 +2622,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010824308466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af74fd9aa9cb73944a44e85ece6fb57c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3645f1559add3264e9e4a373c57df07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
