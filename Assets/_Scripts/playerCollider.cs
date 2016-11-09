@@ -82,7 +82,7 @@ public class playerCollider : MonoBehaviour
             hit.transform.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
         }
 		if (hit.gameObject.CompareTag ("FreggoCollider")) {
-			if(hit.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName("Run"))
+			if(hit.transform.parent.parent.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName("Run"))
 				enemyHit (hit.transform.position);
 		}
 
