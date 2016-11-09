@@ -31,8 +31,20 @@ public class WaterAbsorb : MonoBehaviour {
         {
         	shrink = true;
         	waterCollider.enabled = false;
-        	Debug.Log("Sponge collided with water");
-
+        	Debug.Log("Sponge entered water");
         }
     }
+
+	void OnTriggerExit(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Sponge"))
+        {
+        	shrink = false;
+        	waterCollider.enabled = false;
+        	Debug.Log("Sponge exited water");
+        }
+
+    }
+
 }

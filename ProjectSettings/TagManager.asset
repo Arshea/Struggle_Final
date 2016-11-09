@@ -15,6 +15,7 @@ TagManager:
   - PlayingCard
   - Sponge
   - Plane
+  - Wand
   layers:
   - Default
   - TransparentFX
