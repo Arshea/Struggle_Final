@@ -17,7 +17,6 @@ public class PickUpLight : MonoBehaviour {
 	// Particle dust to player lantern effect
 	private float speedDuringAnim = 5.0f; // Speed to keep particles circling player
 	private float speedEndAnim = 10.0f;	// Speed into lanten at end
-	private float decel = 1.00f/*0.96f*/; // Need to decelerate particles to remove their initial velocity
 	// and accurately stream to target
 
 	private bool playingAnim = false; // Is animation playing?

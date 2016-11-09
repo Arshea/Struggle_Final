@@ -11,8 +11,17 @@ public class playerCollider : MonoBehaviour
 	//public AudioClip pickupClip;
 	public float speed = 2.5f; // Speed at which pickup moves to player
 	public static bool pickedUp = false;	//Is true if a light is picked up, false after pick up animation	
-    private Light lanternLight = null;
 	public AudioClip smallPickupAudio;
+	public static bool hit_by_enemy = false;
+	// Oh hit! overlay
+	private bool isOverlay = false;
+	private float overlayStartTime;
+	public float overlayCooldownTime = 500.0f;
+	private float max_health_overlay_intensity = 3.0f;
+	public float health_overlay_increment = 0.5f;
+
+	// Enemy push back params
+	private float pushSpeed = 0.7f, pushTime = 0.5f;
 
     // Use this for initialization
     void Start()
@@ -38,6 +47,7 @@ public class playerCollider : MonoBehaviour
 				else activeCarpetHairs[i].transform.eulerAngles = new Vector3(0, 0, 0);
 			}
         }
+
     }
 
     // Animate carpet hairs
@@ -71,6 +81,13 @@ public class playerCollider : MonoBehaviour
             hit.gameObject.GetComponent<BoxCollider>().enabled = false;
             hit.transform.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
         }
+		if (hit.gameObject.CompareTag ("DominoTrigger")) {
+			hit.transform.parent.GetComponent<Animator> ().SetTrigger ("FallTrigger");
+		}
+		if (hit.gameObject.CompareTag ("FreggoCollider")) {
+			if(hit.transform.parent.parent.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName("Run"))
+				enemyHit (hit.transform.position);
+		}
 
         Rigidbody body = hit.collider.attachedRigidbody;
         if (body == null || body.isKinematic)
@@ -109,7 +126,51 @@ public class playerCollider : MonoBehaviour
 		}
     }
 
-	
+	// Got hit by enemy -- bounce backwards
+	void enemyHit(Vector3 enemyPos) {
+		Vector3 knockBackDirection = player.transform.position - enemyPos;
+		knockBackDirection.y = 0.0f; // Don't jump up
+		knockBackDirection.Normalize ();
+		knockBackDirection.y = 0.35f; // Ok jump up a bit
+		StartCoroutine (hitKnockBack (knockBackDirection));
+
+		if (UnityStandardAssets.ImageEffects.ScreenOverlay.intensity < max_health_overlay_intensity) {
+			UnityStandardAssets.ImageEffects.ScreenOverlay.intensity += health_overlay_increment;
+		}
+		overlayStartTime = Time.time;
+		if (!isOverlay) {
+			isOverlay = true;
+			StartCoroutine (screenOverlayCooldown());
+		}
+		//player.GetComponent<CharacterController> ().attachedRigidbody.AddForce (knockBackDirection * 10.0f);
+		//player.GetComponent<CharacterController>().Move(knockBackDirection * 10.0f);
+
+		Debug.Log ("Enemy hit");
+	}
+
+	IEnumerator hitKnockBack(Vector3 direction) {
+		float startTime = Time.time;
+		float endTime = startTime + pushTime;
+
+		while (Time.time < endTime) {
+			float complete = (Time.time - startTime) / (endTime - startTime); // 0 when coroutine starts; 1 at end (proportion of completion)
+			player.GetComponent<CharacterController>().Move(direction * pushSpeed * (1 - complete));
+			yield return null;
+		}
+	}
+
+	IEnumerator screenOverlayCooldown() {
+
+		while (UnityStandardAssets.ImageEffects.ScreenOverlay.intensity > 0) {
+			float complete = (Time.time - overlayStartTime) / (overlayCooldownTime); // 0 at start of cooldown; 1 at end (proportion of completion)
+			UnityStandardAssets.ImageEffects.ScreenOverlay.intensity = Mathf.Lerp(UnityStandardAssets.ImageEffects.ScreenOverlay.intensity, 0.0f, complete);
+			yield return null;
+		}
+		UnityStandardAssets.ImageEffects.ScreenOverlay.intensity = 0;
+		isOverlay = false;
+
+	} 
+
 	void playPickupAnim(GameObject pickup) {
 //		pickup.GetComponent<Animation>().Play ();
 		//currentLight = pickup;
