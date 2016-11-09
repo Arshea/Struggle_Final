@@ -16,6 +16,10 @@ public class playerCollider : MonoBehaviour
 	public static bool hit_by_enemy = false;
 	public float max_health_overlay_intensity = 3.0f;
 	public float health_overlay_increment = 0.5f;
+
+	// Enemy push back params
+	private float pushSpeed = 0.7f, pushTime = 0.5f;
+
     // Use this for initialization
     void Start()
     {
@@ -117,22 +121,31 @@ public class playerCollider : MonoBehaviour
 
 	// Got hit by enemy -- bounce backwards
 	void enemyHit(Vector3 enemyPos) {
-
-
-		Vector3 pushDir = player.transform.position - enemyPos;
-		pushDir.y = 0;
-		pushDir.Normalize();
-		player.transform.position += (pushDir * 3.0f);
-
-
+		Vector3 knockBackDirection = player.transform.position - enemyPos;
+		knockBackDirection.y = 0.0f; // Don't jump up
+		knockBackDirection.Normalize ();
+		knockBackDirection.y = 0.35f; // Ok jump up a bit
+		StartCoroutine (hitKnockBack (knockBackDirection));
 
 		if (UnityStandardAssets.ImageEffects.ScreenOverlay.intensity < max_health_overlay_intensity) {
-			UnityStandardAssets.ImageEffects.ScreenOverlay.intensity += health_overlay_increment;
+		//	UnityStandardAssets.ImageEffects.ScreenOverlay.intensity += health_overlay_increment;
 		}
 
-
+		//player.GetComponent<CharacterController> ().attachedRigidbody.AddForce (knockBackDirection * 10.0f);
+		//player.GetComponent<CharacterController>().Move(knockBackDirection * 10.0f);
 
 		Debug.Log ("Enemy hit");
+	}
+
+	IEnumerator hitKnockBack(Vector3 direction) {
+		float startTime = Time.time;
+		float endTime = startTime + pushTime;
+
+		while (Time.time < endTime) {
+			float complete = (Time.time - startTime) / (endTime - startTime); // 0 when coroutine starts; 1 at end (proportion of completion)
+			player.GetComponent<CharacterController>().Move(direction * pushSpeed * (1 - complete));
+			yield return null;
+		}
 	}
 	 
 	void playPickupAnim(GameObject pickup) {
