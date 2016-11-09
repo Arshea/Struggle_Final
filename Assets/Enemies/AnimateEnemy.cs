@@ -10,7 +10,7 @@ public class AnimateEnemy: MonoBehaviour {
 	// Use this for initialization
 	private float closest_distance_to_player;
 	private int current_state;
-	private float territory_radius;
+	public float territory_radius = 12.0f;
 	private Vector3 initial_position;
 	public int enemy_health;
 	private float run_speed;
@@ -25,16 +25,18 @@ public class AnimateEnemy: MonoBehaviour {
 
 	private enum states :int
 	{
-		IDLE = 0,
+		BEFOREEMERGE = -1,
+		IDLE,
 		RUN,
 		STUN,
 		RETURN,
-		STAGGER// To run back to initial position
+		STAGGER,
+		EMERGE// To run back to initial position
 	}
 
 	private enum transitions : int
 	{
-		IDLERUN = 5,
+		IDLERUN = 6,
 		RUNSTUN,
 		STUNIDLE,
 		RETURNIDLE,
@@ -42,12 +44,12 @@ public class AnimateEnemy: MonoBehaviour {
 		RUNRETURN,
 		RUNSTAGGER,
 		STAGGERRUN,
-		STAGGERSTUN
+		STAGGERSTUN,
+		EMERGERUN
 	}
 	void Start () {
-		current_state = (int)states.IDLE;
+		current_state = (int)states.BEFOREEMERGE;
 		initial_position = transform.position;
-		territory_radius = 20;
 		//enemy_health = 2;
 		run_speed = 2;
 		closest_distance_to_player = 5;
@@ -79,6 +81,24 @@ public class AnimateEnemy: MonoBehaviour {
 	void Update () {
 		//resetAllAnimations ();
 		switch (current_state) {
+		case (int)states.BEFOREEMERGE: 
+			playerCollider.hit_by_enemy = false;
+			if (playerInTerritory ()) {
+				GetComponent<Animator> ().SetTrigger ("EmergeTrigger");
+				current_state = (int)states.EMERGE;
+			}
+			//			Debug.Log ("IDLE");
+			break;
+		case (int)states.EMERGE: 
+			playerCollider.hit_by_enemy = false;
+			current_state = (int)transitions.EMERGERUN;
+			//			Debug.Log ("IDLE");
+			break;
+		case (int)transitions.EMERGERUN:
+			playerCollider.hit_by_enemy = false;
+			GetComponent<Animator> ().SetTrigger ("EmergeRun");
+			current_state = (int)states.RUN;
+			break;
 		case (int)states.IDLE: 
 			playerCollider.hit_by_enemy = false;
 			if (playerInTerritory ()) {
@@ -192,16 +212,18 @@ public class AnimateEnemy: MonoBehaviour {
 			break;
 		case (int)states.RETURN:
 			playerCollider.hit_by_enemy = false;
-			if (Vector3.SqrMagnitude (initial_position - transform.position) > 0.1f) {
-				transform.LookAt (new Vector3 (initial_position.x, transform.position.y, initial_position.z));
-				transform.Translate (new Vector3 (0, 0, 3 * Time.deltaTime));
-			} 
 			if (playerInTerritory()) {
 				//transform.LookAt (new Vector3 (player.transform.position.x, 0, player.transform.position.z));
 				current_state = (int)transitions.RETURNRUN;
 			}
+
+			else if (Vector3.SqrMagnitude (initial_position - transform.position) > 0.1f) {
+				transform.LookAt (new Vector3 (initial_position.x, transform.position.y, initial_position.z));
+				transform.Translate (new Vector3 (0, 0, running_speed * Time.deltaTime));
+			} 
+
 			else {
-				initial_position = transform.position;
+				//initial_position = transform.position;
 				current_state = (int)transitions.RETURNIDLE;
 			}
 //			Debug.Log ("RETURN");
