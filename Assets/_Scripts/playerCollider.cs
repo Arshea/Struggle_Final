@@ -13,14 +13,12 @@ public class playerCollider : MonoBehaviour
 	public static bool pickedUp = false;	//Is true if a light is picked up, false after pick up animation	
 	public AudioClip smallPickupAudio;
 	public static bool hit_by_enemy = false;
-
-
-	public bool isOverlay = false;
-	public float overlayStartTime;
-	private float overlayCooldownTime = 500.0f;
-	public float max_health_overlay_intensity = 3.0f;
+	// Oh hit! overlay
+	private bool isOverlay = false;
+	private float overlayStartTime;
+	public float overlayCooldownTime = 500.0f;
+	private float max_health_overlay_intensity = 3.0f;
 	public float health_overlay_increment = 0.5f;
-	public float health_overlay_decrement = 0.0000000000005f;
 
 	// Enemy push back params
 	private float pushSpeed = 0.7f, pushTime = 0.5f;
@@ -84,7 +82,8 @@ public class playerCollider : MonoBehaviour
             hit.transform.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
         }
 		if (hit.gameObject.CompareTag ("FreggoCollider")) {
-			enemyHit (hit.transform.position);
+			if(hit.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName("Run"))
+				enemyHit (hit.transform.position);
 		}
 
         Rigidbody body = hit.collider.attachedRigidbody;
@@ -162,8 +161,6 @@ public class playerCollider : MonoBehaviour
 		while (UnityStandardAssets.ImageEffects.ScreenOverlay.intensity > 0) {
 			float complete = (Time.time - overlayStartTime) / (overlayCooldownTime); // 0 at start of cooldown; 1 at end (proportion of completion)
 			UnityStandardAssets.ImageEffects.ScreenOverlay.intensity = Mathf.Lerp(UnityStandardAssets.ImageEffects.ScreenOverlay.intensity, 0.0f, complete);
-
-			Debug.Log (complete);
 			yield return null;
 		}
 		UnityStandardAssets.ImageEffects.ScreenOverlay.intensity = 0;
