@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StackedLegoAnimation : MonoBehaviour {
+public class Double_Stacked_Lego : MonoBehaviour {
 
 	public GameObject player;
 	public GameObject enemyRoot;
@@ -111,20 +111,20 @@ public class StackedLegoAnimation : MonoBehaviour {
 					}
 				}
 			}
-			Debug.Log ("IDLE");
+			//Debug.Log ("IDLE");
 			break;
 
 		case (int)transitions.IDLERUN:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("IdleRun");
 			current_state = (int)states.RUN;
-			Debug.Log ("IDLERUN");
+			//Debug.Log ("IDLERUN");
 			break;
 		case (int)transitions.IDLESTUN:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("IdleStun");
 			current_state = (int)states.STUN;
-			Debug.Log ("IDLESTUN");
+			//Debug.Log ("IDLESTUN");
 			break;
 
 		case (int)states.RUN:
@@ -150,23 +150,23 @@ public class StackedLegoAnimation : MonoBehaviour {
 						if (enemy_health == 0)
 							current_state = (int)transitions.RUNSTUN;
 						//else
-							//current_state = (int)transitions.RUNSTAGGER;
+						//current_state = (int)transitions.RUNSTAGGER;
 
 					}
 				}
 			}
-			Debug.Log ("RUN");
+			//Debug.Log ("RUN");
 			break;
 		case (int)transitions.RUNSTUN:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("RunStun");
 			current_state = (int)states.STUN;
-			Debug.Log ("RUNSTUN");
+			//Debug.Log ("RUNSTUN");
 			break;
 		case (int)transitions.RUNRETURN:
 			playerCollider.hit_by_enemy = false;
 			current_state = (int)states.RETURN;
-			Debug.Log ("RUNRETURN");
+			//Debug.Log ("RUNRETURN");
 			break;
 		case (int)states.STUN:
 			playerCollider.hit_by_enemy = false;
@@ -217,21 +217,21 @@ public class StackedLegoAnimation : MonoBehaviour {
 			//GetComponent<Animator> ().ResetTrigger ("IdleRun");
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("RunIdle");
 			current_state = (int)states.IDLE;
-			Debug.Log ("RETURNIDLE");
+			//Debug.Log ("RETURNIDLE");
 			break;
 		case (int)transitions.RETURNRUN:
 			playerCollider.hit_by_enemy = false;
 			current_state = (int)states.RUN;
-			Debug.Log ("RETURNRUN");
+			//Debug.Log ("RETURNRUN");
 			break;
 		case (int)transitions.RETURNSTUN:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("RunStun");
 			current_state = (int)states.STUN;
-			Debug.Log ("RETURNSTUN");
+			//Debug.Log ("RETURNSTUN");
 			break;
 		default:
-			Debug.Log ("ERROR");
+			//Debug.Log ("ERROR");
 			break;
 
 		}
@@ -269,8 +269,8 @@ public class StackedLegoAnimation : MonoBehaviour {
 		animatedFreggo.SetActive (false);
 		// Birth static freggo in its place
 		deadFreggo.SetActive (true);
-		//sca *= 100.0f; // Scales are 100 factor different, probably metre-cm conversion
-		//pos.y -= 1.45f;	// Move to floor
+		sca *= 55.0f; // Scales are 100 factor different, probably metre-cm conversion
+		pos.y -= 1.8f;	// Move to floor
 		//pos.x = 5.0f;
 		deadFreggo.transform.localPosition = pos;
 		deadFreggo.transform.eulerAngles = rot;
@@ -280,6 +280,5 @@ public class StackedLegoAnimation : MonoBehaviour {
 		// Debug.Log ("killed a freggo child");
 		yield return null;
 	}
-
 
 }
