@@ -54,6 +54,8 @@ public class AnimateEnemy: MonoBehaviour {
 		RETURNSTUN
 	}
 	void Start () {
+		if(player == null) player = GameObject.Find ("Player");
+
 		current_state = (int)states.BEFOREEMERGE;
 		initial_position = transform.position;
 		current_position = initial_position;

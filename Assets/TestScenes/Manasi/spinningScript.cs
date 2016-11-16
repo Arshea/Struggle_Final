@@ -3,6 +3,8 @@ using System.Collections;
 
 public class spinningScript : MonoBehaviour {
 
+	public GameObject player;
+
     public float yRotSpeed = 100;
     public bool isSpinning = true;
 
@@ -13,6 +15,8 @@ public class spinningScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if(player == null) player = GameObject.Find ("Player");
+
         origin = this.gameObject.GetComponent<Transform>().position;
         t = 0.0f;
 	}
@@ -20,6 +24,17 @@ public class spinningScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+		if (Input.GetButtonDown ("Interact") && LanternManager.ammunition > 0) {
+			float distToPlayer = Vector3.Distance (player.transform.position, this.transform.position);
+			if (distToPlayer < LanternManager.lanternRange) {
+				if(isSpinning) StopSpinning ();
+				Vector3 forceDir = transform.position - player.transform.position;
+				forceDir.y = 0.0f;
+				forceDir.Normalize ();
+				GetComponent<Rigidbody> ().AddForce (forceDir * 1000.0f);
+			}
+		}
+
         if (isSpinning)
             Spinning();
 	}

@@ -3,7 +3,9 @@ using System.Collections;
 
 public class playerCollider : MonoBehaviour
 {
+
 	public GameObject player;
+
     public float pushPower = 2.0F; // Push force of player
     public GameObject[] carpetHair;
     public float distTriggerCarpetHair = 2.0f; // Distance to start carpet hair animation
@@ -20,7 +22,6 @@ public class playerCollider : MonoBehaviour
 	private float max_health_overlay_intensity = 3.0f;
 	public float health_overlay_increment = 0.5f;
 
-	public ParticleSystem greenBeacon; // Turn off spiral after domino animation (else will be at angle)
 
 	// Enemy push back params
 	private float pushSpeed = 0.7f, pushTime = 0.5f;
@@ -28,6 +29,7 @@ public class playerCollider : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		if(player == null) player = GameObject.Find ("Player");
     }
 
     // Update is called once per frame
@@ -84,11 +86,9 @@ public class playerCollider : MonoBehaviour
             hit.transform.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
         }
 		if (hit.gameObject.CompareTag ("DominoTrigger")) {
-			hit.transform.parent.GetComponent<Animator> ().SetTrigger ("FallTrigger");
+			hit.transform.parent.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
 
-			// Turn off beacon for green
-			var temp = greenBeacon.emission;
-			temp.enabled = false;
+
 		}
 		if (hit.gameObject.CompareTag ("FreggoCollider") || hit.gameObject.CompareTag ("FreggoCollider2") || hit.gameObject.CompareTag ("FreggoCollider3")) {
 			if(hit.transform.parent.parent.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName("Run"))
