@@ -90,7 +90,7 @@ public class playerCollider : MonoBehaviour
 
 
 		}
-		if (hit.gameObject.CompareTag ("FreggoCollider") || hit.gameObject.CompareTag ("FreggoCollider2") || hit.gameObject.CompareTag ("FreggoCollider3")) {
+		if (hit.gameObject.CompareTag ("FreggoCollider")/* || hit.gameObject.CompareTag ("FreggoCollider2") || hit.gameObject.CompareTag ("FreggoCollider3")*/) {
 			if(hit.transform.parent.parent.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName("Run"))
 				enemyHit (hit.transform.position);
 		}

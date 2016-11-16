@@ -16,13 +16,16 @@ public class EarpodPlayOnClick : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (!triggered && Input.GetButtonDown ("Interact") && LanternManager.ammunition > 0) {
+		if (!triggered/*move this to later if want to reset timer on second click*/ && Input.GetButtonDown ("Interact") && LanternManager.ammunition > 0) {
 			if (Vector3.Distance (player.transform.position, transform.position) < LanternManager.lanternRange) {
 
-				if (!triggered) {
-					StartCoroutine ("playMusic");
-					triggered = true;
-				}
+				StartCoroutine ("playMusic");
+				triggered = true;
+
+				// Change to cooler animation and maybe music note particle effects??
+				this.GetComponent<Rigidbody>().AddForce(1800 * Vector3.up);
+				this.GetComponent<Rigidbody>().AddTorque(1800 * Vector3.up);
+
 			}
 		}
 	}

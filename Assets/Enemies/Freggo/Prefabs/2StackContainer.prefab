@@ -2377,6 +2377,7 @@ GameObject:
   - 4: {fileID: 4000012675528040}
   - 54: {fileID: 54000011660894010}
   - 65: {fileID: 65000013155134222}
+  - 114: {fileID: 114000013166120436}
   m_Layer: 0
   m_Name: Two_AfterStun
   m_TagString: Untagged
@@ -4222,8 +4223,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014079121948}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.03, y: -0.01, z: -20.17}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -50.6, y: 0, z: -116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -5461,6 +5462,18 @@ MonoBehaviour:
   enemy_health: 0
   animatedFreggo: {fileID: 1000011536759292}
   deadFreggo: {fileID: 1000013705703522}
+--- !u!114 &114000013166120436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013705703522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c434ca805bd676343b9089e7dea8d649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!137 &137000012893653858
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

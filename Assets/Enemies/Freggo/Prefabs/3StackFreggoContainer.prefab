@@ -1632,6 +1632,7 @@ GameObject:
   - 4: {fileID: 4000011153010124}
   - 54: {fileID: 54000014114632854}
   - 65: {fileID: 65000010913404552}
+  - 114: {fileID: 114000011105291786}
   m_Layer: 0
   m_Name: Three_AfterStun
   m_TagString: Untagged
@@ -4888,8 +4889,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012037926536}
   m_LocalRotation: {x: -0, y: -0.49389112, z: -0, w: 0.8695238}
-  m_LocalPosition: {x: 7.962322, y: 0, z: -35.954998}
-  m_LocalScale: {x: 55.00002, y: 55, z: 55.00002}
+  m_LocalPosition: {x: -92.4, y: 0, z: -100.6}
+  m_LocalScale: {x: 55.000034, y: 55, z: 55.000034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013297976806}
@@ -7704,6 +7705,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000011105291786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011743658826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c434ca805bd676343b9089e7dea8d649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114000012229188770
 MonoBehaviour:
   m_ObjectHideFlags: 1

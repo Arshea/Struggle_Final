@@ -53,6 +53,8 @@ public class StackedLegoAnimation : MonoBehaviour {
 		RETURNSTUN
 	}
 	void Start () {
+		if(player == null) player = GameObject.Find ("Player");
+
 		current_state = (int)states.IDLE;
 		initial_position = transform.position;
 		current_position = initial_position;
@@ -111,20 +113,20 @@ public class StackedLegoAnimation : MonoBehaviour {
 					}
 				}
 			}
-			Debug.Log ("IDLE");
+			// Debug.Log ("IDLE");
 			break;
 
 		case (int)transitions.IDLERUN:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("IdleRun");
 			current_state = (int)states.RUN;
-			Debug.Log ("IDLERUN");
+			// Debug.Log ("IDLERUN");
 			break;
 		case (int)transitions.IDLESTUN:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("IdleStun");
 			current_state = (int)states.STUN;
-			Debug.Log ("IDLESTUN");
+			// Debug.Log ("IDLESTUN");
 			break;
 
 		case (int)states.RUN:
@@ -135,7 +137,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 				if (closest_distance_to_player >= Vector3.Distance (player.transform.position, this.transform.position)) {
 					current_enemy_position = transform.position;
 					player.SendMessage ("enemyHit", current_enemy_position,SendMessageOptions.DontRequireReceiver);
-					//Debug.Log ("Hit by enemy" + playerCollider.hit_by_enemy);
+					//// Debug.Log ("Hit by enemy" + playerCollider.hit_by_enemy);
 				}
 
 				transform.Translate (new Vector3 (0, 0, running_speed * Time.deltaTime));
@@ -155,18 +157,18 @@ public class StackedLegoAnimation : MonoBehaviour {
 					}
 				}
 			}
-			Debug.Log ("RUN");
+			// Debug.Log ("RUN");
 			break;
 		case (int)transitions.RUNSTUN:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("RunStun");
 			current_state = (int)states.STUN;
-			Debug.Log ("RUNSTUN");
+			// Debug.Log ("RUNSTUN");
 			break;
 		case (int)transitions.RUNRETURN:
 			playerCollider.hit_by_enemy = false;
 			current_state = (int)states.RETURN;
-			Debug.Log ("RUNRETURN");
+			// Debug.Log ("RUNRETURN");
 			break;
 		case (int)states.STUN:
 			playerCollider.hit_by_enemy = false;
@@ -217,21 +219,21 @@ public class StackedLegoAnimation : MonoBehaviour {
 			//GetComponent<Animator> ().ResetTrigger ("IdleRun");
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("RunIdle");
 			current_state = (int)states.IDLE;
-			Debug.Log ("RETURNIDLE");
+			// Debug.Log ("RETURNIDLE");
 			break;
 		case (int)transitions.RETURNRUN:
 			playerCollider.hit_by_enemy = false;
 			current_state = (int)states.RUN;
-			Debug.Log ("RETURNRUN");
+			// Debug.Log ("RETURNRUN");
 			break;
 		case (int)transitions.RETURNSTUN:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("RunStun");
 			current_state = (int)states.STUN;
-			Debug.Log ("RETURNSTUN");
+			// Debug.Log ("RETURNSTUN");
 			break;
 		default:
-			Debug.Log ("ERROR");
+			// Debug.Log ("ERROR");
 			break;
 
 		}

@@ -53,6 +53,9 @@ public class Double_Stacked_Lego : MonoBehaviour {
 		RETURNSTUN
 	}
 	void Start () {
+		if(player == null) player = GameObject.Find ("Player");
+
+
 		current_state = (int)states.IDLE;
 		initial_position = transform.position;
 		current_position = initial_position;

@@ -4,7 +4,7 @@ using System.Collections;
 public class DeadFreggoMove : MonoBehaviour {
 
 	public GameObject player;
-	private float moveStrengthFactor = 700.0f;
+	private float moveStrengthFactor = 1000.0f;
 
 	// Use this for initialization
 	void Start () {
