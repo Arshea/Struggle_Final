@@ -30,8 +30,8 @@ public CapsuleCollider myCollider;
 				{
 					Debug.Log("Disabling Carpet Hair  ");
 					// Debug.Log(overlaps[i].gameObject.tag);
-					this.gameObject.SetActive(false);
-        			// DestroyImmediate(this.gameObject);
+					// this.gameObject.SetActive(false);
+        			DestroyImmediate(this.gameObject);
 				}
 			}
 		}
