@@ -95,7 +95,11 @@ public class playerCollider : MonoBehaviour
 				enemyHit (hit.transform.position);
 		}
 
-        Rigidbody body = hit.collider.attachedRigidbody;
+        
+		// Push ability
+
+		/*
+		Rigidbody body = hit.collider.attachedRigidbody;
         if (body == null || body.isKinematic)
             return;
 
@@ -103,7 +107,7 @@ public class playerCollider : MonoBehaviour
             return;
 
         Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-        body.velocity = pushDir * pushPower;
+        body.velocity = pushDir * pushPower;*/
     }
 
 

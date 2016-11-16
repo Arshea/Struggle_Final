@@ -8,6 +8,8 @@ public class LanternManager : MonoBehaviour {
 	public float cooldown = 1.5f; // Number of seconds between allowed shots
 									// NEED TO PLAYTEST THIS VALUE
 
+	// Need access to these from pretty much everywhere for onclick functionality
+	public static float lanternRange = 15.0f; // 
 	public static int ammunition = 0; // Ammunition currently available - always updated
 									// Accessed in enemy AI script to determine a valid lantern attack
 

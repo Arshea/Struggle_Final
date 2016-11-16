@@ -12,13 +12,11 @@ public class SwanAnimator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown ("Interact")) {
-			Debug.Log ("Ammunition: " + LanternManager.ammunition);
-			if (LanternManager.ammunition > 0) {
-				if (Vector3.Distance (player.transform.position, initial_position) < 12) {
+		if (Input.GetButtonDown ("Interact") && LanternManager.ammunition > 0) {
+			if (Vector3.Distance (player.transform.position, initial_position) < LanternManager.lanternRange) {
 					GetComponent<Animator> ().SetTrigger ("TakeoffTrigger");
 
-				}
+
 			}
 		}
 	}

@@ -1,0 +1,252 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000010951423818}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010951423818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010664558868}
+  - 33: {fileID: 33000010944334646}
+  - 64: {fileID: 64000010721016736}
+  - 23: {fileID: 23000013463089380}
+  - 114: {fileID: 114000010481411402}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Plane
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!1 &1000011296898526
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013891092686}
+  m_Layer: 0
+  m_Name: Brush
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000014089260668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011102172560}
+  - 114: {fileID: 114000013542698334}
+  m_Layer: 0
+  m_Name: Carpet Hairs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000010664558868
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010951423818}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 100, y: 0, z: 100}
+  m_LocalScale: {x: 20, y: 1, z: 20}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000011102172560}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &4000011102172560
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014089260668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 1, z: 0.05}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000013891092686}
+  m_Father: {fileID: 4000010664558868}
+  m_RootOrder: 0
+--- !u!4 &4000013891092686
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011296898526}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -32.12477, y: 0.9999924, z: -81.97107}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000011102172560}
+  m_RootOrder: 0
+--- !u!23 &23000013463089380
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010951423818}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 891aeb9941c201a4a82f62d7b1b4e89e, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &33000010944334646
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010951423818}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &64000010721016736
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010951423818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114000010481411402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010951423818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d2b75035bb7b74bbb809fa045ddbc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings:
+    isActive: 1
+    groupName: Carpet Hairs
+    setOfMeshesToPaint: []
+    classicUI: 0
+    previewIconSize: 60
+    globalPaintingLayers: 0101010101010101010101010101010101010101010101010101010101010101
+    paintKey: 112
+    deleteKey: 108
+    combineAreaKey: 107
+    increaseRadiusKey: 111
+    decreaseRadiusKey: 105
+    brushRadius: 10
+    brushColor: {r: 1, g: 1, b: 1, a: 1}
+    meshCount: 1
+    useMeshDensity: 0
+    meshDensity: 3
+    minMeshDensity: 0.5
+    maxMeshDensity: 1.5
+    useRandomMeshCount: 0
+    minNrOfMeshes: 1
+    maxNrOfMeshes: 1
+    delay: 0.25
+    meshOffset: -50
+    slopeInfluence: 100
+    useSlopeFilter: 0
+    maxSlopeFilterAngle: 30
+    inverseSlopeFilter: 0
+    manualRefVecSampling: 0
+    showRefVecInSceneGUI: 1
+    slopeRefVec: {x: 0, y: 1, z: 0}
+    slopeRefVec_HandleLocation: {x: 0, y: 0, z: 0}
+    yAxisIsTangent: 0
+    invertY: 0
+    scattering: 60
+    autoStatic: 1
+    useOverlapFilter: 0
+    useRandomAbsMinDist: 0
+    absoluteMinDist: 0.5
+    randomAbsMinDist: {x: 0.5, y: 1}
+    uniformScale: 1
+    constUniformScale: 1
+    rWithinRange: 1
+    b_Help: 0
+    b_Help_Templates: 0
+    b_Help_GeneralUsage: 0
+    b_Help_Optimization: 0
+    b_SetOfMeshesToPaint: 1
+    b_Templates: 1
+    b_CustomKeys: 0
+    b_BrushSettings: 1
+    b_Slopes: 1
+    b_Randomizers: 1
+    b_OverlapFilter: 1
+    b_AdditiveScale: 1
+    b_Opt: 1
+    rScaleW: 0
+    rScaleH: 0
+    rScale: 0
+    rUniformRange: {x: 0.8, y: 1.7}
+    rNonUniformRange: {x: 0, y: 0, z: 0, w: 0}
+    cScale: 0
+    cScaleXYZ: {x: 0, y: 0, z: 0}
+    randomRotation: 0
+    autoSelectOnCombine: 1
+  globalPaintingMode: 0
+  setOfMeshesToPaint:
+  - {fileID: 1000010423568918, guid: 9fe68d4a28a39064383188e08419b7c3, type: 2}
+  - {fileID: 1000013877559700, guid: 8465884a96ea91840ae3f9e6b3ebc3a0, type: 2}
+  - {fileID: 1000012860261164, guid: 8c046b2d29bf46c43af2723ee770a1f3, type: 2}
+  - {fileID: 1000010888738168, guid: 87d1b8adc2e6777478a4cbf2bf797c60, type: 2}
+  - {fileID: 1000010787592756, guid: 102486393ce79a14caea1893ef89e395, type: 2}
+  brush: {fileID: 1000011296898526}
+  paintBufferRoot: {fileID: 0}
+  holderObj: {fileID: 4000011102172560}
+  brushTransform: {fileID: 4000013891092686}
+  paintBuffer: []
+  deletionBuffer: []
+--- !u!114 &114000013542698334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014089260668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5898d007696ec1f4695a8bb85688b738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
