@@ -23,6 +23,6 @@ public class MainMenuUIManager : MonoBehaviour {
 	}
 
 	public void startGame () {
-		Application.LoadLevel("WorldBuilding");
+		Application.LoadLevel("_Scenes/WorldBuilding");
 	}
 }

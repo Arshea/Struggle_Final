@@ -7,10 +7,11 @@ public class MusicManager : MonoBehaviour {
 	//Needs to move elsewhere later
 	public GameObject victory_message;
 	public GameObject winning_particles;
+	public GameObject back_home_guide;
 	public AudioSource main_source;				//Main theme music
 	public AudioSource ambient_source;			//Ambient sounds like light pickups
 	public AudioSource narration_audio_source;	//Narration
-
+	public AudioSource[] lantern_stun_sources;
 
 	public AudioClip main_theme;
 	public AudioClip light_variation;
@@ -94,7 +95,7 @@ public class MusicManager : MonoBehaviour {
 
 		//Transition from intro 1 to intro 2
 		/*Note 2: As in Note 1 player regains controls here*/
-		narration_transition_with_dependency (0);
+		//narration_transition_with_dependency (0);
 
 		if (enemy_name == "Freggo") {
 			narration_transition_without_dependency (2, 0); //Pass the narration index that you want to change it to
@@ -118,6 +119,7 @@ public class MusicManager : MonoBehaviour {
 
 		if (number_of_lights_picked_up == 2) {
 			narration_transition_without_dependency (6, 8);
+
 		}
 		if (number_of_lights_picked_up == 3) {
 			narration_transition_without_dependency (7, 8);
@@ -125,16 +127,28 @@ public class MusicManager : MonoBehaviour {
 		}
 		if (number_of_lights_picked_up == 4) {
 			narration_transition_without_dependency (9, 8);
+			back_home_guide.SetActive (true);
 		}
-		if ((Vector3.Distance (player.transform.position,new Vector3(-18.98f,3.083f,12.066f)) < 12)&&(number_of_lights_picked_up==4)) {
+		if ((Vector3.Distance (player.transform.position,new Vector3(-25.23f,3.29f,3.81f)) < 12)&&(number_of_lights_picked_up==4)) {
 			narration_transition_without_dependency (12, 0);
 			narration_transition_with_dependency (12);
 			winning_particles.SetActive (true);
+			back_home_guide.SetActive (false);
 			victory_message.SetActive (true);
+
 			
 		}
-		if(narration_audio_source.isPlaying == false)
+		if (narration_audio_source.isPlaying == false) {
 			main_source.volume = 1.0f;
+			for (int i = 0; i < 5; i++) {
+				lantern_stun_sources [i].volume = 1.0f;
+			}
+		} 
+		else {
+			for (int i = 0; i < 5; i++) {
+				lantern_stun_sources [i].volume = 0.5f;
+			}
+		}
 		
 	}
 

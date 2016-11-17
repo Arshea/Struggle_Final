@@ -73,7 +73,7 @@ public class Sailing : MonoBehaviour {
 		if (Input.GetButtonDown("Interact") && LanternManager.ammunition > 0)
 		{
 			// if(other.gameObject.CompareTag("Player") && !reachedEnd)
-			if(other.gameObject.CompareTag("Player"))
+			if(other.gameObject.CompareTag("Player") && other.transform.position.y > 2.0f)
 			{
 				Debug.Log("Start your sailing!");
 

@@ -54,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010888738168}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 83.07847, y: 0, z: -0.8751831}
-  m_LocalScale: {x: 1.6443527, y: 1.6443527, z: 1.6443527}
+  m_LocalPosition: {x: -91.10826, y: 0, z: 95.04368}
+  m_LocalScale: {x: 1.4188541, y: 1.4188541, z: 1.4188541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000010374501124}
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010888738168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00f1a7d76b02b38429346b0a83de2810, type: 3}
   m_Name: 
@@ -156,7 +156,7 @@ LODGroup:
   m_FadeMode: 2
   m_AnimateCrossFading: 1
   m_LODs:
-  - screenRelativeHeight: 0.11988809
+  - screenRelativeHeight: 0.04114656
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23000013098702282}

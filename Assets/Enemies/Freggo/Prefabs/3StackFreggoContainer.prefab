@@ -1981,6 +1981,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011481536382}
   - 114: {fileID: 114000012229188770}
+  - 114: {fileID: 114000012907989850}
   m_Layer: 0
   m_Name: 3StackFreggoContainer
   m_TagString: Untagged
@@ -4889,7 +4890,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012037926536}
   m_LocalRotation: {x: -0, y: -0.49389112, z: -0, w: 0.8695238}
-  m_LocalPosition: {x: -92.4, y: 0, z: -100.6}
+  m_LocalPosition: {x: -130.5, y: 0, z: -59.4}
   m_LocalScale: {x: 55.000034, y: 55, z: 55.000034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -7731,10 +7732,24 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyRoot: {fileID: 1000012878721936}
   running_speed: 8
-  territory_radius: 14
+  territory_radius: 20
   enemy_health: 0
   animatedFreggo: {fileID: 1000010369157180}
   deadFreggo: {fileID: 1000011743658826}
+--- !u!114 &114000012907989850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012037926536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df58c92abb1c77b499f807fd9b87c55f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carpetHair: []
+  distTriggerCarpetHair: 3
+  maxAngle: 80
 --- !u!137 &137000010812107856
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

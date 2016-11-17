@@ -656,6 +656,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012795032626}
   - 114: {fileID: 114000013575302564}
+  - 114: {fileID: 114000011812094434}
   m_Layer: 0
   m_Name: Freggo_Container
   m_TagString: Untagged
@@ -2741,13 +2742,27 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000011812094434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012073121020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df58c92abb1c77b499f807fd9b87c55f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carpetHair: []
+  distTriggerCarpetHair: 3
+  maxAngle: 80
 --- !u!114 &114000012456583914
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012889369274}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df58c92abb1c77b499f807fd9b87c55f, type: 3}
   m_Name: 
@@ -2799,7 +2814,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyRoot: {fileID: 1000013739485266}
   running_speed: 8
-  territory_radius: 12
+  territory_radius: 18
   enemy_health: 0
   animatedFreggo: {fileID: 1000012889369274}
   deadFreggo: {fileID: 1000011908482776}
