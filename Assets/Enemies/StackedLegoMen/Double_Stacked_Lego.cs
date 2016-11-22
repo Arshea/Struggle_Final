@@ -19,6 +19,10 @@ public class Double_Stacked_Lego : MonoBehaviour {
 	public GameObject animatedFreggo;
 	public GameObject deadFreggo;
 
+	//Audio
+	public AudioSource audio_source;
+	public AudioClip[] stunned_sound;
+
 	/***Triggers for narration. Do not remove***/
 	public static bool narration_trigger = false;
 	private bool has_already_triggered = false;
@@ -179,6 +183,8 @@ public class Double_Stacked_Lego : MonoBehaviour {
 				if (MusicManager.enemy_name != null)
 					MusicManager.enemy_name += "Stun";
 				StartCoroutine ("deathTheFreggo");
+				audio_source.clip = stunned_sound [Random.Range (0, (stunned_sound.Length - 1))];
+				audio_source.Play();
 			} else {
 
 			}

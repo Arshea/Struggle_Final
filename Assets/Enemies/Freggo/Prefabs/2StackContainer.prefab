@@ -2562,6 +2562,7 @@ GameObject:
   - 4: {fileID: 4000012798336534}
   - 114: {fileID: 114000010550478730}
   - 114: {fileID: 114000014099569244}
+  - 82: {fileID: 82000011436653818}
   m_Layer: 0
   m_Name: 2StackContainer
   m_TagString: Untagged
@@ -5430,6 +5431,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.054797925, y: 0.05994473, z: 0.036874067}
   m_Center: {x: 0.00028644907, y: 0.06733215, z: 0.0030946904}
+--- !u!82 &82000011436653818
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014079121948}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243000010424155352, guid: cfde54be5945f403bacfa0432096569f,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.9
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 60
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82000012682826288
 AudioSource:
   m_ObjectHideFlags: 1
@@ -5540,6 +5616,10 @@ MonoBehaviour:
   enemy_health: 0
   animatedFreggo: {fileID: 1000011536759292}
   deadFreggo: {fileID: 1000013705703522}
+  audio_source: {fileID: 82000011436653818}
+  stunned_sound:
+  - {fileID: 8300000, guid: 8d76d3810b9624c1d88a7148ae2c827c, type: 3}
+  - {fileID: 8300000, guid: 4c9903434df214ab1a7df4580ba8d46e, type: 3}
 --- !u!114 &114000013066494854
 MonoBehaviour:
   m_ObjectHideFlags: 1
