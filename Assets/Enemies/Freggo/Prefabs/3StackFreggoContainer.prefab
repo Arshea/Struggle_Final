@@ -291,6 +291,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013297976806}
   - 95: {fileID: 95000012761656942}
+  - 114: {fileID: 114000013631932444}
+  - 82: {fileID: 82000012143537020}
   m_Layer: 0
   m_Name: 3Stacked_StunFBX_with_col
   m_TagString: Untagged
@@ -7689,6 +7691,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05946576, y: 0.090384535, z: 0.03842442}
   m_Center: {x: -0.0008985928, y: 0.05194815, z: 0.0022893664}
+--- !u!82 &82000012143537020
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010369157180}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243000012497569126, guid: cfde54be5945f403bacfa0432096569f,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.9
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 60
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95000012761656942
 Animator:
   serializedVersion: 3
@@ -7750,6 +7827,22 @@ MonoBehaviour:
   carpetHair: []
   distTriggerCarpetHair: 3
   maxAngle: 80
+--- !u!114 &114000013631932444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010369157180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78846e83f1f954a06b98057b970ec834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footsteps:
+  - {fileID: 8300000, guid: b9c20d52465f6471d9125f0676e46f7b, type: 3}
+  - {fileID: 8300000, guid: 3c9db5541838a48898f51ccac1344adf, type: 3}
+  - {fileID: 8300000, guid: 3b7d7da7966974a9cb590416556d094a, type: 3}
+  - {fileID: 8300000, guid: 5ea9fd7f0ee2e40fa8b1e1e0eda77e1b, type: 3}
 --- !u!137 &137000010812107856
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
