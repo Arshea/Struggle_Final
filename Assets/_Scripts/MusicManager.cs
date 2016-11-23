@@ -21,12 +21,10 @@ public class MusicManager : MonoBehaviour {
 	public bool []has_played_before;
 
 	public static string enemy_name;
-	public static string light_name;
+	//public static string light_name;
 
-	private static int number_of_lights_picked_up;
 	void Start() {
 		
-		number_of_lights_picked_up = 0;
 		/*When the game starts the background music plays softly while the narrator speaks.*/
 		main_source.clip = main_theme;
 		main_source.loop = true;
@@ -71,23 +69,45 @@ public class MusicManager : MonoBehaviour {
 		}
 	}
 
+	public void playLightPickupMusic() {
+
+		// Music -------------------------------------------------------------------------
+		/*The light pickup is an ambient sound.The main theme pauses to let the sound play and then resumes from where it had paused. Eventually we can add a fade-out/fade-in for both*/
+		if (main_source.isPlaying) {
+			main_source.Pause ();
+		}
+
+		ambient_source.clip = light_variation;
+		ambient_source.loop = false;
+		ambient_source.volume = 0.5f;
+		StartCoroutine( audio_util.play_sound_fade_in( ambient_source, 2, false ) );
+
+
+	}
+
+	public void playLightPickupNarration(int lightNumber) {
+		// Narration ---------------------------------------------------------------------
+		if (lightNumber == 0) {
+			narration_transition_without_dependency (4,2); //Pass the narration index that you want to change it to
+		}
+
+		if (lightNumber == 1) {
+			narration_transition_without_dependency (6, 2);
+
+		}
+		if (lightNumber == 2) {
+			narration_transition_without_dependency (7, 2);
+			narration_transition_with_dependency (7);
+		}
+		if (lightNumber == 3) {
+			narration_transition_without_dependency (9, 2);
+			back_home_guide.SetActive (true);
+		}
+	}
+
 	void Update() {
 
-		/*The light pickup is an ambient sound.The main theme pauses to let the sound play and then resumes from where it had paused. Eventually we can add a fade-out/fade-in for both*/
-		if (LanternManager.pickingUpAudioTrigger) {
-			if (main_source.isPlaying) {
 
-				main_source.Pause ();
-			}
-				
-			ambient_source.clip = light_variation;
-			ambient_source.loop = false;
-			ambient_source.volume = 0.5f;
-			StartCoroutine( audio_util.play_sound_fade_in( ambient_source, 2, false ) );
-			//ambient_source.Play ();
-			number_of_lights_picked_up++;
-			LanternManager.pickingUpAudioTrigger = false;
-		}
 
 		if((ambient_source.isPlaying == false && main_source.isPlaying == false)) {
 			StartCoroutine( audio_util.play_sound_fade_in( main_source, 2, true ) );
@@ -113,23 +133,8 @@ public class MusicManager : MonoBehaviour {
 		if (((enemy_name == "spider")||(enemy_name == "spider (2)") || (enemy_name == "spider (1)"))&& (has_played_before[10])) {
 			narration_transition_without_dependency (11,0); //Pass the narration index that you want to change it to
 		} */
-		if (light_name == "LightPickup_yellow") {
-			narration_transition_without_dependency (4,1); //Pass the narration index that you want to change it to
-		}
 
-		if (number_of_lights_picked_up == 2) {
-			narration_transition_without_dependency (6, 8);
-
-		}
-		if (number_of_lights_picked_up == 3) {
-			narration_transition_without_dependency (7, 8);
-			narration_transition_with_dependency (7);
-		}
-		if (number_of_lights_picked_up == 4) {
-			narration_transition_without_dependency (9, 8);
-			back_home_guide.SetActive (true);
-		}
-		if ((Vector3.Distance (player.transform.position,new Vector3(-25.23f,3.29f,3.81f)) < 12)&&(number_of_lights_picked_up==4)) {
+		if ((Vector3.Distance (player.transform.position,new Vector3(-25.23f,3.29f,3.81f)) < 12)&&(GameManager.progressState==4)) {
 			narration_transition_without_dependency (12, 0);
 			narration_transition_with_dependency (12);
 			winning_particles.SetActive (true);

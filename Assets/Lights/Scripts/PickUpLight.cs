@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PickUpLight : MonoBehaviour {
 
+	private GameManager gameManager;
+
 	public GameObject lanternCentre;
 	public ParticleSystem dustDeactivate; // Moves to player
 	public ParticleSystem dustActivate; // Moves to player
@@ -31,6 +33,9 @@ public class PickUpLight : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		gameManager = (GameManager)GameObject.Find ("Game_Manager").GetComponent(typeof(GameManager));
+
+
 		lanternCentreTrans = lanternCentre.transform;
 		if(dustActivate != null)
 		if (particles == null || particles.Length < dustActivate.maxParticles)
@@ -62,10 +67,9 @@ public class PickUpLight : MonoBehaviour {
 		pickUpAnimation (light); // Start light burst anim
 
 		light.transform.parent.GetComponent<AudioSource>().Play(); // Trigger sound
-		LanternManager.pickingUpAudioTrigger = true; // Trigger music
 
-		// Need to change - should probably access var in a GameManager instead
-		//gameState++;
+		gameManager.pickedUpLightMusic ();
+
 	}
 
 	void pickUpAnimation(GameObject light) {
@@ -151,7 +155,7 @@ public class PickUpLight : MonoBehaviour {
 				// Trigger addition to lantern
 				if (triggeredAdd == false) {
 					triggeredAdd = true;
-					LanternManager.lightToAddName = this.transform.parent.gameObject.name;
+					gameManager.pickedUpLight (this.transform.parent.gameObject.name);
 				}
 
 			}
