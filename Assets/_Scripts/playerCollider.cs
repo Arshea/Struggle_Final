@@ -22,7 +22,6 @@ public class playerCollider : MonoBehaviour
 	private float max_health_overlay_intensity = 3.0f;
 	public float health_overlay_increment = 0.5f;
 
-
 	// Enemy push back params
 	private float pushSpeed = 0.7f, pushTime = 0.5f;
 
@@ -162,7 +161,7 @@ public class playerCollider : MonoBehaviour
 		float startTime = Time.time;
 		float endTime = startTime + pushTime;
 
-		while (Time.time < endTime) {
+		while (Time.time < endTime && Time.timeScale > 0.000001) {
 			float complete = (Time.time - startTime) / (endTime - startTime); // 0 when coroutine starts; 1 at end (proportion of completion)
 			player.GetComponent<CharacterController>().Move(direction * pushSpeed * (1 - complete));
 			yield return null;

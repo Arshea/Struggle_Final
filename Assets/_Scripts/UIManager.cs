@@ -7,24 +7,30 @@ public class UIManager : MonoBehaviour {
 	public GameObject pausePanel;
 	public bool isPaused;
 	public GameObject first_person_camera;
-	public 
+    public GameObject player;
+
+    private Vector3 prevLoc;
+
 	// Use this for initialization
 	void Start () {
 		isPaused = false;
+        prevLoc = player.transform.position;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (isPaused) {
+	void Update ()
+    {
+        Vector3 vel = (player.transform.position - prevLoc);
+        if (isPaused) {
 			PauseGame (true);
 		} else {
 			PauseGame (false);
 		}
-		if(Input.GetButtonDown ("Pause")) {
+		if(Input.GetButtonDown ("Pause") && vel.y == 0) {
 			TogglePause ();
-	
 		}
-	}
+        prevLoc = player.transform.position;
+    }
 
 	void PauseGame (bool state) {
 		if (state) {
