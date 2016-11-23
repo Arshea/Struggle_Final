@@ -16,6 +16,9 @@ TagManager:
   - Sponge
   - Plane
   - Wand
+  - FreggoCollider
+  - DominoTrigger
+  - Enemy
   layers:
   - Default
   - TransparentFX

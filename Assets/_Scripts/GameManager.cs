@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour {
 	public static bool[] lanternContentsUnlocked; // Which lights are currently unlocked?
 	public static int progressState = 0; // Number of lights picked up
 
+	//Enemy containers
+	private GameObject[] enemies;
+	private int num_of_enemies;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +28,9 @@ public class GameManager : MonoBehaviour {
 
 		GameObject[] miniPickups = GameObject.FindGameObjectsWithTag ("PickUpMini");
 		numMiniPickUps_total = miniPickups.Length;
+
+		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		num_of_enemies = enemies.Length;
 
 		lanternContentsUnlocked = new bool[]{false, false, false, false};
 
@@ -65,9 +71,13 @@ public class GameManager : MonoBehaviour {
 		lanternManager.addLight (colour);
 
 		musicManager.playLightPickupNarration (progressState);
-
 		lanternContentsUnlocked [(int)colour] = true;
 		progressState++;
+
+
+		for (int i = 0; i < num_of_enemies; i++) {
+			enemies [i].GetComponent<ScaleEnemyDifficulty> ().SendMessage ("scaleDifficultyByOne", progressState);
+		}
 
 	}
 
