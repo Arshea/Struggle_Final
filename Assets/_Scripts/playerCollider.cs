@@ -78,15 +78,16 @@ public class playerCollider : MonoBehaviour
     {
         if (hit.gameObject.CompareTag("Top"))
         {
-            hit.transform.SendMessage("StopSpinning", SendMessageOptions.DontRequireReceiver);
+			hit.gameObject.GetComponentInParent<InteractionManager>().SendMessage("InteractWithObject",0.0f, SendMessageOptions.DontRequireReceiver);
         }
         if (hit.gameObject.CompareTag("HouseOfCards"))
         {
             hit.gameObject.GetComponent<BoxCollider>().enabled = false;
-            hit.transform.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
+			hit.gameObject.GetComponentInParent<InteractionManager>().SendMessage("InteractWithObject",0.0f, SendMessageOptions.DontRequireReceiver);
         }
 		if (hit.gameObject.CompareTag ("DominoTrigger")) {
-			hit.transform.parent.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
+			hit.gameObject.GetComponentInParent<InteractionManager>().SendMessage("InteractWithObject",0.0f, SendMessageOptions.DontRequireReceiver);
+			//hit.transform.parent.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
 
 
 		}

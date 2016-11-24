@@ -9,36 +9,32 @@ public class spinningScript : MonoBehaviour {
     public bool isSpinning = true;
 
     private Vector3 origin;
-    private float zRotationMin = -35;
-    private float zRotationMax = 0;
-    private float t = 0f;
+ 	//private float zRotationMin = -35;
+	//private float zRotationMax = 0;
+	//private float t = 0f;
 
 	// Use this for initialization
 	void Start () {
 		if(player == null) player = GameObject.Find ("Player");
 
         origin = this.gameObject.GetComponent<Transform>().position;
-        t = 0.0f;
+		this.gameObject.GetComponentInParent<InteractionManager>().trigger_cooldown_time = 2.0f;
+        //t = 0.0f;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.GetButtonDown ("Interact") && LanternManager.ammunition > 0) {
-			float distToPlayer = Vector3.Distance (player.transform.position, this.transform.position);
-			if (distToPlayer < LanternManager.lanternRange) {
-				if(isSpinning) StopSpinning ();
-				Vector3 forceDir = transform.position - player.transform.position;
-				forceDir.y = 0.0f;
-				forceDir.Normalize ();
-				GetComponent<Rigidbody> ().AddForce (forceDir * 1000.0f);
-			}
-		}
-
         if (isSpinning)
             Spinning();
 	}
-
+	void TriggerInteraction() {
+		if(isSpinning) StopSpinning ();
+		Vector3 forceDir = transform.position - player.transform.position;
+		forceDir.y = 0.0f;
+		forceDir.Normalize ();
+		GetComponent<Rigidbody> ().AddForce (forceDir * 1000.0f);
+	}
     void Spinning()
     {
         this.gameObject.GetComponent<Transform>().Rotate(0, yRotSpeed * Time.deltaTime, 0, Space.World);

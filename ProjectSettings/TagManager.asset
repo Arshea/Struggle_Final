@@ -19,6 +19,7 @@ TagManager:
   - FreggoCollider
   - DominoTrigger
   - Enemy
+  - InteractionManager
   layers:
   - Default
   - TransparentFX

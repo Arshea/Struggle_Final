@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour {
 	private LanternManager lanternManager;
 	private MusicManager musicManager;
 
+	//Player position
+	private GameObject player;
+
 	// Mini pickups
 	static int numMiniPickUps_total;
 	static int percentComplete;
@@ -20,11 +23,17 @@ public class GameManager : MonoBehaviour {
 	private GameObject[] enemies;
 	private int num_of_enemies;
 
+	//Interactable objects
+	private GameObject[] interactive_objects;
+	private int num_of_interactive_objects;
+
+
 	// Use this for initialization
 	void Start () {
 		lanternManager = (LanternManager)GameObject.Find ("Lantern_Manager").GetComponent(typeof(LanternManager));
 		musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
 
+		player = GameObject.FindGameObjectWithTag ("Player");
 
 		GameObject[] miniPickups = GameObject.FindGameObjectsWithTag ("PickUpMini");
 		numMiniPickUps_total = miniPickups.Length;
@@ -34,11 +43,22 @@ public class GameManager : MonoBehaviour {
 
 		lanternContentsUnlocked = new bool[]{false, false, false, false};
 
+		interactive_objects = GameObject.FindGameObjectsWithTag ("InteractionManager");
+		num_of_interactive_objects = interactive_objects.Length;
+
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		float distance_to_player;
+		if (Input.GetButtonDown ("Interact") && LanternManager.ammunition > 0) {
+			for (int i = 0; i < num_of_interactive_objects; i++) {
+				distance_to_player = Vector3.Distance (player.transform.position, interactive_objects [i].transform.position);
+				//if(distance_to_player < LanternManager.lanternRange) //Approximate distance from interactive object
+				interactive_objects [i].SendMessage ("InteractWithObject", distance_to_player, SendMessageOptions.DontRequireReceiver);
+			}
+		}
 	}
 
 	private Colours findLightIndex(string toAdd) {
@@ -76,7 +96,7 @@ public class GameManager : MonoBehaviour {
 
 
 		for (int i = 0; i < num_of_enemies; i++) {
-			enemies [i].GetComponent<ScaleEnemyDifficulty> ().SendMessage ("scaleDifficultyByOne", progressState);
+			enemies [i].GetComponent<ScaleEnemyDifficulty> ().SendMessage ("scaleDifficultyByOne", progressState, SendMessageOptions.DontRequireReceiver);
 		}
 
 	}
