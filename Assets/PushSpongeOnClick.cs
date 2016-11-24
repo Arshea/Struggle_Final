@@ -4,7 +4,7 @@ using System.Collections;
 public class PushSpongeOnClick : MonoBehaviour {
 
 	public GameObject player;
-	private float moveStrengthFactor = 4000.0f;
+	private float moveStrengthFactor = 800.0f;
 	public GameObject target;
 
 	private bool isTriggered = false;
