@@ -9,7 +9,7 @@ public class InteractionManager : MonoBehaviour {
 	public float range_factor = 1.0f;
 	public bool is_retriggerable;
 	public float trigger_cooldown_time = 2.0f;	//This should be 2.0f for only those objects that are not retriggerable.
-
+    public Material []indicator_materials; //0 is the dim one, 1 is the bright one
 	//CHILDREN
 	//Object
 	public GameObject interactive_object;
@@ -23,8 +23,9 @@ public class InteractionManager : MonoBehaviour {
 		if(player == null) 
 			player = GameObject.Find ("Player");
 		interaction_triggered = false;
-		halo = (Behaviour)interaction_indicator.GetComponent("Halo");
-		halo.enabled = false;
+        /*halo = (Behaviour)interaction_indicator.GetComponent("Halo");
+		halo.enabled = false;*/
+        interaction_indicator.GetComponent<Renderer>().material = indicator_materials[0];
 	}
 
 
@@ -40,8 +41,9 @@ public class InteractionManager : MonoBehaviour {
 			if (distance_to_player < LanternManager.lanternRange * range_factor) { //Accurate distance from player to object 
 					interaction_triggered = true;
 					StartCoroutine ("triggerCountdown");
-					halo.enabled = true;
-					interactive_object.SendMessage ("TriggerInteraction", SendMessageOptions.DontRequireReceiver);
+                    //halo.enabled = true;
+                    interaction_indicator.GetComponent<Renderer>().material = indicator_materials[1];
+                    interactive_object.SendMessage ("TriggerInteraction", SendMessageOptions.DontRequireReceiver);
 
 			}
 		}
@@ -49,11 +51,14 @@ public class InteractionManager : MonoBehaviour {
 
 	IEnumerator triggerCountdown() {
 		yield return new WaitForSeconds (trigger_cooldown_time);
-		interaction_triggered = false;
-		if (is_retriggerable)
-			halo.enabled = false;
-		else
+		if (is_retriggerable) {
+			interaction_indicator.GetComponent<Renderer> ().material = indicator_materials [0];
+			interaction_triggered = false;
+		} 
+		else {
 			interaction_indicator.SetActive (false);
+		
+		}
 	}
 
 }
