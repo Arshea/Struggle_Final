@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour {
 
 		lanternManager.addLight (colour);
 
-		musicManager.playLightPickupNarration (progressState);
+		//musicManager.playLightPickupNarration (progressState);
 		lanternContentsUnlocked [(int)colour] = true;
 		progressState++;
 
