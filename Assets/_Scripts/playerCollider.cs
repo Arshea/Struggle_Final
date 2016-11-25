@@ -130,7 +130,7 @@ public class playerCollider : MonoBehaviour
 
 		if (other.gameObject.CompareTag("PickUp"))
 		{
-			//Debug.Log ("Sending pick up sigal");
+			Debug.Log ("PlayerCollider: Pick Up Signal");
 			other.gameObject.GetComponent<SphereCollider>().enabled = false;
 			other.transform.SendMessage("pickUp", SendMessageOptions.DontRequireReceiver);
 		}

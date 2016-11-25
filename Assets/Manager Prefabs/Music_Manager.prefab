@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000013559292720}
+  m_IsPrefabParent: 1
+--- !u!1 &1000013559292720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000014056134942}
+  - 114: {fileID: 114000012185779340}
+  m_Layer: 0
+  m_Name: Music_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000014056134942
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013559292720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.123901, y: 10.371465, z: 35.035618}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000012185779340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013559292720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aca79e2c002fae4390779635a0fcdb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  victory_message: {fileID: 0}
+  winning_particles: {fileID: 0}
+  back_home_guide: {fileID: 0}
+  main_source: {fileID: 0}
+  ambient_source: {fileID: 0}
+  narration_audio_source: {fileID: 0}
+  lantern_stun_sources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  main_theme: {fileID: 8300000, guid: 01ada39c7ab36dc45b5f2b85c3eff6ab, type: 3}
+  light_variation: {fileID: 8300000, guid: 0334fdbd50ad1bd4381e227d628a7186, type: 3}
+  narration:
+  - {fileID: 8300000, guid: 2229c675982ca1d4ba16b33406ea1830, type: 3}
+  - {fileID: 8300000, guid: 348042b9b24b169479cba19f69cee66d, type: 3}
+  - {fileID: 8300000, guid: 47a874ef88c147c4692090db512e2a02, type: 3}
+  - {fileID: 8300000, guid: 83ec5a4f7c77fd24781baf37796d0e78, type: 3}
+  - {fileID: 8300000, guid: fd7ad925b886e544191ad6efd2571000, type: 3}
+  - {fileID: 8300000, guid: aa20d3667307dff44bb8be7a1c337962, type: 3}
+  - {fileID: 8300000, guid: 29185a5c154788945b56fd54a4aa42d5, type: 3}
+  - {fileID: 8300000, guid: 38d06f3b28b2cc840b44d368c07015c7, type: 3}
+  - {fileID: 8300000, guid: 87d7585bb7d73d541afb8a11ee63c7c7, type: 3}
+  - {fileID: 8300000, guid: b36068497430a1e42aba0f8d14dd8a31, type: 3}
+  - {fileID: 8300000, guid: d3741a84109622243926923db7de0a54, type: 3}
+  - {fileID: 8300000, guid: cbd2c08fe8fa3304ea3ad44a8da0f718, type: 3}
+  - {fileID: 8300000, guid: 340c5ae1a9ee86843a67012b9300c4e3, type: 3}
+  - {fileID: 8300000, guid: ba665a819260bfe4aa1593ad494b3cca, type: 3}
+  has_played_before: 0000000000000000000000000000

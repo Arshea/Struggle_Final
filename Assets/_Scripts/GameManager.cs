@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour {
 	static int percentComplete;
 
 	// Large pickups
-	public enum Colours {Yellow = 0, Blue, Green, Red};
-	public static bool[] lanternContentsUnlocked; // Which lights are currently unlocked?
 	public static int progressState = 0; // Number of lights picked up
 
 	//Enemy containers
@@ -23,7 +21,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		lanternManager = (LanternManager)GameObject.Find ("Lantern_Manager").GetComponent(typeof(LanternManager));
-		musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+		musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager)); // UNCOMMENT WHEN YOU WANT SOUNDS !!!!
 
 
 		GameObject[] miniPickups = GameObject.FindGameObjectsWithTag ("PickUpMini");
@@ -31,9 +29,6 @@ public class GameManager : MonoBehaviour {
 
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		num_of_enemies = enemies.Length;
-
-		lanternContentsUnlocked = new bool[]{false, false, false, false};
-
 	}
 	
 	// Update is called once per frame
@@ -41,37 +36,17 @@ public class GameManager : MonoBehaviour {
 	
 	}
 
-	private Colours findLightIndex(string toAdd) {
-		if (toAdd == "LightPickup_yellow") {
-			//Debug.Log ("adding yellow");
-			return GameManager.Colours.Yellow;
-		} else if (toAdd == "LightPickup_blue") {
-			//Debug.Log ("adding blue");
-			return GameManager.Colours.Blue;
-		} else if (toAdd == "LightPickup_green") {
-			//Debug.Log ("adding green");
-			return GameManager.Colours.Green;
-		} else if (toAdd == "LightPickup_red") {
-			//Debug.Log ("adding red");
-			return GameManager.Colours.Red;
-		} else {
-			Debug.Log ("Error parsing light pickup name");
-			return 0;
-		}
-	}
-
 	public void pickedUpLightMusic() {
-		musicManager.playLightPickupMusic ();
+		if(musicManager != null) musicManager.playLightPickupMusic ();
 
 	}
 
-	public void pickedUpLight(string lightName) {
-		Colours colour = findLightIndex (lightName);
+	public void pickedUpLight() {
+		Debug.Log ("GameManager: Pick Up Signal");
+	
+		lanternManager.addLight ();
 
-		lanternManager.addLight (colour);
-
-		musicManager.playLightPickupNarration (progressState);
-		lanternContentsUnlocked [(int)colour] = true;
+		if(musicManager != null) musicManager.playLightPickupNarration (progressState);
 		progressState++;
 
 
