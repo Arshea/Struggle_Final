@@ -5,6 +5,10 @@ public class spinningScript : MonoBehaviour {
 
 	public GameObject player;
 
+	//Audio
+	public AudioSource spinningTopSfxLoop;
+	public AudioSource spinningTopSfxHit;
+
     public float yRotSpeed = 100;
     public bool isSpinning = true;
 
@@ -34,6 +38,7 @@ public class spinningScript : MonoBehaviour {
 		forceDir.y = 0.0f;
 		forceDir.Normalize ();
 		GetComponent<Rigidbody> ().AddForce (forceDir * 1000.0f);
+		spinningTopSfxHit.Play ();
 	}
     void Spinning()
     {
@@ -46,6 +51,7 @@ public class spinningScript : MonoBehaviour {
     {
         GetComponent<Rigidbody>().isKinematic = false;
         isSpinning = false;
+		spinningTopSfxLoop.Stop ();
     }
    
 }
