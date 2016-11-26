@@ -136,6 +136,7 @@ public class MusicManager : MonoBehaviour {
 
 		/*When the game starts, it is quiet and the first narration plays*/
 		int index = searchNarrationByTrigger (ObjectTriggerType.STORY_START);
+		main_source.Stop ();
 		playNarrationOfIndex (index);
 
 
@@ -149,6 +150,19 @@ public class MusicManager : MonoBehaviour {
 		}
 		Debug.Log ("Could not find narration");
 		return -1;
+	}
+
+	void fadeInMainTheme() {
+		main_source.loop = true;
+		StartCoroutine( audio_util.play_sound_fade_in( main_source, 2, true ) );
+
+	}
+	void adjustAllVolumes() {
+		main_source.volume = 0.5f;
+		ambient_source.volume = 0.5f;
+		for (int i = 0; i < lantern_stun_sources.Length; i++) {
+			lantern_stun_sources [i].volume = 0.5f;
+		}
 	}
 
 	void playNarrationOfIndex(int index) {
@@ -200,6 +214,10 @@ public class MusicManager : MonoBehaviour {
 
 		if((ambient_source.isPlaying == false && main_source.isPlaying == false)) {
 			StartCoroutine( audio_util.play_sound_fade_in( main_source, 2, true ) );
+		}
+
+		if (narration_audio_source.isPlaying && narration_audio_source.clip != narration_clips [0]) {
+			adjustAllVolumes ();
 		}
 
 		//Transition from intro 1 to intro 2
