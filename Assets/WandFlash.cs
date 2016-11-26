@@ -4,6 +4,7 @@ using System.Collections;
 public class WandFlash : MonoBehaviour {
 
 	public ParticleSystem wandFlash;
+	public AudioSource wandSfx;
 
 	//private bool isTriggered = false;
 
@@ -33,6 +34,7 @@ public class WandFlash : MonoBehaviour {
 	}
 	void TriggerInteraction() {
 		wandFlash.GetComponent<ParticleSystem> ().Play ();
+		wandSfx.Play ();
 		this.transform.parent.GetComponent<Rigidbody>().AddForce(1800 * Vector3.up);
 		this.transform.parent.GetComponent<Rigidbody>().AddTorque(100000 * Vector3.right);
 	}
