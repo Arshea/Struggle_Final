@@ -6,12 +6,12 @@ public class LanternManager : MonoBehaviour {
 
 	// Burst attack
 	public float cooldown = 1.5f; // Number of seconds between allowed shots
-									// NEED TO PLAYTEST THIS VALUE
+	// NEED TO PLAYTEST THIS VALUE
 
 	// Need access to these from pretty much everywhere for onclick functionality
 	public static float lanternRange = 15.0f; // 
 	public static int ammunition = 0; // Ammunition currently available - always updated
-									// Accessed in enemy AI script to determine a valid lantern attack
+	// Accessed in enemy AI script to determine a valid lantern attack
 
 	// Audio
 	public AudioSource[] lantern_audio_source;
@@ -43,11 +43,8 @@ public class LanternManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Initialise lantern contents
-		lanternContents = new GameObject[4];
-		lanternContents [(int)GameManager.Colours.Yellow] = lanternYellow;
-		lanternContents [(int)GameManager.Colours.Blue] = lanternBlue;
-		lanternContents [(int)GameManager.Colours.Green] = lanternGreen;
-		lanternContents [(int)GameManager.Colours.Red] = lanternRed;
+		lanternContents = GameObject.FindGameObjectsWithTag("LanternLight");
+
 		// Start with empty lantern
 		lanternContentsAvailable = new bool[]{false, false, false, false};
 
@@ -120,13 +117,9 @@ public class LanternManager : MonoBehaviour {
 		}
 	}
 
-	/// <summary>
-	/// ////////////////////////////////////////////////////////////////////////////////////////////
-	/// </summary>
-	/// <returns>The light.</returns>
 	int availableLight() {
-		for(int i = 0; i < 4; i++) {
-			if(GameManager.lanternContentsUnlocked[i] && lanternContentsAvailable[i])
+		for(int i = 0; i < GameManager.progressState; i++) {
+			if(lanternContentsAvailable[i])
 				return i;
 		}
 		return -1; // None available
@@ -151,13 +144,14 @@ public class LanternManager : MonoBehaviour {
 		lightBurst.Emit (10);
 	}
 
-	public void addLight(GameManager.Colours colour) {
-		Debug.Log ("Enabling light (from void addLight) " + (int)colour);
+	public void addLight() {
+		Debug.Log ("Enabling light (from void addLight) ");
 
-		GameManager.lanternContentsUnlocked [(int)colour] = true;
-		lanternContentsAvailable [(int)colour] = true;
+		Debug.Log ("LanternManager: Pick Up Signal");
+
+		lanternContentsAvailable [GameManager.progressState] = true;
 		ammunition++;
-		lanternContents [(int)colour].SetActive (true); // Change to animation
+		lanternContents [GameManager.progressState].SetActive (true); // Change to animation
 	}
 
 
@@ -173,13 +167,6 @@ public class LanternManager : MonoBehaviour {
 		emissiveSphere.localScale /= 2.0f;
 		Behaviour halo = (Behaviour)emissiveSphere.gameObject.GetComponent ("Halo");
 		halo.enabled = false;
-		//Renderer renderer = lanternContents [index].transform.FindChild ("animation_shell").
-		//	FindChild ("centre").GetComponent<Renderer> ();
-		//Color materialColour = renderer.material.color;
-		//DynamicGI.SetEmissive (renderer, materialColour * 0.1f);
-
-		// halo false
-
 
 		Debug.Log ("Cooldown started");
 
@@ -190,10 +177,7 @@ public class LanternManager : MonoBehaviour {
 		halo.enabled = true;
 
 		Debug.Log ("Cooldown ended");
-		// Enable
-		// Enable emission
-		//DynamicGI.SetEmissive(renderer, materialColour * 2.5f);
-		//halo true
+
 		Debug.Log ("Enabling light " + index);
 		lanternContentsAvailable[index] = true;
 		ammunition++;

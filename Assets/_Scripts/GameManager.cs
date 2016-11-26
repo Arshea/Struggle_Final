@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour {
 	static int percentComplete;
 
 	// Large pickups
-	public enum Colours {Yellow = 0, Blue, Green, Red};
-	public static bool[] lanternContentsUnlocked; // Which lights are currently unlocked?
 	public static int progressState = 0; // Number of lights picked up
 
 	//Enemy containers
@@ -40,9 +38,7 @@ public class GameManager : MonoBehaviour {
 
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		num_of_enemies = enemies.Length;
-
-		lanternContentsUnlocked = new bool[]{false, false, false, false};
-
+	
 		interactive_objects = GameObject.FindGameObjectsWithTag ("InteractionManager");
 		num_of_interactive_objects = interactive_objects.Length;
 
@@ -61,42 +57,23 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	private Colours findLightIndex(string toAdd) {
-		if (toAdd == "LightPickup_yellow") {
-			//Debug.Log ("adding yellow");
-			return GameManager.Colours.Yellow;
-		} else if (toAdd == "LightPickup_blue") {
-			//Debug.Log ("adding blue");
-			return GameManager.Colours.Blue;
-		} else if (toAdd == "LightPickup_green") {
-			//Debug.Log ("adding green");
-			return GameManager.Colours.Green;
-		} else if (toAdd == "LightPickup_red") {
-			//Debug.Log ("adding red");
-			return GameManager.Colours.Red;
-		} else {
-			Debug.Log ("Error parsing light pickup name");
-			return 0;
-		}
-	}
 
 	public void pickedUpLightMusic() {
 		musicManager.playLightPickupMusic ();
 
 	}
 
-	public void pickedUpLight(string lightName) {
-		Colours colour = findLightIndex (lightName);
+	public void pickedUpLight() {
+		Debug.Log ("GameManager: Pick Up Signal");
 
-		lanternManager.addLight (colour);
+		lanternManager.addLight ();
 
-		musicManager.playLightPickupNarration (progressState);
-		lanternContentsUnlocked [(int)colour] = true;
+		if(musicManager != null) musicManager.playLightPickupNarration (progressState);
 		progressState++;
 
 
 		for (int i = 0; i < num_of_enemies; i++) {
-			enemies [i].GetComponent<ScaleEnemyDifficulty> ().SendMessage ("scaleDifficultyByOne", progressState, SendMessageOptions.DontRequireReceiver);
+			enemies [i].GetComponent<ScaleEnemyDifficulty> ().SendMessage ("scaleDifficultyByOne", progressState);
 		}
 
 	}
