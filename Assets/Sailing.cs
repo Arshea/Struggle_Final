@@ -19,6 +19,11 @@ public class Sailing : MonoBehaviour {
 	private bool sailing;
 	private bool reachedEnd;
 
+	//Audio
+	public AudioSource sailingStartStopSfx;
+	public AudioSource sailingLoopSfx;
+	public AudioClip[] sailingStartStopClip;
+
 	// Use this for initialization
 	void Start () {
 
@@ -47,6 +52,9 @@ public class Sailing : MonoBehaviour {
 	        	{
 	        		sailing = false;
 	        		reachedEnd = true;
+					sailingLoopSfx.Stop ();
+					sailingStartStopSfx.clip = sailingStartStopClip [0];
+					sailingStartStopSfx.Play ();
 	        	}
 			}
 			else
@@ -57,6 +65,9 @@ public class Sailing : MonoBehaviour {
 	        	{
 	        		sailing = false;
 	        		reachedEnd = false;
+					sailingLoopSfx.Stop ();
+					sailingStartStopSfx.clip = sailingStartStopClip [0];
+					sailingStartStopSfx.Play ();
 	        	}
 			}
 
@@ -78,6 +89,10 @@ public class Sailing : MonoBehaviour {
 				Debug.Log("Start your sailing!");
 
 				sailing = true;
+
+				sailingStartStopSfx.clip = sailingStartStopClip [1];
+				sailingStartStopSfx.Play ();
+				sailingLoopSfx.Play ();
 
 				startTime = Time.time;
 
