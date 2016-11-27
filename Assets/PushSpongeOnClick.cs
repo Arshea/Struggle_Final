@@ -7,8 +7,6 @@ public class PushSpongeOnClick : MonoBehaviour {
 	private float moveStrengthFactor = 800.0f;
 	public GameObject target;
 
-	private bool isTriggered = false;
-
 	// Use this for initialization
 	void Start () {
 		//if(player == null) player = GameObject.Find ("Player");
@@ -42,6 +40,9 @@ public class PushSpongeOnClick : MonoBehaviour {
 
 	IEnumerator Freeze() {
 		yield return new WaitForSeconds (2.0f);
+		this.gameObject.GetComponentInParent<InteractionManager> ().narration_triggered = true;
+		MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+		musicManager.SendMessage("playNarrationOfTrigger", ObjectTriggerType.SPONGE,SendMessageOptions.DontRequireReceiver);
 		this.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 	
 	}
