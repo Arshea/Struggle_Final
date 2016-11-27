@@ -4,6 +4,7 @@ using System.Collections;
 public class HouseOfCards : MonoBehaviour {
 
 	//public GameObject player;
+	public AudioSource houseOfCardsSfx;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class HouseOfCards : MonoBehaviour {
 				child.GetComponent<Rigidbody> ().isKinematic = false;
 			} 
         }
+		houseOfCardsSfx.Play ();
 
     }
 
