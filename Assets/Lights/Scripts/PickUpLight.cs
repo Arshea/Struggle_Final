@@ -78,30 +78,42 @@ public class PickUpLight : MonoBehaviour {
 	IEnumerator pickUpAnimation() {
 		FPController.movementEnabled = false; // Stop player movement
 
-		timeAnimStart = Time.time; // Time animation initialised
+		//if (pWithTrails != null)
+		//	pWithTrails.emit = true;
 
-		if (pWithTrails != null)
-			pWithTrails.emit = true;
+		float timeStopEmit = 4.0f;
+		float timeStartClimaxEmit = 5.5f;
+
+		timeAnimStart = Time.time; // Time animation initialised
 
 		gameManager.pickedUpLightMusic ();
 		transform.GetComponent<AudioSource>().Play(); // Trigger sound
 
-		yield return new WaitForSeconds (4.0f);
+		while (Time.time - timeAnimStart < (timeStopEmit)) {
+			yield return null;
+		}
 
-		pWithTrails.emit = false; // Pause before climax
+		//pWithTrails.emit = false; // Pause before climax
 
 		pDust.emit = false; // Timing-wise here is a good place to stop the centre emission
 
-		yield return new WaitForSeconds (1.5f);
+		Vector3 randomVelocityMin = new Vector3(-5f,1,-5f);   // The minimum random velocity
+		Vector3 randomVelocityMax = new Vector3(5f,5f,5f);    // The maximum random velocity
+		Color32 color = Color.white;                          // The color of particles
 
-		pWithTrails.particleCount = 100; // Release loads and loads :J
-		pWithTrails.emit = true;
+		while (Time.time - timeAnimStart < (timeStartClimaxEmit)) {
+			yield return null;
+		}
+
+		pWithTrails.Emit (100, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		//pWithTrails.particleCount = 100; // Release loads and loads :J
+		//pWithTrails.emit = true;
+		//pWithTrails.Emit(100);
 
 		while (Time.time - timeAnimStart < (climaxTime)) {
 			yield return null;
 		}
 
-		pWithTrails.emit = false; // Turn off
 
 		// Turn off spotlight
 		v_spotlight.gameObject.SetActive(false);
@@ -112,6 +124,9 @@ public class PickUpLight : MonoBehaviour {
 		gameManager.pickedUpLight (); // Add the light functionality to the lantern
 
 		yield return new WaitForSeconds (0.5f);
+
+		//pWithTrails.emit = false; // Turn off
+
 
 		// Trigger ending? New vlight beacon and minipickup trail; add trigger for book house animation, etc.
 		Debug.Log("From PickUpLight.cs:: Current state is: " + GameManager.progressState);
