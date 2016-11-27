@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: emissive_blue
+  m_Name: emissive_blue 3
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 2
@@ -121,7 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0.25517225, b: 1, a: 1}
+      second: {r: 0.050980393, g: 0.92156863, b: 1, a: 0.2509804}
     - first:
         name: _EmissionColor
-      second: {r: 0.7266435, g: 0.7322812, b: 1.5441176, a: 1}
+      second: {r: 0.4006272, g: 0.7245, b: 1.4338236, a: 1}

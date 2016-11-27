@@ -1027,7 +1027,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7824d0dd13013c64a8d966be807e7b1a, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -2236,7 +2236,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010034785920}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 7
   m_Type: 2
   m_Color: {r: 0.3137255, g: 0.3137255, b: 0.004, a: 1}
@@ -2366,7 +2366,9 @@ MonoBehaviour:
   range_factor: 1.2
   is_retriggerable: 1
   trigger_cooldown_time: 0
-  indicator_materials: []
+  indicator_materials:
+  - {fileID: 2100000, guid: 75960a3784e528e4d9b9fb5fc7167679, type: 2}
+  - {fileID: 2100000, guid: 33abfad8e382ac54f94be45719653596, type: 2}
   interactive_object: {fileID: 1000013518168038}
   interaction_indicator: {fileID: 1000014226356610}
 --- !u!114 &114000012219649900

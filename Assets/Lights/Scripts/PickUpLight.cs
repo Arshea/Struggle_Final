@@ -5,6 +5,7 @@ using ParticlePlayground;
 public class PickUpLight : MonoBehaviour {
 
 	private GameManager gameManager;
+	private GameObject endingEvent;
 
 	private GameObject v_spotlight;
 	private GameObject spotlight;
@@ -20,6 +21,7 @@ public class PickUpLight : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameManager = (GameManager)GameObject.Find ("Game_Manager").GetComponent(typeof(GameManager));
+		endingEvent = GameObject.Find ("Ending Event");
 
 		v_spotlight = transform.FindChild ("V-Light Spot").gameObject;
 		spotlight = transform.FindChild ("Spot light").gameObject;
@@ -50,7 +52,10 @@ public class PickUpLight : MonoBehaviour {
 	void pickUpLight(GameObject light) {
 		StartCoroutine("pickUpAnimation");
 
-
+		// Trigger ending? New vlight beacon and minipickup trail; add trigger for book house animation, etc.
+		if (GameManager.progressState == 3) {
+			endingEvent.transform.SendMessage ("triggerEnding", SendMessageOptions.DontRequireReceiver);
+		}
 	}
 
 	/*void pickUpAnimation(GameObject light) {
