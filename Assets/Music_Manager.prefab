@@ -51,10 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aca79e2c002fae4390779635a0fcdb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  victory_message: {fileID: 0}
-  winning_particles: {fileID: 0}
-  back_home_guide: {fileID: 0}
   lantern_stun_sources:
   - {fileID: 0}
   - {fileID: 0}
@@ -65,9 +61,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9ed5cc39cc80c9d4e9eaab5b0a8a8c8c, type: 3}
   - {fileID: 8300000, guid: bb6501d90e8e2174996ed274c1bdd183, type: 3}
   - {fileID: 8300000, guid: ee449fc8f181d694faec17fdd2d60813, type: 3}
-  - {fileID: 8300000, guid: ee449fc8f181d694faec17fdd2d60813, type: 3}
-  light_variation: {fileID: 0}
-  has_played_before: 0000000000000000000000000000
+  - {fileID: 8300000, guid: f32b0dc033f891249afe0df53c0bd691, type: 3}
+  light_variation:
+  - {fileID: 8300000, guid: 58d86525116584a4ebaf3dff30c72aa2, type: 3}
+  - {fileID: 8300000, guid: b2d767d25d1429749b1754f8e070a5f7, type: 3}
+  - {fileID: 8300000, guid: 36a73f0db2704f342990f2c929329d9c, type: 3}
+  has_played_before: 
   narration_clips:
   - {fileID: 8300000, guid: aa2758c67cb13bf43acb8136b9d3d5c3, type: 3}
   - {fileID: 8300000, guid: 17267c9407477df46bea0a35ad15e6c5, type: 3}
