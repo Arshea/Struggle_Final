@@ -1039,7 +1039,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4000011648925696}
   sourceTransforms:
   - transform: {fileID: 4000011648925696}
-    instanceID: 3189452
+    instanceID: -195492
     available: 1
     position: {x: 19.353302, y: 3.5, z: -43.105507}
     localPosition: {x: 0, y: 0, z: 0}
@@ -1198,7 +1198,7 @@ MonoBehaviour:
         instanceID: 3294360
         available: 1
         position: {x: 16.138533, y: 2.0190003, z: -37.821987}
-        localPosition: {x: -3.2147694, y: -1.4809997, z: 5.2835197}
+        localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
         previousPosition: {x: 16.138533, y: 2.0190003, z: -37.821987}
         forward: {x: 0.028348103, y: 0, z: -0.9995985}
         up: {x: 0, y: 1, z: -0}
@@ -1368,7 +1368,7 @@ MonoBehaviour:
       instanceID: 3294360
       available: 1
       position: {x: 16.138533, y: 2.0190003, z: -37.821987}
-      localPosition: {x: -3.2147694, y: -1.4809997, z: 5.2835197}
+      localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
       previousPosition: {x: 16.138533, y: 2.0190003, z: -37.821987}
       forward: {x: 0.028348103, y: 0, z: -0.9995985}
       up: {x: 0, y: 1, z: -0}
@@ -1704,7 +1704,7 @@ MonoBehaviour:
       instanceID: 3294360
       available: 1
       position: {x: 16.138533, y: 2.0190003, z: -37.821987}
-      localPosition: {x: -3.2147694, y: -1.4809997, z: 5.2835197}
+      localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
       previousPosition: {x: 16.138533, y: 2.0190003, z: -37.821987}
       forward: {x: 0.028348103, y: 0, z: -0.9995985}
       up: {x: 0, y: 1, z: -0}
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a095f32c8084a4b1ba25c9153255dd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: 1
+  source: 4
   activeState: 0
   emit: 1
   loop: 1
@@ -2171,7 +2171,7 @@ MonoBehaviour:
   nearestNeighborOrigin: 0
   nearestNeighborOriginVector3: {x: 0, y: 0, z: 0}
   nearestNeighborOriginTransform: {fileID: 0}
-  particleCount: 10
+  particleCount: 100
   emissionRate: 1
   overflowMode: 0
   overflowOffset: {x: 0, y: 0, z: 0}
@@ -2187,8 +2187,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  sizeMin: 1
-  sizeMax: 1
+  sizeMin: 0.2
+  sizeMax: 0.2
   scale: 1
   initialRotationMin: 0
   initialRotationMax: 0
@@ -2811,7 +2811,7 @@ MonoBehaviour:
         rate: 1
         rate3: {x: 0, y: 1, z: 0}
       velocity: {x: 0, y: 0, z: 0}
-      localVelocity: {x: 0, y: 0, z: -0}
+      localVelocity: {x: -0, y: 0, z: 0}
       color: {r: 1, g: 1, b: 1, a: 1}
       lifetimeColor:
         key0:
@@ -2859,19 +2859,19 @@ MonoBehaviour:
       size: 1
       targets:
       - transform: {fileID: 0}
-        instanceID: 3294360
+        instanceID: 73722
         available: 1
-        position: {x: 16.138533, y: 2.0190003, z: -37.821987}
-        localPosition: {x: -3.2147694, y: -1.4809997, z: 5.2835197}
-        previousPosition: {x: 16.138533, y: 2.0190003, z: -37.821987}
-        forward: {x: 0.028348103, y: 0, z: -0.9995985}
-        up: {x: 0, y: 1, z: -0}
-        right: {x: -0.9995985, y: 0, z: -0.028348103}
-        rotation: {x: -0, y: 0.9998996, z: -0, w: 0.014175475}
-        inverseRotation: {x: 0, y: -0.9998996, z: 0, w: 0.014175475}
+        position: {x: 16.182133, y: 2.0190003, z: -37.821976}
+        localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
+        previousPosition: {x: 16.182133, y: 2.0190003, z: -37.821976}
+        forward: {x: -0.059751566, y: 0, z: -0.9982134}
+        up: {x: -0, y: 1, z: 0}
+        right: {x: -0.9982134, y: 0, z: 0.059751566}
+        rotation: {x: -0, y: 0.99955326, z: -0, w: -0.029889137}
+        inverseRotation: {x: 0, y: -0.99955326, z: 0, w: -0.029889137}
         scaleMethod: 0
         localScale: {x: 1, y: 1, z: 1}
-        lossyScale: {x: 2.8519013, y: 2.851898, z: 2.8518994}
+        lossyScale: {x: 2.8519003, y: 2.851898, z: 2.8518984}
         transformMatrix:
           e00: 0
           e01: 0
@@ -3029,19 +3029,19 @@ MonoBehaviour:
       m_Bits: 4294967295
     transform:
       transform: {fileID: 0}
-      instanceID: 3294360
+      instanceID: 73722
       available: 1
-      position: {x: 16.138533, y: 2.0190003, z: -37.821987}
-      localPosition: {x: -3.2147694, y: -1.4809997, z: 5.2835197}
-      previousPosition: {x: 16.138533, y: 2.0190003, z: -37.821987}
-      forward: {x: 0.028348103, y: 0, z: -0.9995985}
-      up: {x: 0, y: 1, z: -0}
-      right: {x: -0.9995985, y: 0, z: -0.028348103}
-      rotation: {x: -0, y: 0.9998996, z: -0, w: 0.014175475}
-      inverseRotation: {x: 0, y: -0.9998996, z: 0, w: 0.014175475}
+      position: {x: 16.182133, y: 2.0190003, z: -37.821976}
+      localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
+      previousPosition: {x: 16.182133, y: 2.0190003, z: -37.821976}
+      forward: {x: -0.059751566, y: 0, z: -0.9982134}
+      up: {x: -0, y: 1, z: 0}
+      right: {x: -0.9982134, y: 0, z: 0.059751566}
+      rotation: {x: -0, y: 0.99955326, z: -0, w: -0.029889137}
+      inverseRotation: {x: 0, y: -0.99955326, z: 0, w: -0.029889137}
       scaleMethod: 0
       localScale: {x: 1, y: 1, z: 1}
-      lossyScale: {x: 2.8519013, y: 2.851898, z: 2.8518994}
+      lossyScale: {x: 2.8519003, y: 2.851898, z: 2.8518984}
       transformMatrix:
         e00: 0
         e01: 0
@@ -3065,7 +3065,7 @@ MonoBehaviour:
     bounds:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0.5, y: 0.5, z: 0.5}
-    strength: 50
+    strength: 60
     strengthSmoothing: 1
     strengthDistanceEffect: 1
     applyParticleLifetimeStrength: 1
@@ -3087,7 +3087,7 @@ MonoBehaviour:
       m_RotationOrder: 0
     enabled: 1
     inverseBounds: 0
-    manipulatorId: 3294360
+    manipulatorId: 73722
     applyLifetimeFilter: 1
     lifetimeFilterMinimum: 0.05
     lifetimeFilterMaximum: 1
@@ -3179,7 +3179,7 @@ MonoBehaviour:
         rate: 1
         rate3: {x: 0, y: 1, z: 0}
       velocity: {x: 0, y: 0, z: 0}
-      localVelocity: {x: 0, y: 0, z: -0}
+      localVelocity: {x: -0, y: 0, z: 0}
       color: {r: 1, g: 1, b: 1, a: 0}
       lifetimeColor:
         key0:
@@ -3365,19 +3365,19 @@ MonoBehaviour:
       m_Bits: 4294967295
     transform:
       transform: {fileID: 0}
-      instanceID: 3294360
+      instanceID: 73722
       available: 1
-      position: {x: 16.138533, y: 2.0190003, z: -37.821987}
-      localPosition: {x: -3.2147694, y: -1.4809997, z: 5.2835197}
-      previousPosition: {x: 16.138533, y: 2.0190003, z: -37.821987}
-      forward: {x: 0.028348103, y: 0, z: -0.9995985}
-      up: {x: 0, y: 1, z: -0}
-      right: {x: -0.9995985, y: 0, z: -0.028348103}
-      rotation: {x: -0, y: 0.9998996, z: -0, w: 0.014175475}
-      inverseRotation: {x: 0, y: -0.9998996, z: 0, w: 0.014175475}
+      position: {x: 16.182133, y: 2.0190003, z: -37.821976}
+      localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
+      previousPosition: {x: 16.182133, y: 2.0190003, z: -37.821976}
+      forward: {x: -0.059751566, y: 0, z: -0.9982134}
+      up: {x: -0, y: 1, z: 0}
+      right: {x: -0.9982134, y: 0, z: 0.059751566}
+      rotation: {x: -0, y: 0.99955326, z: -0, w: -0.029889137}
+      inverseRotation: {x: 0, y: -0.99955326, z: 0, w: -0.029889137}
       scaleMethod: 0
       localScale: {x: 1, y: 1, z: 1}
-      lossyScale: {x: 2.8519013, y: 2.851898, z: 2.8518994}
+      lossyScale: {x: 2.8519003, y: 2.851898, z: 2.8518984}
       transformMatrix:
         e00: 0
         e01: 0
@@ -3397,7 +3397,7 @@ MonoBehaviour:
         e33: 0
       unfolded: 0
     shape: 0
-    size: 0.5
+    size: 1
     bounds:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 0.5, y: 0.5, z: 0.5}
@@ -3423,7 +3423,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     enabled: 1
     inverseBounds: 0
-    manipulatorId: 3294360
+    manipulatorId: 73722
     applyLifetimeFilter: 1
     lifetimeFilterMinimum: 0.1
     lifetimeFilterMaximum: 1
@@ -3857,7 +3857,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -1962776875
+  randomSeed: 848707834
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -4234,7 +4234,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 10
+    maxNumParticles: 100
     size3D: 0
     rotation3D: 0
   ShapeModule:
@@ -5611,7 +5611,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 5508872
+  randomSeed: 1554198936
   InitialModule:
     serializedVersion: 2
     enabled: 1

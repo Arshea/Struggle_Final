@@ -20,12 +20,13 @@ public class LanternManager : MonoBehaviour {
 	// Burst mechanic
 	//private float lightBurstLifetime = 1.0f;
 	private int numBurst2Particles = 1; // Num particles for lantern burst
-	//private int numBurst3Particles = 10; // Num particles for lantern wind effect burst
+	private int numBurst3Particles = 10; // Num particles for lantern wind effect burst
 
 	// Lantern centres and game state
 	public GameObject[] lanternContents; // In enum order - lantern colour prefabs
 	private ParticleSystem[] lightBurst2; // Ring effect
 	private ParticleSystem[] lightBurst3; // Wind effect
+	private ParticleSystem[] distortion; // Distortion effect
 	private GameObject[] burstParticleContainer; // For overall rotation
 	private bool[] lanternContentsAvailable; // Which lights are currently ready for use?
 
@@ -46,6 +47,8 @@ public class LanternManager : MonoBehaviour {
 		// Put light burst effects into memory
 		lightBurst2 = new ParticleSystem[4];
 		lightBurst3 = new ParticleSystem[4];
+		distortion = new ParticleSystem[4];
+
 		burstParticleContainer = new GameObject[4]; // For overall rotation
 		for (int i = 0; i < 4; i++) {
 			burstParticleContainer [i] = new GameObject();
@@ -65,14 +68,19 @@ public class LanternManager : MonoBehaviour {
 				} else if (child.name == "burst3") {
 					lightBurst3 [i] = child.GetComponent<ParticleSystem> ();
 					//Debug.Log ("Found child: " + child.name);
+				} else if (child.name == "distortion") {
+					distortion [i] = child.GetComponent<ParticleSystem> ();
+					//Debug.Log ("Found child: " + child.name);
 				} else {
 					//Debug.Log ("Found unexpected child in burstParticles: " + child.name);
 				}
 			}
+			if (distortion [i] == null)
+				Debug.Log ("LanternManager:: problem with distortion");
 			if (lightBurst2 [i] == null)
-				Debug.Log ("problem with lightBurst2");
+				Debug.Log ("LanternManager:: problem with lightBurst2");
 			if (lightBurst3 [i] == null)
-				Debug.Log ("problem with lightBurst3");
+				Debug.Log ("LanternManager:: problem with lightBurst3");
 		}
 
 		// Set all to inactive at first
@@ -125,6 +133,7 @@ public class LanternManager : MonoBehaviour {
 		resetParticleRotation (burstParticleContainer[index]);
 		burst2 (lightBurst2[index]); // Centre circle
 		burst3 (lightBurst3[index]); // Wind
+		burstDistort(distortion[index]); // Distortion effect
 	}
 
 	void resetParticleRotation(GameObject burstParticleContainer) {
@@ -137,7 +146,11 @@ public class LanternManager : MonoBehaviour {
 	}
 
 	void burst3(ParticleSystem lightBurst) {
-		lightBurst.Emit (10);
+		lightBurst.Emit (numBurst3Particles);
+	}
+
+	void burstDistort(ParticleSystem lightBurst) {
+		lightBurst.Emit (2);
 	}
 
 	public void addLight() {
