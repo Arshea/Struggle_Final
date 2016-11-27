@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
 	//Enemy containers
 	private GameObject[] enemies;
 	private int num_of_enemies;
+	private static int enemy_encounter_count;
+	private bool enemy_narration_message_sent;
 
 	//Interactable objects
 	private GameObject[] interactive_objects;
@@ -36,9 +38,11 @@ public class GameManager : MonoBehaviour {
 		GameObject[] miniPickups = GameObject.FindGameObjectsWithTag ("PickUpMini");
 		numMiniPickUps_total = miniPickups.Length;
 
+		enemy_encounter_count = 0;
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		num_of_enemies = enemies.Length;
-	
+		enemy_narration_message_sent = false;
+
 		interactive_objects = GameObject.FindGameObjectsWithTag ("InteractionManager");
 		num_of_interactive_objects = interactive_objects.Length;
 
@@ -55,11 +59,20 @@ public class GameManager : MonoBehaviour {
 				interactive_objects [i].SendMessage ("InteractWithObject", distance_to_player, SendMessageOptions.DontRequireReceiver);
 			}
 		}
+		//Move later?
+		if (!enemy_narration_message_sent) {
+			if (enemy_encounter_count == 1) {
+				musicManager.SendMessage ("playNarrationOfTrigger", ObjectTriggerType.ENEMY);
+				enemy_narration_message_sent = true;
+			}
+		}
+		
+		
 	}
 
 
 	public void pickedUpLightMusic() {
-		musicManager.playLightPickupMusic ();
+		musicManager.playLightPickupMusic (progressState);
 
 	}
 
@@ -94,5 +107,9 @@ public class GameManager : MonoBehaviour {
 		return percentComplete;
 
 		//return (float)numLeft;
+	}
+
+	public static void encounteredEnemy() {
+		enemy_encounter_count++;
 	}
 }

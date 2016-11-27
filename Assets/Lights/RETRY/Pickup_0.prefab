@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000011225974112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,19 +1195,19 @@ MonoBehaviour:
       size: 1
       targets:
       - transform: {fileID: 0}
-        instanceID: -338172
+        instanceID: 73708
         available: 1
-        position: {x: -25.152403, y: 4.029, z: 3.1088476}
+        position: {x: -43.961468, y: 10.829, z: 46.948013}
         localPosition: {x: -44.505707, y: 0.5289998, z: 46.214355}
         previousPosition: {x: -25.152403, y: 4.029, z: 3.1088476}
-        forward: {x: 0.115360916, y: 0, z: -0.9933237}
+        forward: {x: 0.028348103, y: 0, z: -0.9995985}
         up: {x: 0, y: 1, z: -0}
-        right: {x: -0.9933237, y: 0, z: -0.115360916}
-        rotation: {x: -0, y: 0.9983295, z: -0, w: 0.057776973}
-        inverseRotation: {x: 0, y: -0.9983295, z: 0, w: 0.057776973}
+        right: {x: -0.9995985, y: 0, z: -0.028348103}
+        rotation: {x: -0, y: 0.9998996, z: -0, w: 0.014175475}
+        inverseRotation: {x: 0, y: -0.9998996, z: 0, w: 0.014175475}
         scaleMethod: 0
         localScale: {x: 1, y: 1, z: 1}
-        lossyScale: {x: 2.8519, y: 2.851898, z: 2.8518984}
+        lossyScale: {x: 2.8519013, y: 2.851898, z: 2.8518994}
         transformMatrix:
           e00: 0
           e01: 0
@@ -1365,19 +1365,19 @@ MonoBehaviour:
       m_Bits: 4294967295
     transform:
       transform: {fileID: 0}
-      instanceID: -338172
+      instanceID: 73708
       available: 1
-      position: {x: -25.152403, y: 4.029, z: 3.1088476}
+      position: {x: -43.961468, y: 10.829, z: 46.948013}
       localPosition: {x: -44.505707, y: 0.5289998, z: 46.214355}
       previousPosition: {x: -25.152403, y: 4.029, z: 3.1088476}
-      forward: {x: 0.115360916, y: 0, z: -0.9933237}
+      forward: {x: 0.028348103, y: 0, z: -0.9995985}
       up: {x: 0, y: 1, z: -0}
-      right: {x: -0.9933237, y: 0, z: -0.115360916}
-      rotation: {x: -0, y: 0.9983295, z: -0, w: 0.057776973}
-      inverseRotation: {x: 0, y: -0.9983295, z: 0, w: 0.057776973}
+      right: {x: -0.9995985, y: 0, z: -0.028348103}
+      rotation: {x: -0, y: 0.9998996, z: -0, w: 0.014175475}
+      inverseRotation: {x: 0, y: -0.9998996, z: 0, w: 0.014175475}
       scaleMethod: 0
       localScale: {x: 1, y: 1, z: 1}
-      lossyScale: {x: 2.8519, y: 2.851898, z: 2.8518984}
+      lossyScale: {x: 2.8519013, y: 2.851898, z: 2.8518994}
       transformMatrix:
         e00: 0
         e01: 0
@@ -1423,7 +1423,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     enabled: 1
     inverseBounds: 0
-    manipulatorId: -338172
+    manipulatorId: 73708
     applyLifetimeFilter: 0
     lifetimeFilterMinimum: 0
     lifetimeFilterMaximum: 1
@@ -1701,19 +1701,19 @@ MonoBehaviour:
       m_Bits: 4294967295
     transform:
       transform: {fileID: 0}
-      instanceID: -338172
+      instanceID: 73708
       available: 1
-      position: {x: -25.152403, y: 4.029, z: 3.1088476}
+      position: {x: -43.961468, y: 10.829, z: 46.948013}
       localPosition: {x: -44.505707, y: 0.5289998, z: 46.214355}
       previousPosition: {x: -25.152403, y: 4.029, z: 3.1088476}
-      forward: {x: 0.115360916, y: 0, z: -0.9933237}
+      forward: {x: 0.028348103, y: 0, z: -0.9995985}
       up: {x: 0, y: 1, z: -0}
-      right: {x: -0.9933237, y: 0, z: -0.115360916}
-      rotation: {x: -0, y: 0.9983295, z: -0, w: 0.057776973}
-      inverseRotation: {x: 0, y: -0.9983295, z: 0, w: 0.057776973}
+      right: {x: -0.9995985, y: 0, z: -0.028348103}
+      rotation: {x: -0, y: 0.9998996, z: -0, w: 0.014175475}
+      inverseRotation: {x: 0, y: -0.9998996, z: 0, w: 0.014175475}
       scaleMethod: 0
       localScale: {x: 1, y: 1, z: 1}
-      lossyScale: {x: 2.8519, y: 2.851898, z: 2.8518984}
+      lossyScale: {x: 2.8519013, y: 2.851898, z: 2.8518994}
       transformMatrix:
         e00: 0
         e01: 0
@@ -1759,7 +1759,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     enabled: 1
     inverseBounds: 0
-    manipulatorId: -338172
+    manipulatorId: 73708
     applyLifetimeFilter: 0
     lifetimeFilterMinimum: 0
     lifetimeFilterMaximum: 1
@@ -2859,19 +2859,19 @@ MonoBehaviour:
       size: 1
       targets:
       - transform: {fileID: 0}
-        instanceID: -338172
+        instanceID: 73708
         available: 1
-        position: {x: -25.152403, y: 4.029, z: 3.1088476}
+        position: {x: -43.961468, y: 10.829, z: 46.948013}
         localPosition: {x: -44.505707, y: 0.5289998, z: 46.214355}
         previousPosition: {x: -25.152403, y: 4.029, z: 3.1088476}
-        forward: {x: 0.115360916, y: 0, z: -0.9933237}
+        forward: {x: 0.028348103, y: 0, z: -0.9995985}
         up: {x: 0, y: 1, z: -0}
-        right: {x: -0.9933237, y: 0, z: -0.115360916}
-        rotation: {x: -0, y: 0.9983295, z: -0, w: 0.057776973}
-        inverseRotation: {x: 0, y: -0.9983295, z: 0, w: 0.057776973}
+        right: {x: -0.9995985, y: 0, z: -0.028348103}
+        rotation: {x: -0, y: 0.9998996, z: -0, w: 0.014175475}
+        inverseRotation: {x: 0, y: -0.9998996, z: 0, w: 0.014175475}
         scaleMethod: 0
         localScale: {x: 1, y: 1, z: 1}
-        lossyScale: {x: 2.8519, y: 2.851898, z: 2.8518984}
+        lossyScale: {x: 2.8519013, y: 2.851898, z: 2.8518994}
         transformMatrix:
           e00: 0
           e01: 0
@@ -3029,19 +3029,19 @@ MonoBehaviour:
       m_Bits: 4294967295
     transform:
       transform: {fileID: 0}
-      instanceID: -338172
+      instanceID: 73708
       available: 1
-      position: {x: -25.152403, y: 4.029, z: 3.1088476}
+      position: {x: -43.961468, y: 10.829, z: 46.948013}
       localPosition: {x: -44.505707, y: 0.5289998, z: 46.214355}
       previousPosition: {x: -25.152403, y: 4.029, z: 3.1088476}
-      forward: {x: 0.115360916, y: 0, z: -0.9933237}
+      forward: {x: 0.028348103, y: 0, z: -0.9995985}
       up: {x: 0, y: 1, z: -0}
-      right: {x: -0.9933237, y: 0, z: -0.115360916}
-      rotation: {x: -0, y: 0.9983295, z: -0, w: 0.057776973}
-      inverseRotation: {x: 0, y: -0.9983295, z: 0, w: 0.057776973}
+      right: {x: -0.9995985, y: 0, z: -0.028348103}
+      rotation: {x: -0, y: 0.9998996, z: -0, w: 0.014175475}
+      inverseRotation: {x: 0, y: -0.9998996, z: 0, w: 0.014175475}
       scaleMethod: 0
       localScale: {x: 1, y: 1, z: 1}
-      lossyScale: {x: 2.8519, y: 2.851898, z: 2.8518984}
+      lossyScale: {x: 2.8519013, y: 2.851898, z: 2.8518994}
       transformMatrix:
         e00: 0
         e01: 0
@@ -3087,7 +3087,7 @@ MonoBehaviour:
       m_RotationOrder: 0
     enabled: 1
     inverseBounds: 0
-    manipulatorId: -338172
+    manipulatorId: 73708
     applyLifetimeFilter: 1
     lifetimeFilterMinimum: 0.05
     lifetimeFilterMaximum: 1
@@ -3365,19 +3365,19 @@ MonoBehaviour:
       m_Bits: 4294967295
     transform:
       transform: {fileID: 0}
-      instanceID: -338172
+      instanceID: 73708
       available: 1
-      position: {x: -25.152403, y: 4.029, z: 3.1088476}
+      position: {x: -43.961468, y: 10.829, z: 46.948013}
       localPosition: {x: -44.505707, y: 0.5289998, z: 46.214355}
       previousPosition: {x: -25.152403, y: 4.029, z: 3.1088476}
-      forward: {x: 0.115360916, y: 0, z: -0.9933237}
+      forward: {x: 0.028348103, y: 0, z: -0.9995985}
       up: {x: 0, y: 1, z: -0}
-      right: {x: -0.9933237, y: 0, z: -0.115360916}
-      rotation: {x: -0, y: 0.9983295, z: -0, w: 0.057776973}
-      inverseRotation: {x: 0, y: -0.9983295, z: 0, w: 0.057776973}
+      right: {x: -0.9995985, y: 0, z: -0.028348103}
+      rotation: {x: -0, y: 0.9998996, z: -0, w: 0.014175475}
+      inverseRotation: {x: 0, y: -0.9998996, z: 0, w: 0.014175475}
       scaleMethod: 0
       localScale: {x: 1, y: 1, z: 1}
-      lossyScale: {x: 2.8519, y: 2.851898, z: 2.8518984}
+      lossyScale: {x: 2.8519013, y: 2.851898, z: 2.8518994}
       transformMatrix:
         e00: 0
         e01: 0
@@ -3423,7 +3423,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     enabled: 1
     inverseBounds: 0
-    manipulatorId: -338172
+    manipulatorId: 73708
     applyLifetimeFilter: 1
     lifetimeFilterMinimum: 0.1
     lifetimeFilterMaximum: 1

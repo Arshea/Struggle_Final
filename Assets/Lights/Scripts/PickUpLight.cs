@@ -5,6 +5,7 @@ using ParticlePlayground;
 public class PickUpLight : MonoBehaviour {
 
 	private GameManager gameManager;
+	private GameObject startEndEvts;
 
 	private GameObject v_spotlight;
 	private GameObject spotlight;
@@ -20,6 +21,9 @@ public class PickUpLight : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameManager = (GameManager)GameObject.Find ("Game_Manager").GetComponent(typeof(GameManager));
+		startEndEvts = GameObject.Find ("Start_And_End_Events");
+		if (startEndEvts == null)
+			Debug.Log ("In PickUpLight.cs:: Couldn't find \"Start_And_End_Events\"");
 
 		v_spotlight = transform.FindChild ("V-Light Spot").gameObject;
 		spotlight = transform.FindChild ("Spot light").gameObject;
@@ -49,7 +53,6 @@ public class PickUpLight : MonoBehaviour {
 
 	void pickUpLight(GameObject light) {
 		StartCoroutine("pickUpAnimation");
-
 
 	}
 
@@ -101,8 +104,15 @@ public class PickUpLight : MonoBehaviour {
 
 		yield return new WaitForSeconds (0.5f);
 
+		// Trigger ending? New vlight beacon and minipickup trail; add trigger for book house animation, etc.
+		Debug.Log("From PickUpLight.cs:: Current state is: " + GameManager.progressState);
+		if (GameManager.progressState == 3) {
+			startEndEvts.transform.SendMessage ("triggerEnding", SendMessageOptions.DontRequireReceiver);
+		}
+
 		// Maybe wait a tiny bit more before doing this next bit? ~
 		gameManager.pickedUpLight (); // Add the light functionality to the lantern
+	
 
 		// Reduce spotlight
 		float timeStartSpotlightAnim = Time.time;

@@ -5,8 +5,7 @@ using System.Collections;
 public class LanternManager : MonoBehaviour {
 
 	// Burst attack
-	public float cooldown = 1.5f; // Number of seconds between allowed shots
-	// NEED TO PLAYTEST THIS VALUE
+	public float cooldown = 2.0f; // Number of seconds between allowed shots
 
 	// Need access to these from pretty much everywhere for onclick functionality
 	public static float lanternRange = 15.0f; // 
@@ -17,7 +16,6 @@ public class LanternManager : MonoBehaviour {
 	public AudioSource[] lantern_audio_source;
 	public AudioSource lantern_audio_source_stun_sweetner;
 	public AudioClip[] lantern_audio_clips_stun_sweetner;
-	//public AudioClip[] burstSounds; // Sounds on lantern shot (1-3 shots, 0 empty)
 
 	// Burst mechanic
 	//private float lightBurstLifetime = 1.0f;
@@ -25,14 +23,11 @@ public class LanternManager : MonoBehaviour {
 	//private int numBurst3Particles = 10; // Num particles for lantern wind effect burst
 
 	// Lantern centres and game state
-	public GameObject lanternYellow, lanternBlue, lanternGreen, lanternRed;
-	private GameObject[] lanternContents; // In enum order - lantern colour prefabs
+	public GameObject[] lanternContents; // In enum order - lantern colour prefabs
 	private ParticleSystem[] lightBurst2; // Ring effect
 	private ParticleSystem[] lightBurst3; // Wind effect
 	private GameObject[] burstParticleContainer; // For overall rotation
-	//private bool[] lanternContentsUnlocked; // Which lights are currently unlocked?
 	private bool[] lanternContentsAvailable; // Which lights are currently ready for use?
-	public static string lightToAddName = null;
 
 	//public enum Colours {Yellow = 0, Blue, Green, Red};
 
@@ -43,7 +38,7 @@ public class LanternManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Initialise lantern contents
-		lanternContents = GameObject.FindGameObjectsWithTag("LanternLight");
+		if(lanternContents == null) lanternContents = GameObject.FindGameObjectsWithTag("LanternLight");
 
 		// Start with empty lantern
 		lanternContentsAvailable = new bool[]{false, false, false, false};
@@ -82,6 +77,7 @@ public class LanternManager : MonoBehaviour {
 
 		// Set all to inactive at first
 		for (int i = 0; i < 4; i++) {
+			Debug.Log (lanternContents [i].name);
 			lanternContents [i].SetActive (false);
 		}
 

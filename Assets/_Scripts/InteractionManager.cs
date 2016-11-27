@@ -10,6 +10,7 @@ public class InteractionManager : MonoBehaviour {
 	public bool is_retriggerable;
 	public float trigger_cooldown_time = 2.0f;	//This should be 2.0f for only those objects that are not retriggerable.
     public Material []indicator_materials; //0 is the dim one, 1 is the bright one
+	public bool narration_triggered;
 	//CHILDREN
 	//Object
 	public GameObject interactive_object;
@@ -23,6 +24,7 @@ public class InteractionManager : MonoBehaviour {
 		if(player == null) 
 			player = GameObject.Find ("Player");
 		interaction_triggered = false;
+		narration_triggered = false;
         /*halo = (Behaviour)interaction_indicator.GetComponent("Halo");
 		halo.enabled = false;*/
         interaction_indicator.GetComponent<Renderer>().material = indicator_materials[0];
@@ -36,7 +38,7 @@ public class InteractionManager : MonoBehaviour {
 
 	//This function is called if player clicks near an object. See GameManager
 	void InteractWithObject(float distance_to_player) {
-		if (!interaction_triggered) {
+		if (!interaction_triggered && !narration_triggered) {
 			distance_to_player = Vector3.Distance (player.transform.position, interactive_object.transform.position);
 			if (distance_to_player < LanternManager.lanternRange * range_factor) { //Accurate distance from player to object 
 					interaction_triggered = true;

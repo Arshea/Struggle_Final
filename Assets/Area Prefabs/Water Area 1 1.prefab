@@ -1202,7 +1202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000012810987212
 GameObject:
   m_ObjectHideFlags: 1
@@ -8705,7 +8705,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012217851908}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 7
   m_Type: 2
   m_Color: {r: 0.3137255, g: 0.3137255, b: 0.004, a: 1}
@@ -9558,7 +9558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetScale: 0
   shrinkSpeed: 0.1
-  sponge: {fileID: 0}
+  sponge: {fileID: 1000013066745940}
   waterCollider: {fileID: 65000012844999428}
 --- !u!114 &114000011951032530
 MonoBehaviour:

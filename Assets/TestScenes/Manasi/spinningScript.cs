@@ -34,6 +34,11 @@ public class spinningScript : MonoBehaviour {
 	}
 	void TriggerInteraction() {
 		if(isSpinning) StopSpinning ();
+
+		this.gameObject.GetComponentInParent<InteractionManager> ().narration_triggered = true;
+		MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+		musicManager.SendMessage("playNarrationOfTrigger", ObjectTriggerType.TOP,SendMessageOptions.DontRequireReceiver);
+
 		Vector3 forceDir = transform.position - player.transform.position;
 		forceDir.y = 0.0f;
 		forceDir.Normalize ();

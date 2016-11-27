@@ -2799,6 +2799,10 @@ MonoBehaviour:
   is_retriggerable: 0
   trigger_cooldown_time: 0
   indicator_materials: []
+  indicator_materials:
+  - {fileID: 2100000, guid: 75960a3784e528e4d9b9fb5fc7167679, type: 2}
+  - {fileID: 2100000, guid: 33abfad8e382ac54f94be45719653596, type: 2}
+  narration_triggered: 0
   interactive_object: {fileID: 1000014019498044}
   interaction_indicator: {fileID: 1000012234785398}
 --- !u!114 &114000011057157700
