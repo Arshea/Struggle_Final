@@ -285,7 +285,7 @@ public class MusicManager : MonoBehaviour {
 
 		if (!main_music_trigger) {
 			if ((narration_audio_source.isPlaying == false)&&(current_narration_index==0)) {
-				main_source.Play ();
+				main_source.PlayDelayed (1.0f);
 				main_music_trigger = true;
 			}
 		}
