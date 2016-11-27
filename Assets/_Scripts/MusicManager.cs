@@ -129,11 +129,6 @@ public class MusicManager : MonoBehaviour {
 		0.0f
 
 	};
-	public GameObject player;
-	//Needs to move elsewhere later
-	public GameObject victory_message;
-	public GameObject winning_particles;
-	public GameObject back_home_guide;
 
 	//Audio sources
 	private AudioSource main_source;			//Main theme music
@@ -183,6 +178,9 @@ public class MusicManager : MonoBehaviour {
 	bool canIPlay(int index) {
 		int new_priority = (int)narrations [index].type;
 		int current_priority = (int)narrations [current_narration_index].type;
+
+		if (!narration_audio_source.isPlaying)
+			return true;
 
 		if (new_priority <= current_priority)
 			return true;
