@@ -8,7 +8,7 @@ public class HouseOfCards : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//if(player == null) player = GameObject.Find ("Player");
-		this.gameObject.GetComponentInParent<InteractionManager>().trigger_cooldown_time = 2.0f;
+		this.gameObject.GetComponentInParent<InteractionManager>().trigger_cooldown_time = 4.0f;
 	}
 	
 	// Update is called once per frame
@@ -28,9 +28,15 @@ public class HouseOfCards : MonoBehaviour {
 				child.GetComponent<Rigidbody> ().isKinematic = false;
 			} 
         }
-
+		StartCoroutine ("playHouseOfCardsNarration");
     }
 
+	IEnumerator playHouseOfCardsNarration() {
+		this.gameObject.GetComponentInParent<InteractionManager> ().narration_triggered = true;
+		yield return new WaitForSeconds (1.0f);
+		MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+		musicManager.SendMessage("playNarrationOfTrigger", ObjectTriggerType.CARDS,SendMessageOptions.DontRequireReceiver);
+	}
 
 
 }

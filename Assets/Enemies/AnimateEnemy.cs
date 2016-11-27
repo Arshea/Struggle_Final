@@ -95,6 +95,7 @@ public class AnimateEnemy: MonoBehaviour {
 		case (int)states.BEFOREEMERGE: 
 			playerCollider.hit_by_enemy = false;
 			if (playerInTerritory ()) {
+				GameManager.encounteredEnemy ();
 				animatedFreggo.GetComponent<Animator> ().SetTrigger ("EmergeTrigger");
 				current_state = (int)states.EMERGE;
 			}

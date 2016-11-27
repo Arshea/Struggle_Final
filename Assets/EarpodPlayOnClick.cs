@@ -31,11 +31,20 @@ public class EarpodPlayOnClick : MonoBehaviour {
 	}
 	void TriggerInteraction() {
 		StartCoroutine ("playMusic");
+		StartCoroutine ("playEarpodNarration");
 		//triggered = true;
-
 		// Change to cooler animation and maybe music note particle effects??
 		this.GetComponent<Rigidbody>().AddForce(1800 * Vector3.up);
 		this.GetComponent<Rigidbody>().AddTorque(1800 * Vector3.up);
+	}
+
+	IEnumerator playEarpodNarration() {
+		this.gameObject.GetComponentInParent<InteractionManager> ().narration_triggered = true;
+		yield return new WaitForSeconds (1.0f);
+		MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+		musicManager.SendMessage("playNarrationOfTrigger", ObjectTriggerType.EARPHONES,SendMessageOptions.DontRequireReceiver);
+		this.gameObject.GetComponentInParent<InteractionManager> ().narration_triggered = false;
+
 	}
 	IEnumerator playMusic() {
 		GetComponent<AudioSource> ().mute = false;

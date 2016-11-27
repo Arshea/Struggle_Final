@@ -17,11 +17,11 @@ enum ObjectTriggerType {
 	LIGHT_2,
 	LIGHT_3,
 	LIGHT_4,
-	STORY_END,
+	STORY_END,					//Not implemented yet /o\
 
 	ENEMY,
-	CLIMBING_START,
-	CLIMBING_END,
+	CLIMBING_START,				
+	CLIMBING_END,				//Not implemented yet /o\
 	DOMINO,
 	WATER,
 
@@ -37,7 +37,9 @@ enum ObjectTriggerType {
 	RUBIKS,
 	SCRABBLE,
 	TOP,
-	SPONGE
+	SPONGE,
+
+	CARPET_EDGE
 	/*
 	RANDOM*/
 
@@ -47,28 +49,30 @@ struct Narration {
 	public AudioClip clip;
 	public NarrationType type;
 	public ObjectTriggerType trigger;
-
-	public Narration(AudioClip _clip, NarrationType _type, int _trigger) {
+	public float delay;
+	public Narration(AudioClip _clip, NarrationType _type, int _trigger, float _delay = 0.0f) {
 		clip = _clip;
 		type = _type;
 		trigger = (ObjectTriggerType)_trigger;
+		delay = _delay;
 	}
 }
 public class MusicManager : MonoBehaviour {
-	
+
 	private NarrationType[] types = {
 		NarrationType.PROGRESS,
 		NarrationType.PROGRESS,
 		NarrationType.PROGRESS,
 		NarrationType.PROGRESS,
 		NarrationType.PROGRESS,
-		NarrationType.PROGRESS,
+		NarrationType.PROGRESS,						//Not implemented yet /o\
 
 		NarrationType.INSTRUCTION,
 		NarrationType.INSTRUCTION,
 		NarrationType.INSTRUCTION,
 		NarrationType.INSTRUCTION,
 		NarrationType.INSTRUCTION,
+		NarrationType.INSTRUCTION,
 
 		NarrationType.INTERACTIVE,
 		NarrationType.INTERACTIVE,
@@ -84,6 +88,7 @@ public class MusicManager : MonoBehaviour {
 		NarrationType.INTERACTIVE,
 		NarrationType.INTERACTIVE,
 
+		NarrationType.INSTRUCTION
 		/*
 		NarrationType.IDLE,
 		NarrationType.IDLE,
@@ -92,6 +97,38 @@ public class MusicManager : MonoBehaviour {
 
 	};
 
+	private float[] narration_delays =  {
+		0.0f,
+		2.0f,
+		2.0f,
+		2.0f,
+		2.0f,
+		0.0f,
+
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+
+		0.7f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.6f,
+		0.0f,
+
+		0.0f
+
+	};
 	public GameObject player;
 	//Needs to move elsewhere later
 	public GameObject victory_message;
@@ -105,19 +142,19 @@ public class MusicManager : MonoBehaviour {
 	public AudioSource[] lantern_stun_sources;	//Needs to be public unfortunately. Might find fix for this later
 
 	//Audio clips
-	private AudioClip main_theme;
-	private AudioClip light_variation;
+	public AudioClip[] main_theme;
+	public AudioClip light_variation;
 
 	//Narration essentials
 	private Narration[] narrations;
 	private int num_of_narrations = 0;	
-	//private int current_narrative_index = 0;
 	public bool []has_played_before;
 	public AudioClip[] narration_clips;
+	private int current_narration_index;
 
+	private bool main_music_trigger;
 	public static string enemy_name;
 	//public static string light_name;
-
 	void Start() {
 
 		//Assign all sources
@@ -129,19 +166,29 @@ public class MusicManager : MonoBehaviour {
 
 		//Load all audio clips, with type and trigger for narration
 		for(int i = 0; i<num_of_narrations; i++) {
-			Narration narration = new Narration (narration_clips[i], types[i], i);
+			Narration narration = new Narration (narration_clips[i], types[i], i,narration_delays[i]);
 			narrations[i] = narration;
 
 		}
 
 		/*When the game starts, it is quiet and the first narration plays*/
-		int index = searchNarrationByTrigger (ObjectTriggerType.STORY_START);
+		current_narration_index = 0;
 		main_source.Stop ();
-		playNarrationOfIndex (index);
-
+		playNarrationOfTrigger (ObjectTriggerType.STORY_START);
+		main_music_trigger = false;
 
 	}
 
+	//Priority logic
+	bool canIPlay(int index) {
+		int new_priority = (int)narrations [index].type;
+		int current_priority = (int)narrations [current_narration_index].type;
+
+		if (new_priority <= current_priority)
+			return true;
+
+		return false;
+	}
 	//returns the index of valid narration object
 	int searchNarrationByTrigger(ObjectTriggerType _trigger) {
 		for (int i = 0; i < num_of_narrations; i++) {
@@ -152,26 +199,46 @@ public class MusicManager : MonoBehaviour {
 		return -1;
 	}
 
-	void fadeInMainTheme() {
+	void fadeInMainTheme(bool playFromPause, float time =0.0f) {
+		main_source.time = time;
 		main_source.loop = true;
-		StartCoroutine( audio_util.play_sound_fade_in( main_source, 2, true ) );
+		StartCoroutine( audio_util.play_sound_fade_in( main_source, 2, playFromPause ) );
 
 	}
-	void adjustAllVolumes() {
+	void lowerAllVolumes() {
 		main_source.volume = 0.5f;
 		ambient_source.volume = 0.5f;
 		for (int i = 0; i < lantern_stun_sources.Length; i++) {
-			lantern_stun_sources [i].volume = 0.5f;
+			lantern_stun_sources [i].volume = 0.295f;
+		}
+	}
+	void restoreAllVolumes() {
+		main_source.volume = 1.0f;
+		ambient_source.volume = 1.0f;
+		for (int i = 0; i < lantern_stun_sources.Length; i++) {
+			lantern_stun_sources [i].volume = 0.4f;
 		}
 	}
 
-	void playNarrationOfIndex(int index) {
+	IEnumerator playNarrationOfIndex(int index) {
+		current_narration_index = index;
+		lowerAllVolumes ();
 		narration_audio_source.clip = narrations [index].clip;
 		narration_audio_source.loop = false;
 		narration_audio_source.volume = 1.0f;
-		narration_audio_source.Play();
-	}
+		narration_audio_source.PlayDelayed(narrations[index].delay);
+		yield return new WaitForSeconds (narration_audio_source.clip.length);
+		restoreAllVolumes ();
 
+	}
+		
+	void playNarrationOfTrigger(ObjectTriggerType _trigger) {
+		
+		int index = searchNarrationByTrigger (_trigger);
+		if(canIPlay(index) ){
+			StartCoroutine ("playNarrationOfIndex", index);
+		}
+	}
 	public void playLightPickupMusic() {
 
 		// Music -------------------------------------------------------------------------
@@ -190,35 +257,47 @@ public class MusicManager : MonoBehaviour {
 
 	public void playLightPickupNarration(int lightNumber) {
 		// Narration ---------------------------------------------------------------------
-		int index = 1;
 		if (lightNumber == 0) {
-			index = searchNarrationByTrigger (ObjectTriggerType.LIGHT_1); //Pass the narration index that you want to change it to
+			playNarrationOfTrigger(ObjectTriggerType.LIGHT_1);
+			main_source.Play ();
 		}
-
 		if (lightNumber == 1) {
-			index = searchNarrationByTrigger (ObjectTriggerType.LIGHT_2); //Pass the narration index that you want to change it to
+			playNarrationOfTrigger(ObjectTriggerType.LIGHT_2);
+			float timePlayed = main_source.time;
+			main_source.clip = main_theme [lightNumber];
+			fadeInMainTheme (false, timePlayed);
+
 		}
 		if (lightNumber == 2) {
-			index = searchNarrationByTrigger (ObjectTriggerType.LIGHT_3); //Pass the narration index that you want to change it to
+			playNarrationOfTrigger(ObjectTriggerType.LIGHT_3);
+			float timePlayed = main_source.time;
+			main_source.clip = main_theme [lightNumber];
+			fadeInMainTheme (false, timePlayed);
+
 		}
 		if (lightNumber == 3) {
-			index = searchNarrationByTrigger (ObjectTriggerType.LIGHT_4); //Pass the narration index that you want to change it to
-			back_home_guide.SetActive (true);
+			playNarrationOfTrigger(ObjectTriggerType.LIGHT_4);
+			//main_source = main_theme [lightNumber];
+
+			//back_home_guide.SetActive (true);
 		}
-		playNarrationOfIndex(index);
 	}
 
 	void Update() {
 
+		if (!main_music_trigger) {
+			if ((narration_audio_source.isPlaying == false)&&(current_narration_index==0)) {
+				main_source.Play ();
+				main_music_trigger = true;
+			}
+		}
 
 
-		if((ambient_source.isPlaying == false && main_source.isPlaying == false)) {
+		/*if((ambient_source.isPlaying == false && main_source.isPlaying == false)) {
 			StartCoroutine( audio_util.play_sound_fade_in( main_source, 2, true ) );
-		}
+		}*/
 
-		if (narration_audio_source.isPlaying && narration_audio_source.clip != narration_clips [0]) {
-			adjustAllVolumes ();
-		}
+
 
 		//Transition from intro 1 to intro 2
 		/*Note 2: As in Note 1 player regains controls here*/
@@ -241,7 +320,7 @@ public class MusicManager : MonoBehaviour {
 
 			
 		}*/
-		if (narration_audio_source.isPlaying == false) {
+		/*if (narration_audio_source.isPlaying == false) {
 			main_source.volume = 1.0f;
 			for (int i = 0; i < 5; i++) {
 				lantern_stun_sources [i].volume = 1.0f;
@@ -251,36 +330,11 @@ public class MusicManager : MonoBehaviour {
 			for (int i = 0; i < 5; i++) {
 				lantern_stun_sources [i].volume = 0.5f;
 			}
-		}
+		}*/
 		
 	}
 
-/*void narration_transition_with_dependency (int previous_narration_index) {
-		if (has_played_before [previous_narration_index + 1] == false) {
-			if ((narration_audio_source.isPlaying == false) && (current_narrative_index == previous_narration_index)) {
-				current_narrative_index++;
-				narration_audio_source.clip = narration [current_narrative_index];
-				narration_audio_source.loop = false;
-				narration_audio_source.volume = 1.0f;
-				main_source.volume = 0.5f;
-				narration_audio_source.Play ();	
-			}
-		}
 
-	}
 
-	void narration_transition_without_dependency (int next_narration_index, int delayInSeconds) {
-		if (!has_played_before[next_narration_index]) {
-			if ((narration_audio_source.isPlaying == false) && (current_narrative_index != next_narration_index)) {
-				current_narrative_index = next_narration_index;
-				narration_audio_source.clip = narration [current_narrative_index];
-				narration_audio_source.loop = false;
-				narration_audio_source.volume = 1.0f;
-				main_source.volume = 0.5f;
-				narration_audio_source.PlayDelayed (delayInSeconds);	
-				has_played_before[next_narration_index] = true;
-			}
-		}
-	}*/
+};
 
-}

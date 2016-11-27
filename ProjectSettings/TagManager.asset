@@ -20,6 +20,11 @@ TagManager:
   - DominoTrigger
   - Enemy
   - InteractionManager
+  - Jenga
+  - JengaNarrationTrigger
+  - DominoNarrationTrigger
+  - WaterNarrationTrigger
+  - EdgeOfTheWorld
   layers:
   - Default
   - TransparentFX

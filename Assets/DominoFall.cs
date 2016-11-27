@@ -26,10 +26,17 @@ public class DominoFall : MonoBehaviour {
 	}
 
 	void TriggerInteraction() {
-		Debug.Log ("Hit a domino!");
+		//Debug.Log ("Hit a domino!");
 		this.gameObject.GetComponentInParent<Animator> ().SetTrigger ("FallTrigger");
+		StartCoroutine ("playDominoNarration");
 		// Turn off beacon for green
 		var temp = greenBeacon.emission;
 		temp.enabled = false;
+	}
+	IEnumerator playDominoNarration() {
+		yield return new WaitForSeconds (1.0f);
+		this.gameObject.GetComponentInParent<InteractionManager> ().narration_triggered = true;
+		MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+		musicManager.SendMessage("playNarrationOfTrigger", ObjectTriggerType.AFTER_DOMINO,SendMessageOptions.DontRequireReceiver);
 	}
 }
