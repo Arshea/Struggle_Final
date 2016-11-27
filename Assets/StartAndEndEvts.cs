@@ -46,6 +46,9 @@ public class StartAndEndEvts : MonoBehaviour {
 		float startTime = Time.time;
 		float endTime = startTime + musicManager.narration_clips [0].length + 1.0f; // Added 1 second because it feels a bit better
 		float progress = 0.0f;
+
+
+
 		while (Time.time - startTime < endTime) {
 			progress = (Time.time - startTime) / endTime;
 

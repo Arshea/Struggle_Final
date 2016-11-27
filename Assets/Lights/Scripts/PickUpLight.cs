@@ -3,7 +3,8 @@ using System.Collections;
 using ParticlePlayground;
 
 public class PickUpLight : MonoBehaviour {
-
+	
+	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController FPController;
 	private GameManager gameManager;
 	private GameObject startEndEvts;
 
@@ -24,6 +25,7 @@ public class PickUpLight : MonoBehaviour {
 		startEndEvts = GameObject.Find ("Start_And_End_Events");
 		if (startEndEvts == null)
 			Debug.Log ("In PickUpLight.cs:: Couldn't find \"Start_And_End_Events\"");
+		FPController = (UnityStandardAssets.Characters.FirstPerson.FirstPersonController)GameObject.Find ("Player").GetComponent (typeof(UnityStandardAssets.Characters.FirstPerson.FirstPersonController));
 
 		v_spotlight = transform.FindChild ("V-Light Spot").gameObject;
 		spotlight = transform.FindChild ("Spot light").gameObject;
@@ -74,6 +76,8 @@ public class PickUpLight : MonoBehaviour {
 	}*/
 
 	IEnumerator pickUpAnimation() {
+		FPController.movementEnabled = false; // Stop player movement
+
 		timeAnimStart = Time.time; // Time animation initialised
 
 		if (pWithTrails != null)
@@ -102,16 +106,18 @@ public class PickUpLight : MonoBehaviour {
 		// Turn off spotlight
 		v_spotlight.gameObject.SetActive(false);
 
+		FPController.movementEnabled = true; // Reenable player movement
+
+		// Maybe wait a tiny bit more before doing this next bit? ~
+		gameManager.pickedUpLight (); // Add the light functionality to the lantern
+
 		yield return new WaitForSeconds (0.5f);
 
 		// Trigger ending? New vlight beacon and minipickup trail; add trigger for book house animation, etc.
 		Debug.Log("From PickUpLight.cs:: Current state is: " + GameManager.progressState);
-		if (GameManager.progressState == 3) {
+		if (GameManager.progressState == 4) {
 			startEndEvts.transform.SendMessage ("triggerEnding", SendMessageOptions.DontRequireReceiver);
 		}
-
-		// Maybe wait a tiny bit more before doing this next bit? ~
-		gameManager.pickedUpLight (); // Add the light functionality to the lantern
 	
 
 		// Reduce spotlight
