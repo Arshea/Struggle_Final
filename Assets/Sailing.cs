@@ -70,21 +70,25 @@ public class Sailing : MonoBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
-		if (Input.GetButtonDown("Interact") && LanternManager.ammunition > 0)
+
+		if(!sailing)
 		{
-			// if(other.gameObject.CompareTag("Player") && !reachedEnd)
-			if(other.gameObject.CompareTag("Player"))
+			if (Input.GetButtonDown("Interact") ) && LanternManager.ammunition > 0)
 			{
-				Debug.Log("Start your sailing!");
+				// if(other.gameObject.CompareTag("Player") && !reachedEnd)
+				if(other.gameObject.CompareTag("Player"))
+				{
+					Debug.Log("Start your sailing!");
 
-				sailing = true;
+					sailing = true;
 
-				startTime = Time.time;
+					startTime = Time.time;
 
-		        playerTransform = other.gameObject.transform;
-		        prev_player_pos = playerTransform.position;
+			        playerTransform = other.gameObject.transform;
+			        prev_player_pos = playerTransform.position;
 
-		        prev_boat_pos = transform.position;
+			        prev_boat_pos = transform.position;
+				}
 			}
 		}
 	}
