@@ -68,6 +68,7 @@ public class Double_Stacked_Lego : MonoBehaviour {
 		RUN_1_RETURN_1,
 		IDLE_1_STUN_0,
 		RETURN_1_STUN_0,
+		STUN_1_STUN_0
 
 	}
 	void Start () {
@@ -271,6 +272,18 @@ public class Double_Stacked_Lego : MonoBehaviour {
 			} else {
 
 			}
+			if (Input.GetButtonDown ("Interact")) {
+				//Debug.Log ("Ammunition: " + LanternManager.ammunition);
+				if (LanternManager.ammunition > 0) {
+					if (Vector3.Distance (player.transform.position, current_position) < LanternManager.lanternRange) {
+						if (enemy_health == 0)
+							current_state = (int)transitions.STUN_1_STUN_0;
+						//else
+						//current_state = (int)transitions.RUNSTAGGER;
+
+					}
+				}
+			}
 			/*****************************/
 			// Debug.Log ("STUN");
 			break;
@@ -278,6 +291,12 @@ public class Double_Stacked_Lego : MonoBehaviour {
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Stun_1_Run_1");
 			current_state = (int)states.RUN_1;
+			break;
+		case (int)transitions.STUN_1_STUN_0:
+			playerCollider.hit_by_enemy = false;
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Stun_1_Stun_0");
+			current_state = (int)states.STUN_0;
+			//Debug.Log ("RETURN_2_STUN_1");
 			break;
 		case (int)states.RUN_1:
 			current_position = transform.position;
