@@ -26,7 +26,8 @@ public class Double_Stacked_Lego : MonoBehaviour {
 	/***Triggers for narration. Do not remove***/
 	public static bool narration_trigger = false;
 	private bool has_already_triggered = false;
-	private bool has_already_triggered_stun = false;
+	private bool has_already_triggered_stun_1 = false;
+	private bool has_already_triggered_stun_0 = false;
 	public static Vector3 current_enemy_position;
 	//public static string enemy_name;
 	/*******************************************/
@@ -263,8 +264,8 @@ public class Double_Stacked_Lego : MonoBehaviour {
 		case (int)states.STUN_1:
 			playerCollider.hit_by_enemy = false;
 			/*For narration, do not remove*/
-			if (!has_already_triggered_stun) {
-				has_already_triggered_stun = true;
+			if (!has_already_triggered_stun_1) {
+				has_already_triggered_stun_1 = true;
 				//StartCoroutine ("deathTheFreggo");
 				current_state = (int)transitions.STUN_1_RUN_1;
 				audio_source.clip = stunned_sound [Random.Range (0, (stunned_sound.Length - 1))];
@@ -420,8 +421,8 @@ public class Double_Stacked_Lego : MonoBehaviour {
 		case (int)states.STUN_0:
 			playerCollider.hit_by_enemy = false;
 			/*For narration, do not remove*/
-			if (!has_already_triggered_stun) {
-				has_already_triggered_stun = true;
+			if (!has_already_triggered_stun_0) {
+				has_already_triggered_stun_0 = true;
 				StartCoroutine ("deathTheFreggo");
 				audio_source.clip = stunned_sound [Random.Range (0, (stunned_sound.Length - 1))];
 				audio_source.Play();

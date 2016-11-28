@@ -38,6 +38,7 @@ GameObject:
   - 135: {fileID: 135000013111778452}
   - 114: {fileID: 114000010484459558}
   - 82: {fileID: 82000010798025146}
+  - 114: {fileID: 114000012656596694}
   m_Layer: 0
   m_Name: Pickup_0
   m_TagString: PickUp
@@ -102,6 +103,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000012220412860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012193798490}
+  - 82: {fileID: 82000013885480662}
+  m_Layer: 0
+  m_Name: Big Light Music Loop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4000011648925696
 Transform:
   m_ObjectHideFlags: 1
@@ -115,6 +132,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000013120844938}
   m_RootOrder: 3
+--- !u!4 &4000012193798490
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012220412860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013120844938}
+  m_RootOrder: 4
 --- !u!4 &4000012478556604
 Transform:
   m_ObjectHideFlags: 1
@@ -161,7 +191,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011225974112}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.353302, y: 0.5, z: -43.105507}
+  m_LocalPosition: {x: -15.661316, y: -132.31902, z: -36.251923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -169,6 +199,7 @@ Transform:
   - {fileID: 4000012547282600}
   - {fileID: 4000012565345468}
   - {fileID: 4000011648925696}
+  - {fileID: 4000012193798490}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!20 &20000010077654230
@@ -299,6 +330,80 @@ AudioSource:
     m_Curve:
     - time: 0
       value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82000013885480662
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012220412860}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c1b15e41629fb41b298dda200082ce41, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 20
+  MaxDistance: 40
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 1
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.51111114
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1039,7 +1144,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4000011648925696}
   sourceTransforms:
   - transform: {fileID: 4000011648925696}
-    instanceID: -195492
+    instanceID: -196092
     available: 1
     position: {x: 19.353302, y: 3.5, z: -43.105507}
     localPosition: {x: 0, y: 0, z: 0}
@@ -1198,7 +1303,7 @@ MonoBehaviour:
         instanceID: 3294360
         available: 1
         position: {x: 16.138533, y: 2.0190003, z: -37.821987}
-        localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
+        localPosition: {x: -3.1711693, y: -1.6064835, z: 5.283531}
         previousPosition: {x: 16.138533, y: 2.0190003, z: -37.821987}
         forward: {x: 0.028348103, y: 0, z: -0.9995985}
         up: {x: 0, y: 1, z: -0}
@@ -1368,7 +1473,7 @@ MonoBehaviour:
       instanceID: 3294360
       available: 1
       position: {x: 16.138533, y: 2.0190003, z: -37.821987}
-      localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
+      localPosition: {x: -3.1711693, y: -1.6064835, z: 5.283531}
       previousPosition: {x: 16.138533, y: 2.0190003, z: -37.821987}
       forward: {x: 0.028348103, y: 0, z: -0.9995985}
       up: {x: 0, y: 1, z: -0}
@@ -1704,7 +1809,7 @@ MonoBehaviour:
       instanceID: 3294360
       available: 1
       position: {x: 16.138533, y: 2.0190003, z: -37.821987}
-      localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
+      localPosition: {x: -3.1711693, y: -1.6064835, z: 5.283531}
       previousPosition: {x: 16.138533, y: 2.0190003, z: -37.821987}
       forward: {x: 0.028348103, y: 0, z: -0.9995985}
       up: {x: 0, y: 1, z: -0}
@@ -1944,7 +2049,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198000013520183680}
-  particleSystemId: 0
+  particleSystemId: 13
   particleSystemGameObject: {fileID: 1000011258491610}
   particleSystemTransform: {fileID: 4000011648925696}
   particleSystemRenderer: {fileID: 199000012879011528}
@@ -2859,11 +2964,11 @@ MonoBehaviour:
       size: 1
       targets:
       - transform: {fileID: 0}
-        instanceID: 73722
+        instanceID: 74014
         available: 1
-        position: {x: 16.182133, y: 2.0190003, z: -37.821976}
-        localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
-        previousPosition: {x: 16.182133, y: 2.0190003, z: -37.821976}
+        position: {x: 16.182133, y: 1.8935165, z: -37.821976}
+        localPosition: {x: -3.1711693, y: -1.6064835, z: 5.283531}
+        previousPosition: {x: 16.182133, y: 1.8935165, z: -37.821976}
         forward: {x: -0.059751566, y: 0, z: -0.9982134}
         up: {x: -0, y: 1, z: 0}
         right: {x: -0.9982134, y: 0, z: 0.059751566}
@@ -3029,11 +3134,11 @@ MonoBehaviour:
       m_Bits: 4294967295
     transform:
       transform: {fileID: 0}
-      instanceID: 73722
-      available: 1
-      position: {x: 16.182133, y: 2.0190003, z: -37.821976}
-      localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
-      previousPosition: {x: 16.182133, y: 2.0190003, z: -37.821976}
+      instanceID: 74014
+      available: 0
+      position: {x: 16.182133, y: 1.8935165, z: -37.821976}
+      localPosition: {x: -3.1711693, y: -1.6064835, z: 5.283531}
+      previousPosition: {x: 16.182133, y: 1.8935165, z: -37.821976}
       forward: {x: -0.059751566, y: 0, z: -0.9982134}
       up: {x: -0, y: 1, z: 0}
       right: {x: -0.9982134, y: 0, z: 0.059751566}
@@ -3087,7 +3192,7 @@ MonoBehaviour:
       m_RotationOrder: 0
     enabled: 1
     inverseBounds: 0
-    manipulatorId: 73722
+    manipulatorId: 74014
     applyLifetimeFilter: 1
     lifetimeFilterMinimum: 0.05
     lifetimeFilterMaximum: 1
@@ -3365,11 +3470,11 @@ MonoBehaviour:
       m_Bits: 4294967295
     transform:
       transform: {fileID: 0}
-      instanceID: 73722
-      available: 1
-      position: {x: 16.182133, y: 2.0190003, z: -37.821976}
-      localPosition: {x: -3.1711693, y: -1.4809997, z: 5.283531}
-      previousPosition: {x: 16.182133, y: 2.0190003, z: -37.821976}
+      instanceID: 74014
+      available: 0
+      position: {x: 16.182133, y: 1.8935165, z: -37.821976}
+      localPosition: {x: -3.1711693, y: -1.6064835, z: 5.283531}
+      previousPosition: {x: 16.182133, y: 1.8935165, z: -37.821976}
       forward: {x: -0.059751566, y: 0, z: -0.9982134}
       up: {x: -0, y: 1, z: 0}
       right: {x: -0.9982134, y: 0, z: 0.059751566}
@@ -3423,7 +3528,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     enabled: 1
     inverseBounds: 0
-    manipulatorId: 73722
+    manipulatorId: 74014
     applyLifetimeFilter: 1
     lifetimeFilterMinimum: 0.1
     lifetimeFilterMaximum: 1
@@ -3608,7 +3713,7 @@ MonoBehaviour:
   timeOfSnapshot: 0
   isSnapshot: 0
   shurikenParticleSystem: {fileID: 198000011580487804}
-  particleSystemId: 1
+  particleSystemId: 12
   particleSystemGameObject: {fileID: 1000011951233738}
   particleSystemTransform: {fileID: 4000012565345468}
   particleSystemRenderer: {fileID: 199000013738764344}
@@ -3629,6 +3734,18 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
+--- !u!114 &114000012656596694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011225974112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa02b2285d43f429ba63b9865a7c1523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio_source: {fileID: 82000013885480662}
 --- !u!114 &114000013887248564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3813,7 +3930,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011951233738}
-  serializedVersion: 4
+  serializedVersion: 2
   lengthInSec: 99999
   startDelay:
     scalar: 0
@@ -3851,13 +3968,12 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
+  randomSeed: 1642735578
   looping: 1
   prewarm: 0
   playOnAwake: 0
   moveWithTransform: 0
-  autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 848707834
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -5567,7 +5683,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011258491610}
-  serializedVersion: 4
+  serializedVersion: 2
   lengthInSec: 99999
   startDelay:
     scalar: 0
@@ -5605,13 +5721,12 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
+  randomSeed: 2510500408
   looping: 1
   prewarm: 0
   playOnAwake: 0
   moveWithTransform: 0
-  autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 1554198936
   InitialModule:
     serializedVersion: 2
     enabled: 1
