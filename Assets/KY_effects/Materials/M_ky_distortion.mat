@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: M_ky_distortion
+  m_Shader: {fileID: 4800000, guid: fc162f9c79360477da61e03849ca4c18, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _distTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 3322a533dc8434ee9a3f07e30a2992a9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _distTexSub
+      second:
+        m_Texture: {fileID: 2800000, guid: 3322a533dc8434ee9a3f07e30a2992a9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _normal
+      second:
+        m_Texture: {fileID: 2800000, guid: 5461cc1bee5074b91ba4b7f638701792, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _texMask
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _A
+      second: 0
+    - first:
+        name: _B
+      second: 1
+    - first:
+        name: _Cutoff
+      second: 0.5
+    - first:
+        name: _distPower
+      second: 0.1
+    - first:
+        name: _distTexDensity
+      second: 1
+    - first:
+        name: _noiseSpdX
+      second: 1
+    - first:
+        name: _noiseSpdY
+      second: -1
+    - first:
+        name: _opacity
+      second: 0
+    - first:
+        name: _texMaskDensity
+      second: 1
+    - first:
+        name: _texMaskPower
+      second: 1
+    - first:
+        name: _tileV
+      second: 2
+    - first:
+        name: _tilieU
+      second: 2
+    - first:
+        name: _useTexMask
+      second: 0
+    - first:
+        name: _x
+      second: 0
+    - first:
+        name: _y
+      second: 0.5
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 0.07843138, g: 0.3921569, b: 0.7843137, a: 1}
+    - first:
+        name: _ccolor
+      second: {r: 0.875, g: 0.875, b: 0.875, a: 1}

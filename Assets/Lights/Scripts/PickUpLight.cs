@@ -1,46 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
+using ParticlePlayground;
 
 public class PickUpLight : MonoBehaviour {
+	
+	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController FPController;
+	private GameManager gameManager;
+	private GameObject startEndEvts;
 
-	public GameObject lanternCentre;
-	public ParticleSystem dustDeactivate; // Moves to player
-	public ParticleSystem dustActivate; // Moves to player
-	public ParticleSystem explosion; // Explosion effect
+	private GameObject v_spotlight;
+	private GameObject spotlight;
 
-	public ParticleSystem lanternSwirl; // Dust swirls around lantern to trigger (yel, blu, gre, red - enum from lanternManager)
-	private ParticleSystem.Particle[] lanternSwirlParticles; // Temp array for calculating new dust positions
-
-	private Transform lanternCentreTrans;
-	private ParticleSystem.Particle[] particles; // Temp array for calculating new dust positions
-
-	// Particle dust to player lantern effect
-	private float speedDuringAnim = 5.0f; // Speed to keep particles circling player
-	private float speedEndAnim = 10.0f;	// Speed into lanten at end
-	// and accurately stream to target
-
-	private bool playingAnim = false; // Is animation playing?
-	private bool emittingParticles = true; // Are there still particles emitting? For when they should be stopped
+	private PlaygroundParticlesC pWithTrails;
+	PlaygroundParticlesC pDust;
 
 	// Animation points
+	private float timeAnimStart = 0.0f;
 	private float climaxTime = 6.0f;
-	private float endingTime = 10.0f;
-	private float swirlTime = 0.2f; // Time to start swirl around lantern after trigger
-
-	private float timeAnimStart;
+	private float endingTime = 20.0f;
 
 	// Use this for initialization
 	void Start () {
-		lanternCentreTrans = lanternCentre.transform;
-		if(dustActivate != null)
-		if (particles == null || particles.Length < dustActivate.maxParticles)
-			particles = new ParticleSystem.Particle[dustActivate.maxParticles]; 
+		gameManager = (GameManager)GameObject.Find ("Game_Manager").GetComponent(typeof(GameManager));
+		startEndEvts = GameObject.Find ("Start_And_End_Events");
+		if (startEndEvts == null)
+			Debug.Log ("In PickUpLight.cs:: Couldn't find \"Start_And_End_Events\"");
+		FPController = (UnityStandardAssets.Characters.FirstPerson.FirstPersonController)GameObject.Find ("Player").GetComponent (typeof(UnityStandardAssets.Characters.FirstPerson.FirstPersonController));
 
-		if(lanternSwirl != null)
-		if (lanternSwirlParticles == null || lanternSwirlParticles.Length < lanternSwirl.maxParticles)
-			lanternSwirlParticles = new ParticleSystem.Particle[lanternSwirl.maxParticles]; 
+		v_spotlight = transform.FindChild ("V-Light Spot").gameObject;
+		spotlight = transform.FindChild ("Spot light").gameObject;
 
-		//lanternSwirl.SetActive (false); // Turn off dust swirl around lantern
+		PlaygroundParticlesC[] pickupParticles = this.GetComponentsInChildren<PlaygroundParticlesC> ();
+		pWithTrails = new PlaygroundParticlesC();
+		pDust = new PlaygroundParticlesC ();
+		foreach (PlaygroundParticlesC p in pickupParticles) {
+			if (p.name == "Pickup") {
+				pWithTrails = p;
+				p.emit = false; // Disable on startup
+			} else {
+				pDust = p;
+			}
+		}
 	}
 
 	// Update is called once per frame
@@ -49,26 +49,16 @@ public class PickUpLight : MonoBehaviour {
 	}
 
 	void pickUp() {
-		//Debug.Log ("Pick up sigal received");
+		Debug.Log ("PickUpLight: Pick Up Signal");
 		pickUpLight (this.gameObject);
 	}
 
 	void pickUpLight(GameObject light) {
-		//Debug.Log ("Picking up the thing\n");
-		playingAnim = true; // Start dust towards player anim
+		StartCoroutine("pickUpAnimation");
 
-		StartCoroutine("moveLightToPlayer");
-
-		pickUpAnimation (light); // Start light burst anim
-
-		light.transform.parent.GetComponent<AudioSource>().Play(); // Trigger sound
-		LanternManager.pickingUpAudioTrigger = true; // Trigger music
-
-		// Need to change - should probably access var in a GameManager instead
-		//gameState++;
 	}
 
-	void pickUpAnimation(GameObject light) {
+	/*void pickUpAnimation(GameObject light) {
 		// Start Unity-build animation for light source
 		light.GetComponent<Animation>().Play ();
 
@@ -83,28 +73,128 @@ public class PickUpLight : MonoBehaviour {
 		}
 
 		//updateLantern (light);
-	}
+	}*/
 
-	IEnumerator moveLightToPlayer() {
+	IEnumerator pickUpAnimation() {
+		FPController.movementEnabled = false; // Stop player movement
+
+		Vector3 randomVelocityMin = new Vector3(-5f,1,-5f);   // The minimum random velocity
+		Vector3 randomVelocityMax = new Vector3(5f,5f,5f);    // The maximum random velocity
+		Color32 color = Color.white;                          // The color of particles
+
+		//if (pWithTrails != null)
+		//	pWithTrails.emit = true;
+
+		//float timeStopEmit = 4.0f;
+		//float timeStartClimaxEmit = 5.5f;
+
+		timeAnimStart = Time.time; // Time animation initialised
+
+		gameManager.pickedUpLightMusic ();
+		transform.GetComponent<AudioSource>().Play(); // Trigger sound
+
+		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		while (Time.time - timeAnimStart < 1.1f) {
+			yield return null;
+		}
+		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		while (Time.time - timeAnimStart < 2.2f) {
+			yield return null;
+		}
+		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		while (Time.time - timeAnimStart < 3.3f) {
+			yield return null;
+		}
+		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		while (Time.time - timeAnimStart < 3.3f) {
+			yield return null;
+		}
+		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+
+
+		//pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+
+		//while (Time.time - timeAnimStart < 1.0f) {
+		//	yield return null;
+		//}
+
+		//pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+
+
+		//pWithTrails.emit = false; // Pause before climax
+
+		pDust.emit = false; // Timing-wise here is a good place to stop the centre emission
+
+		while (Time.time - timeAnimStart < (climaxTime)) {
+			yield return null;
+		}
+
+		pWithTrails.Emit (40, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		//pWithTrails.particleCount = 100; // Release loads and loads :J
+		//pWithTrails.emit = true;
+		//pWithTrails.Emit(100);
+
+
+
+
+		// Turn off spotlight
+		v_spotlight.gameObject.SetActive(false);
+
+		FPController.movementEnabled = true; // Reenable player movement
+
+
+
+		yield return new WaitForSeconds (0.5f);
+
+		// Maybe wait a tiny bit more before doing this next bit? ~
+		gameManager.pickedUpLight (); // Add the light functionality to the lantern
+
+		//pWithTrails.emit = false; // Turn off
+
+
+		// Trigger ending? New vlight beacon and minipickup trail; add trigger for book house animation, etc.
+		Debug.Log("From PickUpLight.cs:: Current state is: " + GameManager.progressState);
+		if (GameManager.progressState == 4) {
+			startEndEvts.transform.SendMessage ("triggerEnding", SendMessageOptions.DontRequireReceiver);
+		}
+	
+
+		// Reduce spotlight
+		float timeStartSpotlightAnim = Time.time;
+		float timeTotalSpotlightAnim = 5.0f;
+		float initialIntensity = spotlight.GetComponent<Light> ().intensity;
+		while (Time.time - timeStartSpotlightAnim < timeTotalSpotlightAnim) {
+			float complete = (Time.time - timeStartSpotlightAnim) / timeTotalSpotlightAnim; // 0 to 1 based on completion
+			spotlight.GetComponent<Light>().intensity = Mathf.Lerp(initialIntensity, 0.0f, complete);
+			yield return null;
+		}
+
+		yield return new WaitForSeconds(5.0f);
+		pWithTrails.transform.parent.gameObject.SetActive (false); // Terminate everything (in case bugged particles remaining)
+
+		yield return null;
+
+
+
+		/*
 		// Deactivate original swirl dust
 		var emit = dustDeactivate.emission;
 		emit.enabled = false;
 		dustActivate.Play (); // Doesn't work yet - already playing
 
-		timeAnimStart = Time.time; // Time animation initialised
 		bool triggeredAdd = false;
 		bool triggeredLanternSwirl = false;
 
 		// Triggered: make faster; decrease lifetime; spawn more?
 		int numParticles = dustActivate.GetParticles (particles);
-		int numLanternDustParticles = lanternSwirl.GetParticles (lanternSwirlParticles);
+		//		int numLanternDustParticles = lanternSwirl.GetParticles (lanternSwirlParticles);
 		for (int i = 0; i < numParticles; i++) {
 			particles [i].startLifetime = 3.2f; // Do not allow to linger
 		}
 
 		while (playingAnim) {
 			numParticles = dustActivate.GetParticles (particles);
-			numLanternDustParticles = lanternSwirl.GetParticles (lanternSwirlParticles);
+			//			numLanternDustParticles = lanternSwirl.GetParticles (lanternSwirlParticles);
 
 			if (Time.time - timeAnimStart < climaxTime) { // During animation
 				for (int i = 0; i < numParticles; i++) {
@@ -129,19 +219,9 @@ public class PickUpLight : MonoBehaviour {
 				dustActivate.SetParticles (particles, numParticles);
 
 				// Dust swirl around lantern
-				Vector3 LocalLantCentre = lanternSwirl.transform.localPosition; // These are rendered in local space - need to reverse pos for orirgin
+				//				Vector3 LocalLantCentre = lanternSwirl.transform.localPosition; // These are rendered in local space - need to reverse pos for orirgin
 				// This doesn't work though.
 				// Keep trying next week.
-
-
-				//Debug.Log ("pos: " + LocalLantCentre.x/* + ", " + LocalLantCentre.y, + ", " + LocalLantCentre.z*/);
-				for (int i = 0; i < numLanternDustParticles; i++) {
-					lanternSwirlParticles [i].position = Vector3.Lerp (
-						lanternSwirlParticles [i].position, LocalLantCentre, 
-						speedEndAnim * (Time.deltaTime));
-					lanternSwirlParticles [i].startLifetime = 0.2f; // Do not allow to linger
-				}
-				lanternSwirl.SetParticles (lanternSwirlParticles, numLanternDustParticles);
 
 				if(emittingParticles) {
 					stopEmission(); // Stop producing particles
@@ -151,14 +231,14 @@ public class PickUpLight : MonoBehaviour {
 				// Trigger addition to lantern
 				if (triggeredAdd == false) {
 					triggeredAdd = true;
-					LanternManager.lightToAddName = this.transform.parent.gameObject.name;
+					gameManager.pickedUpLight (this.transform.parent.gameObject.name);
 				}
 
 			}
 
 			// Start swirl around lantern
 			if (Time.time - timeAnimStart < swirlTime && triggeredLanternSwirl == false) { 
-				lanternSwirl.Play ();
+				//				lanternSwirl.Play ();
 				triggeredLanternSwirl = true;
 			}
 
@@ -168,21 +248,10 @@ public class PickUpLight : MonoBehaviour {
 			yield return null;
 
 		}
-		terminateAnimation ();
-		yield return null;
-
+		terminateAnimation ();*/
 	}
 
-	void explode() {
-		burst ();
-		Invoke ("burst", 0.05f);
-		Invoke ("burst", 0.1f);
-	}
-
-	void burst() {
-		explosion.Emit (1);
-	}
-
+	/*
 	// Stop particle emitters (allow them to fade)
 	void stopEmission() {
 		emittingParticles = false;
@@ -196,14 +265,16 @@ public class PickUpLight : MonoBehaviour {
 		var temp = this.GetComponent<ParticleSystem> ().emission;
 		temp.enabled = false;
 
-		temp = lanternSwirl.emission;
-		temp.enabled = false;
-	}
+		//		temp = lanternSwirl.emission;
+		//		temp.enabled = false;
+	}*/
 
+
+	/*
 	// Delete gameObject
 	void terminateAnimation() {
 		this.transform.parent.gameObject.SetActive (false);
-		lanternSwirl.transform.parent.gameObject.SetActive (false);
+		//		lanternSwirl.transform.parent.gameObject.SetActive (false);
 	}
-
+	*/
 }

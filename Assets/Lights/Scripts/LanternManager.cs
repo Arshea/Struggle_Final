@@ -5,37 +5,32 @@ using System.Collections;
 public class LanternManager : MonoBehaviour {
 
 	// Burst attack
-	public float cooldown = 1.5f; // Number of seconds between allowed shots
-									// NEED TO PLAYTEST THIS VALUE
+	public float cooldown = 2.0f; // Number of seconds between allowed shots
 
+	// Need access to these from pretty much everywhere for onclick functionality
+	public static float lanternRange = 15.0f; // 
 	public static int ammunition = 0; // Ammunition currently available - always updated
-									// Accessed in enemy AI script to determine a valid lantern attack
-
-	// Light pickups
-	public static bool pickingUpAudioTrigger = false; // Triggers music change in MusicManager
+	// Accessed in enemy AI script to determine a valid lantern attack
 
 	// Audio
 	public AudioSource[] lantern_audio_source;
 	public AudioSource lantern_audio_source_stun_sweetner;
 	public AudioClip[] lantern_audio_clips_stun_sweetner;
-	//public AudioClip[] burstSounds; // Sounds on lantern shot (1-3 shots, 0 empty)
 
 	// Burst mechanic
-	private float lightBurstLifetime = 1.0f;
+	//private float lightBurstLifetime = 1.0f;
 	private int numBurst2Particles = 1; // Num particles for lantern burst
 	private int numBurst3Particles = 10; // Num particles for lantern wind effect burst
 
 	// Lantern centres and game state
-	public GameObject lanternYellow, lanternBlue, lanternGreen, lanternRed;
-	private GameObject[] lanternContents; // In enum order - lantern colour prefabs
+	public GameObject[] lanternContents; // In enum order - lantern colour prefabs
 	private ParticleSystem[] lightBurst2; // Ring effect
 	private ParticleSystem[] lightBurst3; // Wind effect
+	private ParticleSystem[] distortion; // Distortion effect
 	private GameObject[] burstParticleContainer; // For overall rotation
-	private bool[] lanternContentsUnlocked; // Which lights are currently unlocked?
 	private bool[] lanternContentsAvailable; // Which lights are currently ready for use?
-	public static string lightToAddName = null;
 
-	public enum Colours {Yellow = 0, Blue, Green, Red};
+	//public enum Colours {Yellow = 0, Blue, Green, Red};
 
 	/* Used for narration, do not remove */
 	private bool has_triggered_narration = false;
@@ -44,18 +39,16 @@ public class LanternManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Initialise lantern contents
-		lanternContents = new GameObject[4];
-		lanternContents [(int)Colours.Yellow] = lanternYellow;
-		lanternContents [(int)Colours.Blue] = lanternBlue;
-		lanternContents [(int)Colours.Green] = lanternGreen;
-		lanternContents [(int)Colours.Red] = lanternRed;
+		if(lanternContents == null) lanternContents = GameObject.FindGameObjectsWithTag("LanternLight");
+
 		// Start with empty lantern
-		lanternContentsUnlocked = new bool[]{false, false, false, false};
 		lanternContentsAvailable = new bool[]{false, false, false, false};
 
 		// Put light burst effects into memory
 		lightBurst2 = new ParticleSystem[4];
 		lightBurst3 = new ParticleSystem[4];
+		distortion = new ParticleSystem[4];
+
 		burstParticleContainer = new GameObject[4]; // For overall rotation
 		for (int i = 0; i < 4; i++) {
 			burstParticleContainer [i] = new GameObject();
@@ -75,18 +68,24 @@ public class LanternManager : MonoBehaviour {
 				} else if (child.name == "burst3") {
 					lightBurst3 [i] = child.GetComponent<ParticleSystem> ();
 					//Debug.Log ("Found child: " + child.name);
+				} else if (child.name == "distortion") {
+					distortion [i] = child.GetComponent<ParticleSystem> ();
+					//Debug.Log ("Found child: " + child.name);
 				} else {
 					//Debug.Log ("Found unexpected child in burstParticles: " + child.name);
 				}
 			}
+			if (distortion [i] == null)
+				Debug.Log ("LanternManager:: problem with distortion");
 			if (lightBurst2 [i] == null)
-				Debug.Log ("problem with lightBurst2");
+				Debug.Log ("LanternManager:: problem with lightBurst2");
 			if (lightBurst3 [i] == null)
-				Debug.Log ("problem with lightBurst3");
+				Debug.Log ("LanternManager:: problem with lightBurst3");
 		}
 
 		// Set all to inactive at first
 		for (int i = 0; i < 4; i++) {
+			Debug.Log (lanternContents [i].name);
 			lanternContents [i].SetActive (false);
 		}
 
@@ -98,17 +97,6 @@ public class LanternManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		// If send message from light source (collected)
-		if (lightToAddName != null) {
-			addLight (lightToAddName);
-			//////////////////////////////////////////
-			if (has_triggered_narration == false) {
-				has_triggered_narration = true;
-				MusicManager.light_name = lightToAddName;
-			}
-			/////////////////////////////////////////
-			lightToAddName = null;
-		}
 
 		if (Input.GetButtonDown("Interact")) {
 			int index = availableLight ();
@@ -134,8 +122,8 @@ public class LanternManager : MonoBehaviour {
 	}
 
 	int availableLight() {
-		for(int i = 0; i < 4; i++) {
-			if(lanternContentsUnlocked[i] && lanternContentsAvailable[i])
+		for(int i = 0; i < GameManager.progressState; i++) {
+			if(lanternContentsAvailable[i])
 				return i;
 		}
 		return -1; // None available
@@ -145,6 +133,7 @@ public class LanternManager : MonoBehaviour {
 		resetParticleRotation (burstParticleContainer[index]);
 		burst2 (lightBurst2[index]); // Centre circle
 		burst3 (lightBurst3[index]); // Wind
+		burstDistort(distortion[index]); // Distortion effect
 	}
 
 	void resetParticleRotation(GameObject burstParticleContainer) {
@@ -157,39 +146,24 @@ public class LanternManager : MonoBehaviour {
 	}
 
 	void burst3(ParticleSystem lightBurst) {
-		lightBurst.Emit (10);
+		lightBurst.Emit (numBurst3Particles);
 	}
 
-	void addLight(string toAdd) {
+	void burstDistort(ParticleSystem lightBurst) {
+		lightBurst.Emit (2);
+	}
 
-		int indexToAdd = findLightIndex (toAdd);
+	public void addLight() {
+		Debug.Log ("Enabling light (from void addLight) ");
 
-		Debug.Log ("Enabling light (from void addLight) " + indexToAdd);
+		Debug.Log ("LanternManager: Pick Up Signal");
 
-		lanternContentsUnlocked [indexToAdd] = true;
-		lanternContentsAvailable [indexToAdd] = true;
+		lanternContentsAvailable [GameManager.progressState] = true;
 		ammunition++;
-		lanternContents [indexToAdd].SetActive (true); // Change to animation
+		lanternContents [GameManager.progressState].SetActive (true); // Change to animation
 	}
 
-	int findLightIndex(string toAdd) {
-		if (toAdd == "LightPickup_yellow") {
-			//Debug.Log ("adding yellow");
-			return (int)Colours.Yellow;
-		} else if (toAdd == "LightPickup_blue") {
-			//Debug.Log ("adding blue");
-			return (int)Colours.Blue;
-		} else if (toAdd == "LightPickup_green") {
-			//Debug.Log ("adding green");
-			return (int)Colours.Green;
-		} else if (toAdd == "LightPickup_red") {
-			//Debug.Log ("adding red");
-			return (int)Colours.Red;
-		} else {
-			Debug.Log ("Error parsing light pickup name");
-			return 0;
-		}
-	}
+
 
 	IEnumerator lightBurstCooldown(int index) { //Add cooldown timer to lantern light burst
 		yield return new WaitForEndOfFrame();
@@ -202,13 +176,6 @@ public class LanternManager : MonoBehaviour {
 		emissiveSphere.localScale /= 2.0f;
 		Behaviour halo = (Behaviour)emissiveSphere.gameObject.GetComponent ("Halo");
 		halo.enabled = false;
-		//Renderer renderer = lanternContents [index].transform.FindChild ("animation_shell").
-		//	FindChild ("centre").GetComponent<Renderer> ();
-		//Color materialColour = renderer.material.color;
-		//DynamicGI.SetEmissive (renderer, materialColour * 0.1f);
-
-		// halo false
-
 
 		Debug.Log ("Cooldown started");
 
@@ -219,10 +186,7 @@ public class LanternManager : MonoBehaviour {
 		halo.enabled = true;
 
 		Debug.Log ("Cooldown ended");
-		// Enable
-		// Enable emission
-		//DynamicGI.SetEmissive(renderer, materialColour * 2.5f);
-		//halo true
+
 		Debug.Log ("Enabling light " + index);
 		lanternContentsAvailable[index] = true;
 		ammunition++;

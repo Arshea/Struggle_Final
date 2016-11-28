@@ -4,21 +4,23 @@ using System.Collections;
 public class SwanAnimator : MonoBehaviour {
 
 	public GameObject player;
-	Vector3 initial_position ;
+	bool triggered = false;
 	// Use this for initialization
 	void Start () {
-		initial_position = transform.position;
+		if(player == null) player = GameObject.Find ("Player");
+
+		GetComponent<Animation>().Play();
+		//GetComponent<Animator> ().enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown ("Interact")) {
-			Debug.Log ("Ammunition: " + LanternManager.ammunition);
-			if (LanternManager.ammunition > 0) {
-				if (Vector3.Distance (player.transform.position, initial_position) < 12) {
-					GetComponent<Animator> ().SetTrigger ("TakeoffTrigger");
+		if (!triggered && Input.GetButtonDown ("Interact") && LanternManager.ammunition > 0) {
+			if (Vector3.Distance (player.transform.position, transform.position) < LanternManager.lanternRange) {
 
-				}
+				//GetComponent<Animator> ().enabled = true;
+				Debug.Log("SWAN:" + GetComponent<Animation>().name);
+				GetComponent<Animation>().Play();
 			}
 		}
 	}

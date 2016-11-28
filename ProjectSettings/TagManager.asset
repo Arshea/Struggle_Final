@@ -16,6 +16,15 @@ TagManager:
   - Sponge
   - Plane
   - Wand
+  - FreggoCollider
+  - DominoTrigger
+  - Enemy
+  - InteractionManager
+  - Jenga
+  - JengaNarrationTrigger
+  - DominoNarrationTrigger
+  - WaterNarrationTrigger
+  - EdgeOfTheWorld
   layers:
   - Default
   - TransparentFX
@@ -25,7 +34,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - vlight
   - 
   - 
   - 

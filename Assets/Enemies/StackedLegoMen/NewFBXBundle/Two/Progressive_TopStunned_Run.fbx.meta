@@ -1,0 +1,829 @@
+fileFormatVersion: 2
+guid: b127f4ed9ee178a40ab11256d336f868
+timeCreated: 1480278582
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Amkle_L
+    100002: Ankle_R
+    100004: Calf_L
+    100006: Calf_R
+    100008: Chest
+    100010: Elbow_L
+    100012: Elbow_R
+    100014: Hip_L
+    100016: Hip_R
+    100018: ikHandle1
+    100020: ikHandle1 1
+    100022: ikHandle2
+    100024: ikHandle2 1
+    100026: ikHandle3
+    100028: ikHandle3 1
+    100030: ikHandle4
+    100032: ikHandle5
+    100034: ikHandle6
+    100036: IndexFinger_L
+    100038: IndexFingerTip_L
+    100040: joint1
+    100042: joint10
+    100044: joint10 1
+    100046: joint11
+    100048: joint11 1
+    100050: joint12
+    100052: joint12 1
+    100054: joint13
+    100056: joint14
+    100058: joint15
+    100060: joint16
+    100062: joint17
+    100064: joint18
+    100066: joint19
+    100068: joint2
+    100070: joint20
+    100072: joint21
+    100074: joint22
+    100076: joint23
+    100078: joint5
+    100080: joint6
+    100082: joint7
+    100084: joint8
+    100086: joint9
+    100088: locator1
+    100090: locator2
+    100092: MiddleFinger_L
+    100094: MiddleFingerTip_L
+    100096: nurbsCircle1
+    100098: nurbsCircle10
+    100100: nurbsCircle2
+    100102: nurbsCircle3
+    100104: nurbsCircle4
+    100106: nurbsCircle5
+    100108: nurbsCircle6
+    100110: nurbsCircle7
+    100112: nurbsCircle8
+    100114: nurbsCircle9
+    100116: PalmTip_L
+    100118: pCube2
+    100120: pCube4
+    100122: pCube5
+    100124: pCylinder5
+    100126: Pelvis
+    100128: //RootNode
+    100130: pSphere1
+    100132: RigWithBshapes1:Amkle_L
+    100134: RigWithBshapes1:Ankle_R
+    100136: RigWithBshapes1:Calf_L
+    100138: RigWithBshapes1:Calf_R
+    100140: RigWithBshapes1:Chest
+    100142: RigWithBshapes1:Elbow_L
+    100144: RigWithBshapes1:Elbow_R
+    100146: RigWithBshapes1:Hip_L
+    100148: RigWithBshapes1:Hip_R
+    100150: RigWithBshapes1:ikHandle1
+    100152: RigWithBshapes1:ikHandle1 1
+    100154: RigWithBshapes1:ikHandle2
+    100156: RigWithBshapes1:ikHandle2 1
+    100158: RigWithBshapes1:ikHandle3
+    100160: RigWithBshapes1:ikHandle3 1
+    100162: RigWithBshapes1:ikHandle4
+    100164: RigWithBshapes1:ikHandle5
+    100166: RigWithBshapes1:ikHandle6
+    100168: RigWithBshapes1:IndexFinger_L
+    100170: RigWithBshapes1:IndexFingerTip_L
+    100172: RigWithBshapes1:joint1
+    100174: RigWithBshapes1:joint10
+    100176: RigWithBshapes1:joint10 1
+    100178: RigWithBshapes1:joint11
+    100180: RigWithBshapes1:joint11 1
+    100182: RigWithBshapes1:joint12
+    100184: RigWithBshapes1:joint12 1
+    100186: RigWithBshapes1:joint13
+    100188: RigWithBshapes1:joint14
+    100190: RigWithBshapes1:joint15
+    100192: RigWithBshapes1:joint16
+    100194: RigWithBshapes1:joint17
+    100196: RigWithBshapes1:joint18
+    100198: RigWithBshapes1:joint19
+    100200: RigWithBshapes1:joint2
+    100202: RigWithBshapes1:joint20
+    100204: RigWithBshapes1:joint21
+    100206: RigWithBshapes1:joint22
+    100208: RigWithBshapes1:joint23
+    100210: RigWithBshapes1:joint5
+    100212: RigWithBshapes1:joint6
+    100214: RigWithBshapes1:joint7
+    100216: RigWithBshapes1:joint8
+    100218: RigWithBshapes1:joint9
+    100220: RigWithBshapes1:locator1
+    100222: RigWithBshapes1:locator2
+    100224: RigWithBshapes1:MiddleFinger_L
+    100226: RigWithBshapes1:MiddleFingerTip_L
+    100228: RigWithBshapes1:nurbsCircle1
+    100230: RigWithBshapes1:nurbsCircle10
+    100232: RigWithBshapes1:nurbsCircle2
+    100234: RigWithBshapes1:nurbsCircle3
+    100236: RigWithBshapes1:nurbsCircle4
+    100238: RigWithBshapes1:nurbsCircle5
+    100240: RigWithBshapes1:nurbsCircle6
+    100242: RigWithBshapes1:nurbsCircle7
+    100244: RigWithBshapes1:nurbsCircle8
+    100246: RigWithBshapes1:nurbsCircle9
+    100248: RigWithBshapes1:PalmTip_L
+    100250: RigWithBshapes1:pCube2
+    100252: RigWithBshapes1:pCube4
+    100254: RigWithBshapes1:pCube5
+    100256: RigWithBshapes1:pCylinder5
+    100258: RigWithBshapes1:Pelvis
+    100260: RigWithBshapes1:pSphere1
+    100262: RigWithBshapes1:Root
+    100264: RigWithBshapes1:Shoulder_L
+    100266: RigWithBshapes1:Shoulder_R
+    100268: RigWithBshapes1:stagger:pCube2
+    100270: RigWithBshapes1:stagger:pCube4
+    100272: RigWithBshapes1:stagger:pCylinder5
+    100274: RigWithBshapes1:stagger:transform6
+    100276: RigWithBshapes1:Thumb_L
+    100278: RigWithBshapes1:ThumbTip_L
+    100280: RigWithBshapes1:Top_Tip
+    100282: RigWithBshapes1:transform6
+    100284: RigWithBshapes1:transform7
+    100286: RigWithBshapes1:transform8
+    100288: RigWithBshapes1:Wrist_L
+    100290: RigWithBshapes1:Wrist_R
+    100292: RigWithBshapes:locator1
+    100294: RigWithBshapes:locator2
+    100296: RigWithBshapes:nurbsCircle4
+    100298: RigWithBshapes:nurbsCircle5
+    100300: RigWithBshapes:nurbsCircle6
+    100302: RigWithBshapes:pCube2
+    100304: RigWithBshapes:pCube4
+    100306: RigWithBshapes:pCylinder5
+    100308: RigWithBshapes:stagger:pCube2
+    100310: RigWithBshapes:stagger:pCube4
+    100312: RigWithBshapes:stagger:pCylinder5
+    100314: RigWithBshapes:stagger:transform6
+    100316: RigWithBshapes:transform6
+    100318: RigWithBshapes:transform7
+    100320: RigWithBshapes:transform8
+    100322: Root
+    100324: Shoulder_L
+    100326: Shoulder_R
+    100328: stagger:pCube2
+    100330: stagger:pCube4
+    100332: stagger:pCylinder5
+    100334: stagger:transform6
+    100336: Thumb_L
+    100338: ThumbTip_L
+    100340: Top_Tip
+    100342: transform6
+    100344: transform7
+    100346: transform8
+    100348: Wrist_L
+    100350: Wrist_R
+    400000: Amkle_L
+    400002: Ankle_R
+    400004: Calf_L
+    400006: Calf_R
+    400008: Chest
+    400010: Elbow_L
+    400012: Elbow_R
+    400014: Hip_L
+    400016: Hip_R
+    400018: ikHandle1
+    400020: ikHandle1 1
+    400022: ikHandle2
+    400024: ikHandle2 1
+    400026: ikHandle3
+    400028: ikHandle3 1
+    400030: ikHandle4
+    400032: ikHandle5
+    400034: ikHandle6
+    400036: IndexFinger_L
+    400038: IndexFingerTip_L
+    400040: joint1
+    400042: joint10
+    400044: joint10 1
+    400046: joint11
+    400048: joint11 1
+    400050: joint12
+    400052: joint12 1
+    400054: joint13
+    400056: joint14
+    400058: joint15
+    400060: joint16
+    400062: joint17
+    400064: joint18
+    400066: joint19
+    400068: joint2
+    400070: joint20
+    400072: joint21
+    400074: joint22
+    400076: joint23
+    400078: joint5
+    400080: joint6
+    400082: joint7
+    400084: joint8
+    400086: joint9
+    400088: locator1
+    400090: locator2
+    400092: MiddleFinger_L
+    400094: MiddleFingerTip_L
+    400096: nurbsCircle1
+    400098: nurbsCircle10
+    400100: nurbsCircle2
+    400102: nurbsCircle3
+    400104: nurbsCircle4
+    400106: nurbsCircle5
+    400108: nurbsCircle6
+    400110: nurbsCircle7
+    400112: nurbsCircle8
+    400114: nurbsCircle9
+    400116: PalmTip_L
+    400118: pCube2
+    400120: pCube4
+    400122: pCube5
+    400124: pCylinder5
+    400126: Pelvis
+    400128: //RootNode
+    400130: pSphere1
+    400132: RigWithBshapes1:Amkle_L
+    400134: RigWithBshapes1:Ankle_R
+    400136: RigWithBshapes1:Calf_L
+    400138: RigWithBshapes1:Calf_R
+    400140: RigWithBshapes1:Chest
+    400142: RigWithBshapes1:Elbow_L
+    400144: RigWithBshapes1:Elbow_R
+    400146: RigWithBshapes1:Hip_L
+    400148: RigWithBshapes1:Hip_R
+    400150: RigWithBshapes1:ikHandle1
+    400152: RigWithBshapes1:ikHandle1 1
+    400154: RigWithBshapes1:ikHandle2
+    400156: RigWithBshapes1:ikHandle2 1
+    400158: RigWithBshapes1:ikHandle3
+    400160: RigWithBshapes1:ikHandle3 1
+    400162: RigWithBshapes1:ikHandle4
+    400164: RigWithBshapes1:ikHandle5
+    400166: RigWithBshapes1:ikHandle6
+    400168: RigWithBshapes1:IndexFinger_L
+    400170: RigWithBshapes1:IndexFingerTip_L
+    400172: RigWithBshapes1:joint1
+    400174: RigWithBshapes1:joint10
+    400176: RigWithBshapes1:joint10 1
+    400178: RigWithBshapes1:joint11
+    400180: RigWithBshapes1:joint11 1
+    400182: RigWithBshapes1:joint12
+    400184: RigWithBshapes1:joint12 1
+    400186: RigWithBshapes1:joint13
+    400188: RigWithBshapes1:joint14
+    400190: RigWithBshapes1:joint15
+    400192: RigWithBshapes1:joint16
+    400194: RigWithBshapes1:joint17
+    400196: RigWithBshapes1:joint18
+    400198: RigWithBshapes1:joint19
+    400200: RigWithBshapes1:joint2
+    400202: RigWithBshapes1:joint20
+    400204: RigWithBshapes1:joint21
+    400206: RigWithBshapes1:joint22
+    400208: RigWithBshapes1:joint23
+    400210: RigWithBshapes1:joint5
+    400212: RigWithBshapes1:joint6
+    400214: RigWithBshapes1:joint7
+    400216: RigWithBshapes1:joint8
+    400218: RigWithBshapes1:joint9
+    400220: RigWithBshapes1:locator1
+    400222: RigWithBshapes1:locator2
+    400224: RigWithBshapes1:MiddleFinger_L
+    400226: RigWithBshapes1:MiddleFingerTip_L
+    400228: RigWithBshapes1:nurbsCircle1
+    400230: RigWithBshapes1:nurbsCircle10
+    400232: RigWithBshapes1:nurbsCircle2
+    400234: RigWithBshapes1:nurbsCircle3
+    400236: RigWithBshapes1:nurbsCircle4
+    400238: RigWithBshapes1:nurbsCircle5
+    400240: RigWithBshapes1:nurbsCircle6
+    400242: RigWithBshapes1:nurbsCircle7
+    400244: RigWithBshapes1:nurbsCircle8
+    400246: RigWithBshapes1:nurbsCircle9
+    400248: RigWithBshapes1:PalmTip_L
+    400250: RigWithBshapes1:pCube2
+    400252: RigWithBshapes1:pCube4
+    400254: RigWithBshapes1:pCube5
+    400256: RigWithBshapes1:pCylinder5
+    400258: RigWithBshapes1:Pelvis
+    400260: RigWithBshapes1:pSphere1
+    400262: RigWithBshapes1:Root
+    400264: RigWithBshapes1:Shoulder_L
+    400266: RigWithBshapes1:Shoulder_R
+    400268: RigWithBshapes1:stagger:pCube2
+    400270: RigWithBshapes1:stagger:pCube4
+    400272: RigWithBshapes1:stagger:pCylinder5
+    400274: RigWithBshapes1:stagger:transform6
+    400276: RigWithBshapes1:Thumb_L
+    400278: RigWithBshapes1:ThumbTip_L
+    400280: RigWithBshapes1:Top_Tip
+    400282: RigWithBshapes1:transform6
+    400284: RigWithBshapes1:transform7
+    400286: RigWithBshapes1:transform8
+    400288: RigWithBshapes1:Wrist_L
+    400290: RigWithBshapes1:Wrist_R
+    400292: RigWithBshapes:locator1
+    400294: RigWithBshapes:locator2
+    400296: RigWithBshapes:nurbsCircle4
+    400298: RigWithBshapes:nurbsCircle5
+    400300: RigWithBshapes:nurbsCircle6
+    400302: RigWithBshapes:pCube2
+    400304: RigWithBshapes:pCube4
+    400306: RigWithBshapes:pCylinder5
+    400308: RigWithBshapes:stagger:pCube2
+    400310: RigWithBshapes:stagger:pCube4
+    400312: RigWithBshapes:stagger:pCylinder5
+    400314: RigWithBshapes:stagger:transform6
+    400316: RigWithBshapes:transform6
+    400318: RigWithBshapes:transform7
+    400320: RigWithBshapes:transform8
+    400322: Root
+    400324: Shoulder_L
+    400326: Shoulder_R
+    400328: stagger:pCube2
+    400330: stagger:pCube4
+    400332: stagger:pCylinder5
+    400334: stagger:transform6
+    400336: Thumb_L
+    400338: ThumbTip_L
+    400340: Top_Tip
+    400342: transform6
+    400344: transform7
+    400346: transform8
+    400348: Wrist_L
+    400350: Wrist_R
+    2300000: pSphere1
+    2300002: RigWithBshapes1:pSphere1
+    3300000: pSphere1
+    3300002: RigWithBshapes1:pSphere1
+    4300000: pSphere1
+    4300002: pCube5
+    4300004: RigWithBshapes1:pSphere1
+    4300006: RigWithBshapes1:pCube5
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pCube5
+    13700002: RigWithBshapes1:pCube5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nurbsCircle6
+        weight: 1
+      - path: nurbsCircle6/locator1
+        weight: 1
+      - path: nurbsCircle6/locator2
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle3
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle3/nurbsCircle8
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle3/nurbsCircle8/nurbsCircle7
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle3/nurbsCircle8/nurbsCircle7/nurbsCircle1
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle3/nurbsCircle10
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle3/nurbsCircle10/nurbsCircle9
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle3/nurbsCircle10/nurbsCircle9/nurbsCircle2
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle4
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle4/transform7
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle4/transform7/joint9
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle4/transform7/joint9/joint10
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle4/transform7/joint9/joint10/ikHandle3
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle4/transform7/joint9/joint10/joint11
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle4/transform7/joint9/joint10/joint11/ikHandle2
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle4/transform7/joint9/joint10/joint11/joint12
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle4/transform7/joint9/joint10/joint11/joint12/ikHandle1
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13/joint10 1
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13/joint10 1/ikHandle3 1
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13/joint10 1/ikHandle6
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13/joint10 1/joint11 1
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13/joint10 1/joint11 1/ikHandle2
+          1
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13/joint10 1/joint11 1/ikHandle5
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13/joint10 1/joint11 1/joint12
+          1
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13/joint10 1/joint11 1/joint12
+          1/ikHandle1 1
+        weight: 1
+      - path: nurbsCircle6/nurbsCircle5/transform8/joint13/joint10 1/joint11 1/joint12
+          1/ikHandle4
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: pCube4
+        weight: 1
+      - path: pCube4/transform6
+        weight: 1
+      - path: pCube5
+        weight: 1
+      - path: pCylinder5
+        weight: 1
+      - path: Pelvis
+        weight: 1
+      - path: Pelvis/Hip_L
+        weight: 1
+      - path: Pelvis/Hip_L/Calf_L
+        weight: 1
+      - path: Pelvis/Hip_L/Calf_L/Amkle_L
+        weight: 1
+      - path: Pelvis/Hip_L/Calf_L/Amkle_L/joint5
+        weight: 1
+      - path: Pelvis/Hip_L/Calf_L/Amkle_L/joint5/joint6
+        weight: 1
+      - path: Pelvis/Hip_R
+        weight: 1
+      - path: Pelvis/Hip_R/Calf_R
+        weight: 1
+      - path: Pelvis/Hip_R/Calf_R/Ankle_R
+        weight: 1
+      - path: Pelvis/Hip_R/Calf_R/Ankle_R/joint7
+        weight: 1
+      - path: Pelvis/Hip_R/Calf_R/Ankle_R/joint7/joint8
+        weight: 1
+      - path: Pelvis/joint14
+        weight: 1
+      - path: Pelvis/Root
+        weight: 1
+      - path: Pelvis/Root/Chest
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L/PalmTip_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L/PalmTip_L/IndexFinger_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L/PalmTip_L/IndexFinger_L/IndexFingerTip_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L/PalmTip_L/IndexFinger_L/IndexFingerTip_L/joint1
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L/PalmTip_L/MiddleFinger_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L/PalmTip_L/MiddleFinger_L/MiddleFingerTip_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L/PalmTip_L/MiddleFinger_L/MiddleFingerTip_L/joint2
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L/Thumb_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_L/Elbow_L/Wrist_L/Thumb_L/ThumbTip_L
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R/joint15
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R/joint15/joint16
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R/joint15/joint16/joint17
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R/joint15/joint16/joint17/joint18
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R/joint15/joint19
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R/joint15/joint19/joint20
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R/joint15/joint19/joint20/joint21
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R/joint15/joint22
+        weight: 1
+      - path: Pelvis/Root/Chest/Shoulder_R/Elbow_R/Wrist_R/joint15/joint22/joint23
+        weight: 1
+      - path: Pelvis/Root/Chest/Top_Tip
+        weight: 1
+      - path: pSphere1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:locator1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:locator2
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle3
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle3/RigWithBshapes1:nurbsCircle8
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle3/RigWithBshapes1:nurbsCircle8/RigWithBshapes1:nurbsCircle7
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle3/RigWithBshapes1:nurbsCircle8/RigWithBshapes1:nurbsCircle7/RigWithBshapes1:nurbsCircle1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle3/RigWithBshapes1:nurbsCircle10
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle3/RigWithBshapes1:nurbsCircle10/RigWithBshapes1:nurbsCircle9
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle3/RigWithBshapes1:nurbsCircle10/RigWithBshapes1:nurbsCircle9/RigWithBshapes1:nurbsCircle2
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle4
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle4/RigWithBshapes1:transform7
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle4/RigWithBshapes1:transform7/RigWithBshapes1:joint9
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle4/RigWithBshapes1:transform7/RigWithBshapes1:joint9/RigWithBshapes1:joint10
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle4/RigWithBshapes1:transform7/RigWithBshapes1:joint9/RigWithBshapes1:joint10/RigWithBshapes1:ikHandle3
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle4/RigWithBshapes1:transform7/RigWithBshapes1:joint9/RigWithBshapes1:joint10/RigWithBshapes1:joint11
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle4/RigWithBshapes1:transform7/RigWithBshapes1:joint9/RigWithBshapes1:joint10/RigWithBshapes1:joint11/RigWithBshapes1:ikHandle2
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle4/RigWithBshapes1:transform7/RigWithBshapes1:joint9/RigWithBshapes1:joint10/RigWithBshapes1:joint11/RigWithBshapes1:joint12
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle4/RigWithBshapes1:transform7/RigWithBshapes1:joint9/RigWithBshapes1:joint10/RigWithBshapes1:joint11/RigWithBshapes1:joint12/RigWithBshapes1:ikHandle1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13/RigWithBshapes1:joint10
+          1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13/RigWithBshapes1:joint10
+          1/RigWithBshapes1:ikHandle3 1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13/RigWithBshapes1:joint10
+          1/RigWithBshapes1:ikHandle6
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13/RigWithBshapes1:joint10
+          1/RigWithBshapes1:joint11 1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13/RigWithBshapes1:joint10
+          1/RigWithBshapes1:joint11 1/RigWithBshapes1:ikHandle2 1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13/RigWithBshapes1:joint10
+          1/RigWithBshapes1:joint11 1/RigWithBshapes1:ikHandle5
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13/RigWithBshapes1:joint10
+          1/RigWithBshapes1:joint11 1/RigWithBshapes1:joint12 1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13/RigWithBshapes1:joint10
+          1/RigWithBshapes1:joint11 1/RigWithBshapes1:joint12 1/RigWithBshapes1:ikHandle1
+          1
+        weight: 1
+      - path: RigWithBshapes1:nurbsCircle6/RigWithBshapes1:nurbsCircle5/RigWithBshapes1:transform8/RigWithBshapes1:joint13/RigWithBshapes1:joint10
+          1/RigWithBshapes1:joint11 1/RigWithBshapes1:joint12 1/RigWithBshapes1:ikHandle4
+        weight: 1
+      - path: RigWithBshapes1:pCube2
+        weight: 1
+      - path: RigWithBshapes1:pCube4
+        weight: 1
+      - path: RigWithBshapes1:pCube4/RigWithBshapes1:transform6
+        weight: 1
+      - path: RigWithBshapes1:pCube5
+        weight: 1
+      - path: RigWithBshapes1:pCylinder5
+        weight: 1
+      - path: RigWithBshapes1:Pelvis
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_L/RigWithBshapes1:Calf_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_L/RigWithBshapes1:Calf_L/RigWithBshapes1:Amkle_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_L/RigWithBshapes1:Calf_L/RigWithBshapes1:Amkle_L/RigWithBshapes1:joint5
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_L/RigWithBshapes1:Calf_L/RigWithBshapes1:Amkle_L/RigWithBshapes1:joint5/RigWithBshapes1:joint6
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_R
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_R/RigWithBshapes1:Calf_R
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_R/RigWithBshapes1:Calf_R/RigWithBshapes1:Ankle_R
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_R/RigWithBshapes1:Calf_R/RigWithBshapes1:Ankle_R/RigWithBshapes1:joint7
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Hip_R/RigWithBshapes1:Calf_R/RigWithBshapes1:Ankle_R/RigWithBshapes1:joint7/RigWithBshapes1:joint8
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:joint14
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L/RigWithBshapes1:PalmTip_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L/RigWithBshapes1:PalmTip_L/RigWithBshapes1:IndexFinger_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L/RigWithBshapes1:PalmTip_L/RigWithBshapes1:IndexFinger_L/RigWithBshapes1:IndexFingerTip_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L/RigWithBshapes1:PalmTip_L/RigWithBshapes1:IndexFinger_L/RigWithBshapes1:IndexFingerTip_L/RigWithBshapes1:joint1
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L/RigWithBshapes1:PalmTip_L/RigWithBshapes1:MiddleFinger_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L/RigWithBshapes1:PalmTip_L/RigWithBshapes1:MiddleFinger_L/RigWithBshapes1:MiddleFingerTip_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L/RigWithBshapes1:PalmTip_L/RigWithBshapes1:MiddleFinger_L/RigWithBshapes1:MiddleFingerTip_L/RigWithBshapes1:joint2
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L/RigWithBshapes1:Thumb_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_L/RigWithBshapes1:Elbow_L/RigWithBshapes1:Wrist_L/RigWithBshapes1:Thumb_L/RigWithBshapes1:ThumbTip_L
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R/RigWithBshapes1:joint15
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R/RigWithBshapes1:joint15/RigWithBshapes1:joint16
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R/RigWithBshapes1:joint15/RigWithBshapes1:joint16/RigWithBshapes1:joint17
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R/RigWithBshapes1:joint15/RigWithBshapes1:joint16/RigWithBshapes1:joint17/RigWithBshapes1:joint18
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R/RigWithBshapes1:joint15/RigWithBshapes1:joint19
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R/RigWithBshapes1:joint15/RigWithBshapes1:joint19/RigWithBshapes1:joint20
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R/RigWithBshapes1:joint15/RigWithBshapes1:joint19/RigWithBshapes1:joint20/RigWithBshapes1:joint21
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R/RigWithBshapes1:joint15/RigWithBshapes1:joint22
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Shoulder_R/RigWithBshapes1:Elbow_R/RigWithBshapes1:Wrist_R/RigWithBshapes1:joint15/RigWithBshapes1:joint22/RigWithBshapes1:joint23
+        weight: 1
+      - path: RigWithBshapes1:Pelvis/RigWithBshapes1:Root/RigWithBshapes1:Chest/RigWithBshapes1:Top_Tip
+        weight: 1
+      - path: RigWithBshapes1:pSphere1
+        weight: 1
+      - path: RigWithBshapes1:stagger:pCube2
+        weight: 1
+      - path: RigWithBshapes1:stagger:pCube4
+        weight: 1
+      - path: RigWithBshapes1:stagger:pCube4/RigWithBshapes1:stagger:transform6
+        weight: 1
+      - path: RigWithBshapes1:stagger:pCylinder5
+        weight: 1
+      - path: RigWithBshapes:nurbsCircle6
+        weight: 1
+      - path: RigWithBshapes:nurbsCircle6/RigWithBshapes:locator1
+        weight: 1
+      - path: RigWithBshapes:nurbsCircle6/RigWithBshapes:locator2
+        weight: 1
+      - path: RigWithBshapes:nurbsCircle6/RigWithBshapes:nurbsCircle4
+        weight: 1
+      - path: RigWithBshapes:nurbsCircle6/RigWithBshapes:nurbsCircle4/RigWithBshapes:transform7
+        weight: 1
+      - path: RigWithBshapes:nurbsCircle6/RigWithBshapes:nurbsCircle5
+        weight: 1
+      - path: RigWithBshapes:nurbsCircle6/RigWithBshapes:nurbsCircle5/RigWithBshapes:transform8
+        weight: 1
+      - path: RigWithBshapes:pCube2
+        weight: 1
+      - path: RigWithBshapes:pCube4
+        weight: 1
+      - path: RigWithBshapes:pCube4/RigWithBshapes:transform6
+        weight: 1
+      - path: RigWithBshapes:pCylinder5
+        weight: 1
+      - path: RigWithBshapes:stagger:pCube2
+        weight: 1
+      - path: RigWithBshapes:stagger:pCube4
+        weight: 1
+      - path: RigWithBshapes:stagger:pCube4/RigWithBshapes:stagger:transform6
+        weight: 1
+      - path: RigWithBshapes:stagger:pCylinder5
+        weight: 1
+      - path: stagger:pCube2
+        weight: 1
+      - path: stagger:pCube4
+        weight: 1
+      - path: stagger:pCube4/stagger:transform6
+        weight: 1
+      - path: stagger:pCylinder5
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

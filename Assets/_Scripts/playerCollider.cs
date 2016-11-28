@@ -3,7 +3,9 @@ using System.Collections;
 
 public class playerCollider : MonoBehaviour
 {
+
 	public GameObject player;
+
     public float pushPower = 2.0F; // Push force of player
     public GameObject[] carpetHair;
     public float distTriggerCarpetHair = 2.0f; // Distance to start carpet hair animation
@@ -19,15 +21,17 @@ public class playerCollider : MonoBehaviour
 	public float overlayCooldownTime = 500.0f;
 	private float max_health_overlay_intensity = 3.0f;
 	public float health_overlay_increment = 0.5f;
-
-	public ParticleSystem greenBeacon; // Turn off spiral after domino animation (else will be at angle)
-
+	private bool water_narration_trigger;
+	private bool edge_narration_trigger;
 	// Enemy push back params
 	private float pushSpeed = 0.7f, pushTime = 0.5f;
 
     // Use this for initialization
     void Start()
     {
+		if(player == null) player = GameObject.Find ("Player");
+		water_narration_trigger = false;
+		edge_narration_trigger = false;
     }
 
     // Update is called once per frame
@@ -76,26 +80,57 @@ public class playerCollider : MonoBehaviour
     {
         if (hit.gameObject.CompareTag("Top"))
         {
-            hit.transform.SendMessage("StopSpinning", SendMessageOptions.DontRequireReceiver);
+			hit.gameObject.GetComponentInParent<InteractionManager>().SendMessage("InteractWithObject",0.0f, SendMessageOptions.DontRequireReceiver);
         }
         if (hit.gameObject.CompareTag("HouseOfCards"))
         {
             hit.gameObject.GetComponent<BoxCollider>().enabled = false;
-            hit.transform.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
+			hit.gameObject.GetComponentInParent<InteractionManager>().SendMessage("InteractWithObject",0.0f, SendMessageOptions.DontRequireReceiver);
         }
 		if (hit.gameObject.CompareTag ("DominoTrigger")) {
-			hit.transform.parent.GetComponent<Animator> ().SetTrigger ("FallTrigger");
+			hit.gameObject.GetComponentInParent<InteractionManager>().SendMessage("InteractWithObject",0.0f, SendMessageOptions.DontRequireReceiver);
+			//hit.transform.parent.SendMessage("FallDown", SendMessageOptions.DontRequireReceiver);
 
-			// Turn off beacon for green
-			var temp = greenBeacon.emission;
-			temp.enabled = false;
+
 		}
-		if (hit.gameObject.CompareTag ("FreggoCollider") || hit.gameObject.CompareTag ("FreggoCollider2") || hit.gameObject.CompareTag ("FreggoCollider3")) {
+		if (hit.gameObject.CompareTag ("FreggoCollider")/* || hit.gameObject.CompareTag ("FreggoCollider2") || hit.gameObject.CompareTag ("FreggoCollider3")*/) {
 			if(hit.transform.parent.parent.gameObject.GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName("Run"))
 				enemyHit (hit.transform.position);
 		}
+		if (hit.gameObject.CompareTag ("JengaNarrationTrigger")) {
+			hit.collider.enabled = false;
+			MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+			musicManager.SendMessage ("playNarrationOfTrigger", ObjectTriggerType.CLIMBING_START,SendMessageOptions.DontRequireReceiver);
+		}
+		if (hit.gameObject.CompareTag ("DominoNarrationTrigger")) {
+			hit.collider.enabled = false;
+			MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+			musicManager.SendMessage ("playNarrationOfTrigger", ObjectTriggerType.DOMINO,SendMessageOptions.DontRequireReceiver);
+		}
 
-        Rigidbody body = hit.collider.attachedRigidbody;
+
+		if (hit.gameObject.CompareTag ("WaterNarrationTrigger")) {
+			if(!water_narration_trigger) { 
+				MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+				musicManager.SendMessage ("playNarrationOfTrigger", ObjectTriggerType.WATER,SendMessageOptions.DontRequireReceiver);
+				water_narration_trigger = true;
+			}
+		}
+
+		if (hit.gameObject.CompareTag ("EdgeOfTheWorld")) {
+			if(!edge_narration_trigger) { 
+				MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+				musicManager.SendMessage ("playNarrationOfTrigger", ObjectTriggerType.CARPET_EDGE,SendMessageOptions.DontRequireReceiver);
+				edge_narration_trigger = true;
+			}
+		}
+
+
+        
+		// Push ability
+
+		/*
+		Rigidbody body = hit.collider.attachedRigidbody;
         if (body == null || body.isKinematic)
             return;
 
@@ -103,7 +138,7 @@ public class playerCollider : MonoBehaviour
             return;
 
         Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-        body.velocity = pushDir * pushPower;
+        body.velocity = pushDir * pushPower;*/
     }
 
 

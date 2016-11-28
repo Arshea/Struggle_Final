@@ -1,0 +1,420 @@
+fileFormatVersion: 2
+guid: 7c90230d5cbb54b4792631cd023d603d
+timeCreated: 1480145305
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: group1
+    100002: group10
+    100004: group11
+    100006: group12
+    100008: group13
+    100010: group14
+    100012: group15
+    100014: group16
+    100016: group17
+    100018: group18
+    100020: group19
+    100022: group2
+    100024: group20
+    100026: group3
+    100028: group4
+    100030: group5
+    100032: group6
+    100034: group7
+    100036: group8
+    100038: group9
+    100040: //RootNode
+    100042: polySurface1
+    100044: polySurface1 1
+    100046: polySurface1 10
+    100048: polySurface1 11
+    100050: polySurface1 12
+    100052: polySurface1 13
+    100054: polySurface1 14
+    100056: polySurface1 15
+    100058: polySurface1 16
+    100060: polySurface1 17
+    100062: polySurface1 18
+    100064: polySurface1 19
+    100066: polySurface1 2
+    100068: polySurface1 3
+    100070: polySurface1 4
+    100072: polySurface1 5
+    100074: polySurface1 6
+    100076: polySurface1 7
+    100078: polySurface1 8
+    100080: polySurface1 9
+    100082: polySurface2
+    100084: polySurface3
+    100086: polySurface3 1
+    100088: polySurface3 10
+    100090: polySurface3 11
+    100092: polySurface3 12
+    100094: polySurface3 13
+    100096: polySurface3 14
+    100098: polySurface3 15
+    100100: polySurface3 16
+    100102: polySurface3 17
+    100104: polySurface3 18
+    100106: polySurface3 19
+    100108: polySurface3 2
+    100110: polySurface3 3
+    100112: polySurface3 4
+    100114: polySurface3 5
+    100116: polySurface3 6
+    100118: polySurface3 7
+    100120: polySurface3 8
+    100122: polySurface3 9
+    100124: polySurface4
+    100126: polySurface4 1
+    100128: polySurface4 10
+    100130: polySurface4 11
+    100132: polySurface4 12
+    100134: polySurface4 13
+    100136: polySurface4 14
+    100138: polySurface4 15
+    100140: polySurface4 16
+    100142: polySurface4 17
+    100144: polySurface4 18
+    100146: polySurface4 19
+    100148: polySurface4 2
+    100150: polySurface4 3
+    100152: polySurface4 4
+    100154: polySurface4 5
+    100156: polySurface4 6
+    100158: polySurface4 7
+    100160: polySurface4 8
+    100162: polySurface4 9
+    100164: transform1
+    100166: transform2
+    400000: group1
+    400002: group10
+    400004: group11
+    400006: group12
+    400008: group13
+    400010: group14
+    400012: group15
+    400014: group16
+    400016: group17
+    400018: group18
+    400020: group19
+    400022: group2
+    400024: group20
+    400026: group3
+    400028: group4
+    400030: group5
+    400032: group6
+    400034: group7
+    400036: group8
+    400038: group9
+    400040: //RootNode
+    400042: polySurface1
+    400044: polySurface1 1
+    400046: polySurface1 10
+    400048: polySurface1 11
+    400050: polySurface1 12
+    400052: polySurface1 13
+    400054: polySurface1 14
+    400056: polySurface1 15
+    400058: polySurface1 16
+    400060: polySurface1 17
+    400062: polySurface1 18
+    400064: polySurface1 19
+    400066: polySurface1 2
+    400068: polySurface1 3
+    400070: polySurface1 4
+    400072: polySurface1 5
+    400074: polySurface1 6
+    400076: polySurface1 7
+    400078: polySurface1 8
+    400080: polySurface1 9
+    400082: polySurface2
+    400084: polySurface3
+    400086: polySurface3 1
+    400088: polySurface3 10
+    400090: polySurface3 11
+    400092: polySurface3 12
+    400094: polySurface3 13
+    400096: polySurface3 14
+    400098: polySurface3 15
+    400100: polySurface3 16
+    400102: polySurface3 17
+    400104: polySurface3 18
+    400106: polySurface3 19
+    400108: polySurface3 2
+    400110: polySurface3 3
+    400112: polySurface3 4
+    400114: polySurface3 5
+    400116: polySurface3 6
+    400118: polySurface3 7
+    400120: polySurface3 8
+    400122: polySurface3 9
+    400124: polySurface4
+    400126: polySurface4 1
+    400128: polySurface4 10
+    400130: polySurface4 11
+    400132: polySurface4 12
+    400134: polySurface4 13
+    400136: polySurface4 14
+    400138: polySurface4 15
+    400140: polySurface4 16
+    400142: polySurface4 17
+    400144: polySurface4 18
+    400146: polySurface4 19
+    400148: polySurface4 2
+    400150: polySurface4 3
+    400152: polySurface4 4
+    400154: polySurface4 5
+    400156: polySurface4 6
+    400158: polySurface4 7
+    400160: polySurface4 8
+    400162: polySurface4 9
+    400164: transform1
+    400166: transform2
+    2300000: polySurface1
+    2300002: polySurface1 1
+    2300004: polySurface1 10
+    2300006: polySurface1 11
+    2300008: polySurface1 12
+    2300010: polySurface1 13
+    2300012: polySurface1 14
+    2300014: polySurface1 15
+    2300016: polySurface1 16
+    2300018: polySurface1 17
+    2300020: polySurface1 18
+    2300022: polySurface1 19
+    2300024: polySurface1 2
+    2300026: polySurface1 3
+    2300028: polySurface1 4
+    2300030: polySurface1 5
+    2300032: polySurface1 6
+    2300034: polySurface1 7
+    2300036: polySurface1 8
+    2300038: polySurface1 9
+    2300040: polySurface3
+    2300042: polySurface3 1
+    2300044: polySurface3 10
+    2300046: polySurface3 11
+    2300048: polySurface3 12
+    2300050: polySurface3 13
+    2300052: polySurface3 14
+    2300054: polySurface3 15
+    2300056: polySurface3 16
+    2300058: polySurface3 17
+    2300060: polySurface3 18
+    2300062: polySurface3 19
+    2300064: polySurface3 2
+    2300066: polySurface3 3
+    2300068: polySurface3 4
+    2300070: polySurface3 5
+    2300072: polySurface3 6
+    2300074: polySurface3 7
+    2300076: polySurface3 8
+    2300078: polySurface3 9
+    2300080: polySurface4
+    2300082: polySurface4 1
+    2300084: polySurface4 10
+    2300086: polySurface4 11
+    2300088: polySurface4 12
+    2300090: polySurface4 13
+    2300092: polySurface4 14
+    2300094: polySurface4 15
+    2300096: polySurface4 16
+    2300098: polySurface4 17
+    2300100: polySurface4 18
+    2300102: polySurface4 19
+    2300104: polySurface4 2
+    2300106: polySurface4 3
+    2300108: polySurface4 4
+    2300110: polySurface4 5
+    2300112: polySurface4 6
+    2300114: polySurface4 7
+    2300116: polySurface4 8
+    2300118: polySurface4 9
+    3300000: polySurface1
+    3300002: polySurface1 1
+    3300004: polySurface1 10
+    3300006: polySurface1 11
+    3300008: polySurface1 12
+    3300010: polySurface1 13
+    3300012: polySurface1 14
+    3300014: polySurface1 15
+    3300016: polySurface1 16
+    3300018: polySurface1 17
+    3300020: polySurface1 18
+    3300022: polySurface1 19
+    3300024: polySurface1 2
+    3300026: polySurface1 3
+    3300028: polySurface1 4
+    3300030: polySurface1 5
+    3300032: polySurface1 6
+    3300034: polySurface1 7
+    3300036: polySurface1 8
+    3300038: polySurface1 9
+    3300040: polySurface3
+    3300042: polySurface3 1
+    3300044: polySurface3 10
+    3300046: polySurface3 11
+    3300048: polySurface3 12
+    3300050: polySurface3 13
+    3300052: polySurface3 14
+    3300054: polySurface3 15
+    3300056: polySurface3 16
+    3300058: polySurface3 17
+    3300060: polySurface3 18
+    3300062: polySurface3 19
+    3300064: polySurface3 2
+    3300066: polySurface3 3
+    3300068: polySurface3 4
+    3300070: polySurface3 5
+    3300072: polySurface3 6
+    3300074: polySurface3 7
+    3300076: polySurface3 8
+    3300078: polySurface3 9
+    3300080: polySurface4
+    3300082: polySurface4 1
+    3300084: polySurface4 10
+    3300086: polySurface4 11
+    3300088: polySurface4 12
+    3300090: polySurface4 13
+    3300092: polySurface4 14
+    3300094: polySurface4 15
+    3300096: polySurface4 16
+    3300098: polySurface4 17
+    3300100: polySurface4 18
+    3300102: polySurface4 19
+    3300104: polySurface4 2
+    3300106: polySurface4 3
+    3300108: polySurface4 4
+    3300110: polySurface4 5
+    3300112: polySurface4 6
+    3300114: polySurface4 7
+    3300116: polySurface4 8
+    3300118: polySurface4 9
+    4300000: polySurface1
+    4300002: polySurface3
+    4300004: polySurface4
+    4300006: polySurface1
+    4300008: polySurface3
+    4300010: polySurface4
+    4300012: polySurface1
+    4300014: polySurface3
+    4300016: polySurface4
+    4300018: polySurface1
+    4300020: polySurface3
+    4300022: polySurface4
+    4300024: polySurface1
+    4300026: polySurface3
+    4300028: polySurface4
+    4300030: polySurface1
+    4300032: polySurface3
+    4300034: polySurface4
+    4300036: polySurface1
+    4300038: polySurface3
+    4300040: polySurface4
+    4300042: polySurface1
+    4300044: polySurface3
+    4300046: polySurface4
+    4300048: polySurface1
+    4300050: polySurface3
+    4300052: polySurface4
+    4300054: polySurface1
+    4300056: polySurface3
+    4300058: polySurface4
+    4300060: polySurface1
+    4300062: polySurface3
+    4300064: polySurface4
+    4300066: polySurface1
+    4300068: polySurface3
+    4300070: polySurface4
+    4300072: polySurface1
+    4300074: polySurface3
+    4300076: polySurface4
+    4300078: polySurface1
+    4300080: polySurface3
+    4300082: polySurface4
+    4300084: polySurface1
+    4300086: polySurface3
+    4300088: polySurface4
+    4300090: polySurface1
+    4300092: polySurface3
+    4300094: polySurface4
+    4300096: polySurface1
+    4300098: polySurface3
+    4300100: polySurface4
+    4300102: polySurface1
+    4300104: polySurface3
+    4300106: polySurface4
+    4300108: polySurface1
+    4300110: polySurface3
+    4300112: polySurface4
+    4300114: polySurface1
+    4300116: polySurface3
+    4300118: polySurface4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
