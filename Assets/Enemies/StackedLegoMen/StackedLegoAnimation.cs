@@ -26,7 +26,9 @@ public class StackedLegoAnimation : MonoBehaviour {
 	/***Triggers for narration. Do not remove***/
 	public static bool narration_trigger = false;
 	private bool has_already_triggered = false;
-	private bool has_already_triggered_stun = false;
+	private bool has_already_triggered_stun_2 = false;
+	private bool has_already_triggered_stun_1 = false;
+	private bool has_already_triggered_stun_0 = false;
 	public static Vector3 current_enemy_position;
 	//public static string enemy_name;
 	/*******************************************/
@@ -42,12 +44,17 @@ public class StackedLegoAnimation : MonoBehaviour {
 		RUN_2,
 		RETURN_2,
 		IDLE_2,
-		STUN_1
+		STUN_1,
+		RUN_1,
+		IDLE_1,
+		RETURN_1,
+		STUN_0
+
 	}
 
 	private enum transitions : int
 	{
-		IDLE_3_RUN_3 = states.STUN_1+1,
+		IDLE_3_RUN_3 = states.STUN_0+1,
 		RUN_3_STUN_2,
 		RETURN_3_IDLE_3,
 		RETURN_3_RUN_3,
@@ -68,7 +75,17 @@ public class StackedLegoAnimation : MonoBehaviour {
 		RUN_2_RETURN_2,
 		IDLE_2_STUN_1,
 		RETURN_2_STUN_1,
-		STUN_2_STUN_1
+		STUN_2_STUN_1,
+
+		STUN_1_RUN_1,
+		IDLE_1_RUN_1,
+		RUN_1_STUN_0,
+		RETURN_1_IDLE_1,
+		RETURN_1_RUN_1,
+		RUN_1_RETURN_1,
+		IDLE_1_STUN_0,
+		RETURN_1_STUN_0,
+		STUN_1_STUN_0
 
 	}
 	void Start () {
@@ -263,8 +280,8 @@ public class StackedLegoAnimation : MonoBehaviour {
 		case (int)states.STUN_2:
 			playerCollider.hit_by_enemy = false;
 			/*For narration, do not remove*/
-			if (!has_already_triggered_stun) {
-				has_already_triggered_stun = true;
+			if (!has_already_triggered_stun_2) {
+				has_already_triggered_stun_2 = true;
 				//StartCoroutine ("deathTheFreggo");
 				current_state = (int)transitions.STUN_2_RUN_2;
 				audio_source.clip = stunned_sound [Random.Range (0, (stunned_sound.Length - 1))];
@@ -420,8 +437,165 @@ public class StackedLegoAnimation : MonoBehaviour {
 		case (int)states.STUN_1:
 			playerCollider.hit_by_enemy = false;
 			/*For narration, do not remove*/
-			if (!has_already_triggered_stun) {
-				has_already_triggered_stun = true;
+			if (!has_already_triggered_stun_1) {
+				has_already_triggered_stun_1 = true;
+				//StartCoroutine ("deathTheFreggo");
+				current_state = (int)transitions.STUN_1_RUN_1;
+				audio_source.clip = stunned_sound [Random.Range (0, (stunned_sound.Length - 1))];
+				audio_source.Play();
+			} else {
+
+			}
+			if (Input.GetButtonDown ("Interact")) {
+				//Debug.Log ("Ammunition: " + LanternManager.ammunition);
+				if (LanternManager.ammunition > 0) {
+					if (Vector3.Distance (player.transform.position, current_position) < LanternManager.lanternRange) {
+						if (enemy_health == 0)
+							current_state = (int)transitions.STUN_1_STUN_0;
+						//else
+						//current_state = (int)transitions.RUNSTAGGER;
+
+					}
+				}
+			}
+			/*****************************/
+			// Debug.Log ("STUN");
+			break;
+		case (int)transitions.STUN_1_RUN_1:
+			playerCollider.hit_by_enemy = false;
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Stun_1_Run_1");
+			current_state = (int)states.RUN_1;
+			break;
+		case (int)transitions.STUN_1_STUN_0:
+			playerCollider.hit_by_enemy = false;
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Stun_1_Stun_0");
+			current_state = (int)states.STUN_0;
+			//Debug.Log ("RETURN_2_STUN_1");
+			break;
+		case (int)states.RUN_1:
+			current_position = transform.position;
+			if (!atBoundary (current_position)) {
+				transform.LookAt (new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z));
+				if (closest_distance_to_player >= Vector3.Distance (player.transform.position, this.transform.position)) {
+					current_enemy_position = transform.position;
+					player.SendMessage ("enemyHit", current_enemy_position,SendMessageOptions.DontRequireReceiver);
+					//Debug.Log ("Hit by enemy" + playerCollider.hit_by_enemy);
+				}
+
+				transform.Translate (new Vector3 (0, 0, running_speed * Time.deltaTime));
+
+			} else
+				current_state = (int)transitions.RUN_1_RETURN_1;
+
+			if (Input.GetButtonDown ("Interact")) {
+				//Debug.Log ("Ammunition: " + LanternManager.ammunition);
+				if (LanternManager.ammunition > 0) {
+					if (Vector3.Distance (player.transform.position, current_position) < LanternManager.lanternRange) {
+						if (enemy_health == 0)
+							current_state = (int)transitions.RUN_1_STUN_0;
+						//else
+						//current_state = (int)transitions.RUNSTAGGER;
+
+					}
+				}
+			}
+			//Debug.Log ("RUN");
+			break;
+
+		case (int)transitions.RUN_1_RETURN_1:
+			playerCollider.hit_by_enemy = false;
+			current_state = (int)states.RETURN_1;
+			//Debug.Log ("RUN_2_RETURN_2");
+			break;
+		case (int)transitions.RUN_1_STUN_0:
+			playerCollider.hit_by_enemy = false;
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Run_1_Stun_0");
+			current_state = (int)states.STUN_0;
+			//Debug.Log ("RUN_2_STUN_1");
+			break;
+		case (int)states.RETURN_1:
+			playerCollider.hit_by_enemy = false;
+			if (playerInTerritory ()) {
+				//transform.LookAt (new Vector3 (player.transform.position.x, 0, player.transform.position.z));
+				current_state = (int)transitions.RETURN_1_RUN_1;
+			} else if (Vector3.SqrMagnitude (initial_position - transform.position) > 0.1f) {
+				transform.LookAt (new Vector3 (initial_position.x, transform.position.y, initial_position.z));
+				transform.Translate (new Vector3 (0, 0, running_speed * Time.deltaTime));
+			} else {
+				//initial_position = transform.position;
+				current_state = (int)transitions.RETURN_1_IDLE_1;
+			}
+			if (Input.GetButtonDown ("Interact")) {
+				Debug.Log ("Ammunition: " + LanternManager.ammunition);
+				if (LanternManager.ammunition > 0) {
+					if (Vector3.Distance (player.transform.position, current_position) < LanternManager.lanternRange) {
+						if (enemy_health == 0)
+							current_state = (int)transitions.RETURN_1_STUN_0;
+						//else
+						//current_state = (int)transitions.RUNSTAGGER;
+
+					}
+				}
+			}
+			break;
+		case (int)transitions.RETURN_1_IDLE_1:
+			playerCollider.hit_by_enemy = false;
+			//GetComponent<Animator> ().ResetTrigger ("IdleRun");
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Run_1_Idle_1");
+			current_state = (int)states.IDLE_1;
+			//Debug.Log ("RETURN_2_IDLE_2");
+			break;
+		case (int)transitions.RETURN_1_RUN_1:
+			playerCollider.hit_by_enemy = false;
+			current_state = (int)states.RUN_1;
+			//Debug.Log ("RETURN_2_RUN_2");
+			break;
+		case (int)transitions.RETURN_1_STUN_0:
+			playerCollider.hit_by_enemy = false;
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Run_1_Stun_0");
+			current_state = (int)states.STUN_0;
+			//Debug.Log ("RETURN_2_STUN_1");
+			break;
+		case (int)states.IDLE_1: 
+			playerCollider.hit_by_enemy = false;
+			if (playerInTerritory ()) {
+
+				transform.LookAt (new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z));
+				current_state = (int)transitions.IDLE_1_RUN_1;
+			}
+			if (Input.GetButtonDown ("Interact")) {
+				//Debug.Log ("Ammunition: " + LanternManager.ammunition);
+				if (LanternManager.ammunition > 0) {
+					current_position = transform.position;
+					if (Vector3.Distance (player.transform.position, current_position) < LanternManager.lanternRange) {
+						if (enemy_health == 0)
+							current_state = (int)transitions.IDLE_1_STUN_0;
+						//else
+						//current_state = (int)transitions.RUNSTAGGER;
+
+					}
+				}
+			}
+			//Debug.Log ("IDLE");
+			break;
+		case (int)transitions.IDLE_1_STUN_0:
+			playerCollider.hit_by_enemy = false;
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Idle_1_Stun_0");
+			current_state = (int)states.STUN_0;
+			//Debug.Log ("IDLE_2_STUN_1");
+			break;
+		case (int)transitions.IDLE_1_RUN_1:
+			playerCollider.hit_by_enemy = false;
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Idle_1_Run_1");
+			current_state = (int)states.RUN_1;
+			//Debug.Log ("IDLE_2_RUN_2");
+			break;
+
+		case (int)states.STUN_0:
+			playerCollider.hit_by_enemy = false;
+			/*For narration, do not remove*/
+			if (!has_already_triggered_stun_0) {
+				has_already_triggered_stun_0 = true;
 				StartCoroutine ("deathTheFreggo");
 				audio_source.clip = stunned_sound [Random.Range (0, (stunned_sound.Length - 1))];
 				audio_source.Play();
@@ -470,15 +644,15 @@ public class StackedLegoAnimation : MonoBehaviour {
 		animatedFreggo.SetActive (false);
 		// Birth static freggo in its place
 		deadFreggo.SetActive (true);
-		sca *= 55.0f; // Scales are 100 factor different, probably metre-cm conversion
-		pos.y -= 1.8f;	// Move to floor
+		//sca *= 100.0f; // Scales are 100 factor different, probably metre-cm conversion
+		//pos.y -= 1.45f;	// Move to floor
 		//pos.x = 5.0f;
 		deadFreggo.transform.localPosition = pos;
 		deadFreggo.transform.eulerAngles = rot;
 		deadFreggo.transform.localScale = sca;
 
 
-		// Debug.Log ("killed a freggo child");
+		Debug.Log ("killed a freggo child");
 		yield return null;
 	}
 
