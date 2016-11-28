@@ -10,6 +10,7 @@ public class PickUpLight : MonoBehaviour {
 
 	private GameObject v_spotlight;
 	private GameObject spotlight;
+	private big_light_music_loop lightMusicLoopScript;
 
 	private PlaygroundParticlesC pWithTrails;
 	PlaygroundParticlesC pDust;
@@ -29,6 +30,7 @@ public class PickUpLight : MonoBehaviour {
 
 		v_spotlight = transform.FindChild ("V-Light Spot").gameObject;
 		spotlight = transform.FindChild ("Spot light").gameObject;
+		lightMusicLoopScript = GetComponent<big_light_music_loop> ();
 
 		PlaygroundParticlesC[] pickupParticles = this.GetComponentsInChildren<PlaygroundParticlesC> ();
 		pWithTrails = new PlaygroundParticlesC();
@@ -51,6 +53,7 @@ public class PickUpLight : MonoBehaviour {
 	void pickUp() {
 		Debug.Log ("PickUpLight: Pick Up Signal");
 		pickUpLight (this.gameObject);
+		lightMusicLoopScript.Stop_light_loop ();
 	}
 
 	void pickUpLight(GameObject light) {
