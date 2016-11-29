@@ -1,0 +1,570 @@
+fileFormatVersion: 2
+guid: a058c74ac7e1e004e802150f4e82d01b
+timeCreated: 1480353360
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Amkle_L
+    100002: Ankle_R
+    100004: Calf_L
+    100006: Calf_R
+    100008: Chest
+    100010: Elbow_L
+    100012: Elbow_R
+    100014: Hip_L
+    100016: Hip_R
+    100018: ikHandle1
+    100020: ikHandle1 1
+    100022: ikHandle2
+    100024: ikHandle2 1
+    100026: ikHandle3
+    100028: ikHandle3 1
+    100030: ikHandle4
+    100032: ikHandle5
+    100034: ikHandle6
+    100036: IndexFinger_L
+    100038: IndexFingerTip_L
+    100040: joint1
+    100042: joint10
+    100044: joint10 1
+    100046: joint11
+    100048: joint11 1
+    100050: joint12
+    100052: joint12 1
+    100054: joint13
+    100056: joint14
+    100058: joint15
+    100060: joint16
+    100062: joint17
+    100064: joint18
+    100066: joint19
+    100068: joint2
+    100070: joint20
+    100072: joint21
+    100074: joint22
+    100076: joint23
+    100078: joint5
+    100080: joint6
+    100082: joint7
+    100084: joint8
+    100086: joint9
+    100088: locator1
+    100090: locator2
+    100092: MiddleFinger_L
+    100094: MiddleFingerTip_L
+    100096: nurbsCircle1
+    100098: nurbsCircle10
+    100100: nurbsCircle2
+    100102: nurbsCircle3
+    100104: nurbsCircle4
+    100106: nurbsCircle5
+    100108: nurbsCircle6
+    100110: nurbsCircle7
+    100112: nurbsCircle8
+    100114: nurbsCircle9
+    100116: PalmTip_L
+    100118: pCube2
+    100120: pCube4
+    100122: pCube5
+    100124: pCylinder5
+    100126: Pelvis
+    100128: pSphere1
+    100130: RigWithBshapes1:Amkle_L
+    100132: RigWithBshapes1:Ankle_R
+    100134: RigWithBshapes1:Calf_L
+    100136: RigWithBshapes1:Calf_R
+    100138: RigWithBshapes1:Chest
+    100140: RigWithBshapes1:Elbow_L
+    100142: RigWithBshapes1:Elbow_R
+    100144: RigWithBshapes1:Hip_L
+    100146: RigWithBshapes1:Hip_R
+    100148: RigWithBshapes1:ikHandle1
+    100150: RigWithBshapes1:ikHandle1 1
+    100152: RigWithBshapes1:ikHandle2
+    100154: RigWithBshapes1:ikHandle2 1
+    100156: RigWithBshapes1:ikHandle3
+    100158: RigWithBshapes1:ikHandle3 1
+    100160: RigWithBshapes1:ikHandle4
+    100162: RigWithBshapes1:ikHandle5
+    100164: RigWithBshapes1:ikHandle6
+    100166: RigWithBshapes1:IndexFinger_L
+    100168: RigWithBshapes1:IndexFingerTip_L
+    100170: RigWithBshapes1:joint1
+    100172: RigWithBshapes1:joint10
+    100174: RigWithBshapes1:joint10 1
+    100176: RigWithBshapes1:joint11
+    100178: RigWithBshapes1:joint11 1
+    100180: RigWithBshapes1:joint12
+    100182: RigWithBshapes1:joint12 1
+    100184: RigWithBshapes1:joint13
+    100186: RigWithBshapes1:joint14
+    100188: RigWithBshapes1:joint15
+    100190: RigWithBshapes1:joint16
+    100192: RigWithBshapes1:joint17
+    100194: RigWithBshapes1:joint18
+    100196: RigWithBshapes1:joint19
+    100198: RigWithBshapes1:joint2
+    100200: RigWithBshapes1:joint20
+    100202: RigWithBshapes1:joint21
+    100204: RigWithBshapes1:joint22
+    100206: RigWithBshapes1:joint23
+    100208: RigWithBshapes1:joint5
+    100210: RigWithBshapes1:joint6
+    100212: RigWithBshapes1:joint7
+    100214: RigWithBshapes1:joint8
+    100216: RigWithBshapes1:joint9
+    100218: RigWithBshapes1:locator1
+    100220: RigWithBshapes1:locator2
+    100222: RigWithBshapes1:MiddleFinger_L
+    100224: RigWithBshapes1:MiddleFingerTip_L
+    100226: RigWithBshapes1:nurbsCircle1
+    100228: RigWithBshapes1:nurbsCircle10
+    100230: RigWithBshapes1:nurbsCircle2
+    100232: RigWithBshapes1:nurbsCircle3
+    100234: RigWithBshapes1:nurbsCircle4
+    100236: RigWithBshapes1:nurbsCircle5
+    100238: RigWithBshapes1:nurbsCircle6
+    100240: RigWithBshapes1:nurbsCircle7
+    100242: RigWithBshapes1:nurbsCircle8
+    100244: RigWithBshapes1:nurbsCircle9
+    100246: RigWithBshapes1:PalmTip_L
+    100248: RigWithBshapes1:pCube2
+    100250: RigWithBshapes1:pCube4
+    100252: RigWithBshapes1:pCube5
+    100254: RigWithBshapes1:pCylinder5
+    100256: RigWithBshapes1:Pelvis
+    100258: RigWithBshapes1:pSphere1
+    100260: RigWithBshapes1:Root
+    100262: RigWithBshapes1:Shoulder_L
+    100264: RigWithBshapes1:Shoulder_R
+    100266: RigWithBshapes1:stagger:pCube2
+    100268: RigWithBshapes1:stagger:pCube4
+    100270: RigWithBshapes1:stagger:pCylinder5
+    100272: RigWithBshapes1:stagger:transform6
+    100274: RigWithBshapes1:Thumb_L
+    100276: RigWithBshapes1:ThumbTip_L
+    100278: RigWithBshapes1:Top_Tip
+    100280: RigWithBshapes1:transform6
+    100282: RigWithBshapes1:transform7
+    100284: RigWithBshapes1:transform8
+    100286: RigWithBshapes1:Wrist_L
+    100288: RigWithBshapes1:Wrist_R
+    100290: RigWithBshapes:Amkle_L
+    100292: RigWithBshapes:Ankle_R
+    100294: RigWithBshapes:Calf_L
+    100296: RigWithBshapes:Calf_R
+    100298: RigWithBshapes:Chest
+    100300: RigWithBshapes:Elbow_L
+    100302: RigWithBshapes:Elbow_R
+    100304: RigWithBshapes:Hip_L
+    100306: RigWithBshapes:Hip_R
+    100308: RigWithBshapes:ikHandle1
+    100310: RigWithBshapes:ikHandle1 1
+    100312: RigWithBshapes:ikHandle2
+    100314: RigWithBshapes:ikHandle2 1
+    100316: RigWithBshapes:ikHandle3
+    100318: RigWithBshapes:ikHandle3 1
+    100320: RigWithBshapes:ikHandle4
+    100322: RigWithBshapes:ikHandle5
+    100324: RigWithBshapes:ikHandle6
+    100326: RigWithBshapes:IndexFinger_L
+    100328: RigWithBshapes:IndexFingerTip_L
+    100330: RigWithBshapes:joint1
+    100332: RigWithBshapes:joint10
+    100334: RigWithBshapes:joint10 1
+    100336: RigWithBshapes:joint11
+    100338: RigWithBshapes:joint11 1
+    100340: RigWithBshapes:joint12
+    100342: RigWithBshapes:joint12 1
+    100344: RigWithBshapes:joint13
+    100346: RigWithBshapes:joint14
+    100348: RigWithBshapes:joint15
+    100350: RigWithBshapes:joint16
+    100352: RigWithBshapes:joint17
+    100354: RigWithBshapes:joint18
+    100356: RigWithBshapes:joint19
+    100358: RigWithBshapes:joint2
+    100360: RigWithBshapes:joint20
+    100362: RigWithBshapes:joint21
+    100364: RigWithBshapes:joint22
+    100366: RigWithBshapes:joint23
+    100368: RigWithBshapes:joint5
+    100370: RigWithBshapes:joint6
+    100372: RigWithBshapes:joint7
+    100374: RigWithBshapes:joint8
+    100376: RigWithBshapes:joint9
+    100378: RigWithBshapes:locator1
+    100380: RigWithBshapes:locator2
+    100382: RigWithBshapes:MiddleFinger_L
+    100384: RigWithBshapes:MiddleFingerTip_L
+    100386: RigWithBshapes:nurbsCircle1
+    100388: RigWithBshapes:nurbsCircle10
+    100390: RigWithBshapes:nurbsCircle2
+    100392: RigWithBshapes:nurbsCircle3
+    100394: RigWithBshapes:nurbsCircle4
+    100396: RigWithBshapes:nurbsCircle5
+    100398: RigWithBshapes:nurbsCircle6
+    100400: RigWithBshapes:nurbsCircle7
+    100402: RigWithBshapes:nurbsCircle8
+    100404: RigWithBshapes:nurbsCircle9
+    100406: RigWithBshapes:PalmTip_L
+    100408: RigWithBshapes:pCube2
+    100410: RigWithBshapes:pCube4
+    100412: RigWithBshapes:pCube5
+    100414: RigWithBshapes:pCylinder5
+    100416: RigWithBshapes:Pelvis
+    100418: RigWithBshapes:pSphere1
+    100420: RigWithBshapes:Root
+    100422: RigWithBshapes:Shoulder_L
+    100424: RigWithBshapes:Shoulder_R
+    100426: RigWithBshapes:stagger:pCube2
+    100428: RigWithBshapes:stagger:pCube4
+    100430: RigWithBshapes:stagger:pCylinder5
+    100432: RigWithBshapes:stagger:transform6
+    100434: RigWithBshapes:Thumb_L
+    100436: RigWithBshapes:ThumbTip_L
+    100438: RigWithBshapes:Top_Tip
+    100440: RigWithBshapes:transform6
+    100442: RigWithBshapes:transform7
+    100444: RigWithBshapes:transform8
+    100446: RigWithBshapes:Wrist_L
+    100448: RigWithBshapes:Wrist_R
+    100450: Root
+    100452: Shoulder_L
+    100454: Shoulder_R
+    100456: stagger:pCube2
+    100458: stagger:pCube4
+    100460: stagger:pCylinder5
+    100462: stagger:transform6
+    100464: //RootNode
+    100466: Thumb_L
+    100468: ThumbTip_L
+    100470: Top_Tip
+    100472: transform6
+    100474: transform7
+    100476: transform8
+    100478: Wrist_L
+    100480: Wrist_R
+    400000: Amkle_L
+    400002: Ankle_R
+    400004: Calf_L
+    400006: Calf_R
+    400008: Chest
+    400010: Elbow_L
+    400012: Elbow_R
+    400014: Hip_L
+    400016: Hip_R
+    400018: ikHandle1
+    400020: ikHandle1 1
+    400022: ikHandle2
+    400024: ikHandle2 1
+    400026: ikHandle3
+    400028: ikHandle3 1
+    400030: ikHandle4
+    400032: ikHandle5
+    400034: ikHandle6
+    400036: IndexFinger_L
+    400038: IndexFingerTip_L
+    400040: joint1
+    400042: joint10
+    400044: joint10 1
+    400046: joint11
+    400048: joint11 1
+    400050: joint12
+    400052: joint12 1
+    400054: joint13
+    400056: joint14
+    400058: joint15
+    400060: joint16
+    400062: joint17
+    400064: joint18
+    400066: joint19
+    400068: joint2
+    400070: joint20
+    400072: joint21
+    400074: joint22
+    400076: joint23
+    400078: joint5
+    400080: joint6
+    400082: joint7
+    400084: joint8
+    400086: joint9
+    400088: locator1
+    400090: locator2
+    400092: MiddleFinger_L
+    400094: MiddleFingerTip_L
+    400096: nurbsCircle1
+    400098: nurbsCircle10
+    400100: nurbsCircle2
+    400102: nurbsCircle3
+    400104: nurbsCircle4
+    400106: nurbsCircle5
+    400108: nurbsCircle6
+    400110: nurbsCircle7
+    400112: nurbsCircle8
+    400114: nurbsCircle9
+    400116: PalmTip_L
+    400118: pCube2
+    400120: pCube4
+    400122: pCube5
+    400124: pCylinder5
+    400126: Pelvis
+    400128: pSphere1
+    400130: RigWithBshapes1:Amkle_L
+    400132: RigWithBshapes1:Ankle_R
+    400134: RigWithBshapes1:Calf_L
+    400136: RigWithBshapes1:Calf_R
+    400138: RigWithBshapes1:Chest
+    400140: RigWithBshapes1:Elbow_L
+    400142: RigWithBshapes1:Elbow_R
+    400144: RigWithBshapes1:Hip_L
+    400146: RigWithBshapes1:Hip_R
+    400148: RigWithBshapes1:ikHandle1
+    400150: RigWithBshapes1:ikHandle1 1
+    400152: RigWithBshapes1:ikHandle2
+    400154: RigWithBshapes1:ikHandle2 1
+    400156: RigWithBshapes1:ikHandle3
+    400158: RigWithBshapes1:ikHandle3 1
+    400160: RigWithBshapes1:ikHandle4
+    400162: RigWithBshapes1:ikHandle5
+    400164: RigWithBshapes1:ikHandle6
+    400166: RigWithBshapes1:IndexFinger_L
+    400168: RigWithBshapes1:IndexFingerTip_L
+    400170: RigWithBshapes1:joint1
+    400172: RigWithBshapes1:joint10
+    400174: RigWithBshapes1:joint10 1
+    400176: RigWithBshapes1:joint11
+    400178: RigWithBshapes1:joint11 1
+    400180: RigWithBshapes1:joint12
+    400182: RigWithBshapes1:joint12 1
+    400184: RigWithBshapes1:joint13
+    400186: RigWithBshapes1:joint14
+    400188: RigWithBshapes1:joint15
+    400190: RigWithBshapes1:joint16
+    400192: RigWithBshapes1:joint17
+    400194: RigWithBshapes1:joint18
+    400196: RigWithBshapes1:joint19
+    400198: RigWithBshapes1:joint2
+    400200: RigWithBshapes1:joint20
+    400202: RigWithBshapes1:joint21
+    400204: RigWithBshapes1:joint22
+    400206: RigWithBshapes1:joint23
+    400208: RigWithBshapes1:joint5
+    400210: RigWithBshapes1:joint6
+    400212: RigWithBshapes1:joint7
+    400214: RigWithBshapes1:joint8
+    400216: RigWithBshapes1:joint9
+    400218: RigWithBshapes1:locator1
+    400220: RigWithBshapes1:locator2
+    400222: RigWithBshapes1:MiddleFinger_L
+    400224: RigWithBshapes1:MiddleFingerTip_L
+    400226: RigWithBshapes1:nurbsCircle1
+    400228: RigWithBshapes1:nurbsCircle10
+    400230: RigWithBshapes1:nurbsCircle2
+    400232: RigWithBshapes1:nurbsCircle3
+    400234: RigWithBshapes1:nurbsCircle4
+    400236: RigWithBshapes1:nurbsCircle5
+    400238: RigWithBshapes1:nurbsCircle6
+    400240: RigWithBshapes1:nurbsCircle7
+    400242: RigWithBshapes1:nurbsCircle8
+    400244: RigWithBshapes1:nurbsCircle9
+    400246: RigWithBshapes1:PalmTip_L
+    400248: RigWithBshapes1:pCube2
+    400250: RigWithBshapes1:pCube4
+    400252: RigWithBshapes1:pCube5
+    400254: RigWithBshapes1:pCylinder5
+    400256: RigWithBshapes1:Pelvis
+    400258: RigWithBshapes1:pSphere1
+    400260: RigWithBshapes1:Root
+    400262: RigWithBshapes1:Shoulder_L
+    400264: RigWithBshapes1:Shoulder_R
+    400266: RigWithBshapes1:stagger:pCube2
+    400268: RigWithBshapes1:stagger:pCube4
+    400270: RigWithBshapes1:stagger:pCylinder5
+    400272: RigWithBshapes1:stagger:transform6
+    400274: RigWithBshapes1:Thumb_L
+    400276: RigWithBshapes1:ThumbTip_L
+    400278: RigWithBshapes1:Top_Tip
+    400280: RigWithBshapes1:transform6
+    400282: RigWithBshapes1:transform7
+    400284: RigWithBshapes1:transform8
+    400286: RigWithBshapes1:Wrist_L
+    400288: RigWithBshapes1:Wrist_R
+    400290: RigWithBshapes:Amkle_L
+    400292: RigWithBshapes:Ankle_R
+    400294: RigWithBshapes:Calf_L
+    400296: RigWithBshapes:Calf_R
+    400298: RigWithBshapes:Chest
+    400300: RigWithBshapes:Elbow_L
+    400302: RigWithBshapes:Elbow_R
+    400304: RigWithBshapes:Hip_L
+    400306: RigWithBshapes:Hip_R
+    400308: RigWithBshapes:ikHandle1
+    400310: RigWithBshapes:ikHandle1 1
+    400312: RigWithBshapes:ikHandle2
+    400314: RigWithBshapes:ikHandle2 1
+    400316: RigWithBshapes:ikHandle3
+    400318: RigWithBshapes:ikHandle3 1
+    400320: RigWithBshapes:ikHandle4
+    400322: RigWithBshapes:ikHandle5
+    400324: RigWithBshapes:ikHandle6
+    400326: RigWithBshapes:IndexFinger_L
+    400328: RigWithBshapes:IndexFingerTip_L
+    400330: RigWithBshapes:joint1
+    400332: RigWithBshapes:joint10
+    400334: RigWithBshapes:joint10 1
+    400336: RigWithBshapes:joint11
+    400338: RigWithBshapes:joint11 1
+    400340: RigWithBshapes:joint12
+    400342: RigWithBshapes:joint12 1
+    400344: RigWithBshapes:joint13
+    400346: RigWithBshapes:joint14
+    400348: RigWithBshapes:joint15
+    400350: RigWithBshapes:joint16
+    400352: RigWithBshapes:joint17
+    400354: RigWithBshapes:joint18
+    400356: RigWithBshapes:joint19
+    400358: RigWithBshapes:joint2
+    400360: RigWithBshapes:joint20
+    400362: RigWithBshapes:joint21
+    400364: RigWithBshapes:joint22
+    400366: RigWithBshapes:joint23
+    400368: RigWithBshapes:joint5
+    400370: RigWithBshapes:joint6
+    400372: RigWithBshapes:joint7
+    400374: RigWithBshapes:joint8
+    400376: RigWithBshapes:joint9
+    400378: RigWithBshapes:locator1
+    400380: RigWithBshapes:locator2
+    400382: RigWithBshapes:MiddleFinger_L
+    400384: RigWithBshapes:MiddleFingerTip_L
+    400386: RigWithBshapes:nurbsCircle1
+    400388: RigWithBshapes:nurbsCircle10
+    400390: RigWithBshapes:nurbsCircle2
+    400392: RigWithBshapes:nurbsCircle3
+    400394: RigWithBshapes:nurbsCircle4
+    400396: RigWithBshapes:nurbsCircle5
+    400398: RigWithBshapes:nurbsCircle6
+    400400: RigWithBshapes:nurbsCircle7
+    400402: RigWithBshapes:nurbsCircle8
+    400404: RigWithBshapes:nurbsCircle9
+    400406: RigWithBshapes:PalmTip_L
+    400408: RigWithBshapes:pCube2
+    400410: RigWithBshapes:pCube4
+    400412: RigWithBshapes:pCube5
+    400414: RigWithBshapes:pCylinder5
+    400416: RigWithBshapes:Pelvis
+    400418: RigWithBshapes:pSphere1
+    400420: RigWithBshapes:Root
+    400422: RigWithBshapes:Shoulder_L
+    400424: RigWithBshapes:Shoulder_R
+    400426: RigWithBshapes:stagger:pCube2
+    400428: RigWithBshapes:stagger:pCube4
+    400430: RigWithBshapes:stagger:pCylinder5
+    400432: RigWithBshapes:stagger:transform6
+    400434: RigWithBshapes:Thumb_L
+    400436: RigWithBshapes:ThumbTip_L
+    400438: RigWithBshapes:Top_Tip
+    400440: RigWithBshapes:transform6
+    400442: RigWithBshapes:transform7
+    400444: RigWithBshapes:transform8
+    400446: RigWithBshapes:Wrist_L
+    400448: RigWithBshapes:Wrist_R
+    400450: Root
+    400452: Shoulder_L
+    400454: Shoulder_R
+    400456: stagger:pCube2
+    400458: stagger:pCube4
+    400460: stagger:pCylinder5
+    400462: stagger:transform6
+    400464: //RootNode
+    400466: Thumb_L
+    400468: ThumbTip_L
+    400470: Top_Tip
+    400472: transform6
+    400474: transform7
+    400476: transform8
+    400478: Wrist_L
+    400480: Wrist_R
+    2300000: pSphere1
+    2300002: RigWithBshapes1:pSphere1
+    2300004: RigWithBshapes:pSphere1
+    3300000: pSphere1
+    3300002: RigWithBshapes1:pSphere1
+    3300004: RigWithBshapes:pSphere1
+    4300000: pSphere1
+    4300002: pCube5
+    4300004: RigWithBshapes:pSphere1
+    4300006: RigWithBshapes:pCube5
+    4300008: RigWithBshapes1:pSphere1
+    4300010: RigWithBshapes1:pCube5
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pCube5
+    13700002: RigWithBshapes1:pCube5
+    13700004: RigWithBshapes:pCube5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
