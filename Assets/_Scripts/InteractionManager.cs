@@ -39,6 +39,8 @@ public class InteractionManager : MonoBehaviour {
 	//This function is called if player clicks near an object. See GameManager
 	void InteractWithObject(float distance_to_player) {
 		if (!interaction_triggered && !narration_triggered) {
+			if (interaction_indicator.activeSelf == false)
+				interaction_indicator.SetActive (true);
 			distance_to_player = Vector3.Distance (player.transform.position, interactive_object.transform.position);
 			if (distance_to_player < LanternManager.lanternRange * range_factor) { //Accurate distance from player to object 
 					interaction_triggered = true;

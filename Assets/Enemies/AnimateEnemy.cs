@@ -14,7 +14,7 @@ public class AnimateEnemy: MonoBehaviour {
 	private Vector3 current_position;
 	public int enemy_health;
 	private float run_speed;
-
+	public bool isStunned;
 	// Children
 	public GameObject animatedFreggo;
 	public GameObject deadFreggo;
@@ -55,7 +55,7 @@ public class AnimateEnemy: MonoBehaviour {
 	}
 	void Start () {
 		if(player == null) player = GameObject.Find ("Player");
-
+		isStunned = false;
 		current_state = (int)states.BEFOREEMERGE;
 		initial_position = transform.position;
 		current_position = initial_position;
@@ -338,7 +338,7 @@ public class AnimateEnemy: MonoBehaviour {
 		deadFreggo.transform.eulerAngles = rot;
 		deadFreggo.transform.localScale = sca;
 
-
+		isStunned = true;
 		// Debug.Log ("killed a freggo child");
 		yield return null;
 	}

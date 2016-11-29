@@ -25,7 +25,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 
 	/***Triggers for narration. Do not remove***/
 	public static bool narration_trigger = false;
-	private bool has_already_triggered = false;
+	//private bool has_already_triggered = false;
 	private bool has_already_triggered_stun_2 = false;
 	private bool has_already_triggered_stun_1 = false;
 	private bool has_already_triggered_stun_0 = false;
@@ -59,6 +59,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 		RETURN_3_IDLE_3,
 		RETURN_3_RUN_3,
 		RUN_3_RETURN_3,
+		RUN_3_IDLE_3,
 		//RUNSTAGGER,
 		//STAGGERRUN,
 		//STAGGERSTUN,
@@ -76,6 +77,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 		IDLE_2_STUN_1,
 		RETURN_2_STUN_1,
 		STUN_2_STUN_1,
+		//RUN_2_IDLE_2,
 
 		STUN_1_RUN_1,
 		IDLE_1_RUN_1,
@@ -83,6 +85,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 		RETURN_1_IDLE_1,
 		RETURN_1_RUN_1,
 		RUN_1_RETURN_1,
+		//RUN_1_IDLE_1,
 		IDLE_1_STUN_0,
 		RETURN_1_STUN_0,
 		STUN_1_STUN_0
@@ -147,14 +150,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 		case (int)states.IDLE_3: 
 			playerCollider.hit_by_enemy = false;
 			if (playerInTerritory ()) {
-				/*Triggers narration when in enemy territory*/
-				if (!has_already_triggered) {
-					narration_trigger = true;
-					has_already_triggered = true;
-					MusicManager.enemy_name = transform.name;
-					//Debug.Log (MusicManager.enemy_name);
-				}
-				/*******************************************/
+
 				transform.LookAt (new Vector3 (player.transform.position.x, transform.position.y, player.transform.position.z));
 				current_state = (int)transitions.IDLE_3_RUN_3;
 			}
@@ -289,7 +285,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 			} else {
 
 			}
-			if (Input.GetButtonDown ("Interact")) {
+			/*if (Input.GetButtonDown ("Interact")) {
 				//Debug.Log ("Ammunition: " + LanternManager.ammunition);
 				if (LanternManager.ammunition > 0) {
 					if (Vector3.Distance (player.transform.position, current_position) < LanternManager.lanternRange) {
@@ -300,7 +296,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 
 					}
 				}
-			}
+			}*/
 			/*****************************/
 			// Debug.Log ("STUN");
 			break;
@@ -309,12 +305,12 @@ public class StackedLegoAnimation : MonoBehaviour {
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Stun_2_Run_2");
 			current_state = (int)states.RUN_2;
 			break;
-		case (int)transitions.STUN_2_STUN_1:
+		/*case (int)transitions.STUN_2_STUN_1:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Stun_2_Stun_1");
 			current_state = (int)states.STUN_1;
 			//Debug.Log ("RETURN_3_STUN_2");
-			break;
+			break;*/
 		case (int)states.RUN_2:
 			current_position = transform.position;
 			if (!atBoundary (current_position)) {
@@ -384,7 +380,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 		case (int)transitions.RETURN_2_IDLE_2:
 			playerCollider.hit_by_enemy = false;
 			//GetComponent<Animator> ().ResetTrigger ("IdleRun");
-			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Run_1_Idle_1");
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Run_2_Idle_2");
 			current_state = (int)states.IDLE_2;
 			//Debug.Log ("RETURN_3_IDLE_3");
 			break;
@@ -395,7 +391,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 			break;
 		case (int)transitions.RETURN_2_STUN_1:
 			playerCollider.hit_by_enemy = false;
-			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Run_1_Stun_0");
+			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Run_2_Stun_1");
 			current_state = (int)states.STUN_2;
 			//Debug.Log ("RETURN_3_STUN_2");
 			break;
@@ -446,7 +442,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 			} else {
 
 			}
-			if (Input.GetButtonDown ("Interact")) {
+			/*if (Input.GetButtonDown ("Interact")) {
 				//Debug.Log ("Ammunition: " + LanternManager.ammunition);
 				if (LanternManager.ammunition > 0) {
 					if (Vector3.Distance (player.transform.position, current_position) < LanternManager.lanternRange) {
@@ -457,7 +453,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 
 					}
 				}
-			}
+			}*/
 			/*****************************/
 			// Debug.Log ("STUN");
 			break;
@@ -466,12 +462,12 @@ public class StackedLegoAnimation : MonoBehaviour {
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Stun_1_Run_1");
 			current_state = (int)states.RUN_1;
 			break;
-		case (int)transitions.STUN_1_STUN_0:
+		/*case (int)transitions.STUN_1_STUN_0:
 			playerCollider.hit_by_enemy = false;
 			animatedFreggo.GetComponent<Animator> ().SetTrigger ("Stun_1_Stun_0");
 			current_state = (int)states.STUN_0;
 			//Debug.Log ("RETURN_2_STUN_1");
-			break;
+			break;*/
 		case (int)states.RUN_1:
 			current_position = transform.position;
 			if (!atBoundary (current_position)) {
