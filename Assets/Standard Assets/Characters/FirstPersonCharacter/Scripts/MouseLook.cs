@@ -30,39 +30,39 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public void LookRotation(Transform character, Transform camera)
         {
-            float mouse_yRot = CrossPlatformInputManager.GetAxis("Mouse X") * XSensitivity;
-            float mouse_xRot = CrossPlatformInputManager.GetAxis("Mouse Y") * YSensitivity;
-
-            float controller_yRot = Input.GetAxisRaw("Right Thumb X") * (XSensitivity * 6);
-            float controller_xRot = Input.GetAxisRaw("Right Thumb Y") * (YSensitivity * 6); 
-
-            float yRot = mouse_yRot + controller_yRot;
-            float xRot = mouse_xRot + controller_xRot;
-
-            m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
-            m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);
-
-            if(clampVerticalRotation)
-                m_CameraTargetRot = ClampRotationAroundXAxis (m_CameraTargetRot);
-
-            if(smooth)
-            {
-                character.localRotation = Quaternion.Slerp (character.localRotation, m_CharacterTargetRot,
-                    smoothTime * Time.deltaTime);
-                camera.localRotation = Quaternion.Slerp (camera.localRotation, m_CameraTargetRot,
-                    smoothTime * Time.deltaTime);
-				lantern.transform.localRotation = Quaternion.Slerp (camera.localRotation, m_CameraTargetRot,
-					smoothTime * Time.deltaTime);
+			if (Time.timeScale > 0) {
 				
-            }
-            else
-            {
-                character.localRotation = m_CharacterTargetRot;
-                camera.localRotation = m_CameraTargetRot;
-				lantern.transform.localRotation = m_CameraTargetRot;
-            }
+				float mouse_yRot = CrossPlatformInputManager.GetAxis ("Mouse X") * XSensitivity;
+				float mouse_xRot = CrossPlatformInputManager.GetAxis ("Mouse Y") * YSensitivity;
 
-            UpdateCursorLock();
+				float controller_yRot = Input.GetAxisRaw ("Right Thumb X") * (XSensitivity * 6);
+				float controller_xRot = Input.GetAxisRaw ("Right Thumb Y") * (YSensitivity * 6); 
+
+				float yRot = mouse_yRot + controller_yRot;
+				float xRot = mouse_xRot + controller_xRot;
+
+				m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
+				m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);
+
+				if (clampVerticalRotation)
+					m_CameraTargetRot = ClampRotationAroundXAxis (m_CameraTargetRot);
+
+				if (smooth) {
+					character.localRotation = Quaternion.Slerp (character.localRotation, m_CharacterTargetRot,
+						smoothTime * Time.deltaTime);
+					camera.localRotation = Quaternion.Slerp (camera.localRotation, m_CameraTargetRot,
+						smoothTime * Time.deltaTime);
+					lantern.transform.localRotation = Quaternion.Slerp (camera.localRotation, m_CameraTargetRot,
+						smoothTime * Time.deltaTime);
+				
+				} else {
+					character.localRotation = m_CharacterTargetRot;
+					camera.localRotation = m_CameraTargetRot;
+					lantern.transform.localRotation = m_CameraTargetRot;
+				}
+
+				UpdateCursorLock ();
+			}
         }
 
         public void SetCursorLock(bool value)

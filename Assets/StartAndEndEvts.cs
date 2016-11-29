@@ -39,7 +39,7 @@ public class StartAndEndEvts : MonoBehaviour {
 		// Freeze movement
 		FPController.movementEnabled = false;
 
-		float startIntensity = 3.5f;
+		float startIntensity = 2.5f;
 		UnityStandardAssets.ImageEffects.ScreenOverlay.intensity = startIntensity;
 		float endLightIntensity = ambientLights [0].GetComponent<Light> ().intensity;
 
