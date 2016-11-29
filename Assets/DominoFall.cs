@@ -4,14 +4,19 @@ using System.Collections;
 public class DominoFall : MonoBehaviour {
 
 	public GameObject player;
-	public ParticleSystem greenBeacon; // Turn off spiral after domino animation (else will be at angle)
+
+	public GameObject v_spotlight;
+	public GameObject spotlight;
+	public GameObject v_spotAnimPosition; // position of vlight after the animation
+	public GameObject spotAnimPosition; // position of spot after the animation
 
 
 	// Use this for initialization
 	void Start () {
 		//if(player == null) player = GameObject.Find ("Player");
 		this.gameObject.GetComponentInParent<InteractionManager>().trigger_cooldown_time = 12.458f;
-
+		if (player == null)
+			player = GameObject.Find ("Player");
 
 	}
 	
@@ -26,12 +31,16 @@ public class DominoFall : MonoBehaviour {
 	}
 
 	void TriggerInteraction() {
+		// Move spotlights
+		v_spotlight.transform.position = v_spotAnimPosition.transform.position;
+		v_spotlight.transform.rotation = v_spotAnimPosition.transform.rotation;
+		spotlight.transform.position = spotAnimPosition.transform.position;
+		spotlight.transform.rotation = spotAnimPosition.transform.rotation;
+
 		//Debug.Log ("Hit a domino!");
 		this.gameObject.GetComponentInParent<Animator> ().SetTrigger ("FallTrigger");
 		StartCoroutine ("playDominoNarration");
-		// Turn off beacon for green
-		var temp = greenBeacon.emission;
-		temp.enabled = false;
+
 	}
 	IEnumerator playDominoNarration() {
 		yield return new WaitForSeconds (1.0f);
