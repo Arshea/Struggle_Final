@@ -34,8 +34,8 @@ public class EarpodPlayOnClick : MonoBehaviour {
 		StartCoroutine ("playEarpodNarration");
 		//triggered = true;
 		// Change to cooler animation and maybe music note particle effects??
-		this.GetComponent<Rigidbody>().AddForce(1800 * Vector3.up);
-		this.GetComponent<Rigidbody>().AddTorque(1800 * Vector3.up);
+		//this.GetComponent<Rigidbody>().AddForce(1800 * Vector3.up);
+		//this.GetComponent<Rigidbody>().AddTorque(1800 * Vector3.up); // Decided against adding force
 	}
 
 	IEnumerator playEarpodNarration() {
