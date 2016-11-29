@@ -26,6 +26,7 @@ TagManager:
   - WaterNarrationTrigger
   - EdgeOfTheWorld
   - ClimbingNarrationTrigger
+  - ClimbingFreggo
   layers:
   - Default
   - TransparentFX
