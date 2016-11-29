@@ -8,8 +8,8 @@ public class PickUpLight : MonoBehaviour {
 	private GameManager gameManager;
 	private GameObject startEndEvts;
 
-	private GameObject v_spotlight;
-	private GameObject spotlight;
+	public GameObject v_spotlight;
+	public GameObject spotlight;
 	private big_light_music_loop lightMusicLoopScript;
 
 	private PlaygroundParticlesC pWithTrails;
@@ -28,8 +28,11 @@ public class PickUpLight : MonoBehaviour {
 			Debug.Log ("In PickUpLight.cs:: Couldn't find \"Start_And_End_Events\"");
 		FPController = (UnityStandardAssets.Characters.FirstPerson.FirstPersonController)GameObject.Find ("Player").GetComponent (typeof(UnityStandardAssets.Characters.FirstPerson.FirstPersonController));
 
-		v_spotlight = transform.FindChild ("V-Light Spot").gameObject;
-		spotlight = transform.FindChild ("Spot light").gameObject;
+		if (v_spotlight == null || spotlight == null) { // Must be defined if they're not in the group e.g. for the domino puzzle light
+			v_spotlight = transform.FindChild ("V-Light Spot").gameObject;
+			spotlight = transform.FindChild ("Spot light").gameObject;
+		}
+
 		lightMusicLoopScript = GetComponent<big_light_music_loop> ();
 
 		PlaygroundParticlesC[] pickupParticles = this.GetComponentsInChildren<PlaygroundParticlesC> ();
@@ -79,6 +82,8 @@ public class PickUpLight : MonoBehaviour {
 	}*/
 
 	IEnumerator pickUpAnimation() {
+
+
 		FPController.movementEnabled = false; // Stop player movement
 
 		Vector3 randomVelocityMin = new Vector3(-5f,1,-5f);   // The minimum random velocity
