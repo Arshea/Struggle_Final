@@ -129,6 +129,12 @@ public class playerCollider : MonoBehaviour
 				edge_narration_trigger = true;
 			}
 		}
+		if (hit.gameObject.name == "BookFallTrigger")
+		{
+			Debug.Log ("Player collided with book fall trigger");
+			hit.gameObject.GetComponent<SphereCollider>().enabled = false;
+			hit.gameObject.GetComponentInParent<BookFallScript>().SendMessage("TriggerBookFall", SendMessageOptions.DontRequireReceiver);
+		}
 
 
         
