@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour {
 	public GameObject pausePanel;
 	public bool isPaused;
 	public GameObject first_person_camera;
-	public 
+
 	// Use this for initialization
 	void Start () {
 		isPaused = false;
