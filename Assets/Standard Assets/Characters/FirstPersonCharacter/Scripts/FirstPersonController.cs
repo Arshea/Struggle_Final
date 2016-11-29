@@ -120,7 +120,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
-                if (m_Jump)
+				if (m_Jump && movementEnabled) // Not when movement is disabled --------------------------------------------------
                 {
                     m_MoveDir.y = m_JumpSpeed;
                     PlayJumpSound();
