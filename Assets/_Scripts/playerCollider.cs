@@ -100,6 +100,11 @@ public class playerCollider : MonoBehaviour
 		if (hit.gameObject.CompareTag ("JengaNarrationTrigger")) {
 			hit.collider.enabled = false;
 			MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+			musicManager.SendMessage ("playNarrationOfTrigger", ObjectTriggerType.CLIMBING_END,SendMessageOptions.DontRequireReceiver);
+		}
+		if (hit.gameObject.CompareTag ("ClimbingNarrationTrigger")) {
+			hit.collider.enabled = false;
+			MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
 			musicManager.SendMessage ("playNarrationOfTrigger", ObjectTriggerType.CLIMBING_START,SendMessageOptions.DontRequireReceiver);
 		}
 		if (hit.gameObject.CompareTag ("DominoNarrationTrigger")) {
