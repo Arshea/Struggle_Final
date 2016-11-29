@@ -127,7 +127,7 @@ public class StackedLegoAnimation : MonoBehaviour {
 		case (int)states.BEFOREEMERGE: 
 			playerCollider.hit_by_enemy = false;
 			if (playerInTerritory ()) {
-				GameManager.encounteredEnemy ();
+				//GameManager.encounteredEnemy ();
 				animatedFreggo.GetComponent<Animator> ().SetTrigger ("EmergeTrigger");
 				current_state = (int)states.EMERGE_3;
 			}
