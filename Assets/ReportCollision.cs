@@ -28,7 +28,7 @@ public CapsuleCollider myCollider;
 
 
 					for (int i = 0; i < overlaps.Length; ++i) {
-						if (!(overlaps [i].gameObject.CompareTag ("Plane")) && !(overlaps [i].gameObject.CompareTag ("CarpetHair"))) {
+						if (!(overlaps [i].gameObject.CompareTag ("Plane")) && !(overlaps [i].gameObject.CompareTag ("CarpetHair")) && !(overlaps [i].gameObject.CompareTag ("Terrain"))) {
 							Debug.Log ("Disabling Carpet Hair  ");
 							// Debug.Log(overlaps[i].gameObject.tag);
 							//this.gameObject.SetActive(false);

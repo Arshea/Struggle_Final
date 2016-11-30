@@ -3,7 +3,10 @@ using System.Collections;
 using ParticlePlayground;
 
 public class PickUpLight : MonoBehaviour {
-	
+
+	public float lanternIntensity = 1.0f;
+	public GameObject lanternCentreWithLight;
+
 	private UnityStandardAssets.Characters.FirstPerson.FirstPersonController FPController;
 	private GameManager gameManager;
 	private GameObject startEndEvts;
@@ -101,23 +104,19 @@ public class PickUpLight : MonoBehaviour {
 		gameManager.pickedUpLightMusic ();
 		transform.GetComponent<AudioSource>().Play(); // Trigger sound
 
-		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		if (pWithTrails.IsReady()) pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
 		while (Time.time - timeAnimStart < 1.1f) {
 			yield return null;
 		}
-		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		if (pWithTrails.IsReady()) pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
 		while (Time.time - timeAnimStart < 2.2f) {
 			yield return null;
 		}
-		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		if (pWithTrails.IsReady()) pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
 		while (Time.time - timeAnimStart < 3.3f) {
 			yield return null;
 		}
-		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
-		while (Time.time - timeAnimStart < 3.3f) {
-			yield return null;
-		}
-		pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
+		if (pWithTrails.IsReady()) pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
 
 
 		//pWithTrails.Emit (3, pWithTrails.transform.position, randomVelocityMin, randomVelocityMax, color);
@@ -150,15 +149,11 @@ public class PickUpLight : MonoBehaviour {
 
 		FPController.movementEnabled = true; // Reenable player movement
 
-
-
-		yield return new WaitForSeconds (0.5f);
-
 		// Maybe wait a tiny bit more before doing this next bit? ~
 		gameManager.pickedUpLight (); // Add the light functionality to the lantern
 
 		//pWithTrails.emit = false; // Turn off
-
+		yield return new WaitForSeconds (0.5f);
 
 		// Trigger ending? New vlight beacon and minipickup trail; add trigger for book house animation, etc.
 		Debug.Log("From PickUpLight.cs:: Current state is: " + GameManager.progressState);
@@ -174,6 +169,12 @@ public class PickUpLight : MonoBehaviour {
 		while (Time.time - timeStartSpotlightAnim < timeTotalSpotlightAnim) {
 			float complete = (Time.time - timeStartSpotlightAnim) / timeTotalSpotlightAnim; // 0 to 1 based on completion
 			spotlight.GetComponent<Light>().intensity = Mathf.Lerp(initialIntensity, 0.0f, complete);
+
+			// If first light lerp in lantern light
+			if (GameManager.progressState == 1) {
+				lanternCentreWithLight.GetComponent<Light>().intensity = Mathf.Lerp(0.0f, lanternIntensity, complete);
+			}
+
 			yield return null;
 		}
 

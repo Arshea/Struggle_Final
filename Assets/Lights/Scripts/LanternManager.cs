@@ -97,26 +97,27 @@ public class LanternManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Time.timeScale > 0.0f) {
+			if (Input.GetButtonDown ("Interact")) {
+				int index = availableLight ();
+				if (index >= 0) {
+					int random = Random.Range (1, lantern_audio_source.Length);
+					lantern_audio_source [random].loop = false;
+					lantern_audio_source [random].Play ();
+					lantern_audio_source_stun_sweetner.clip = lantern_audio_clips_stun_sweetner [Random.Range (1, lantern_audio_clips_stun_sweetner.Length)];
+					lantern_audio_source_stun_sweetner.Play ();
 
-		if (Input.GetButtonDown("Interact")) {
-			int index = availableLight ();
-			if (index >= 0) {
-				int random = Random.Range (1, lantern_audio_source.Length);
-				lantern_audio_source[random].loop = false;
-				lantern_audio_source[random].Play ();
-				lantern_audio_source_stun_sweetner.clip = lantern_audio_clips_stun_sweetner[Random.Range(1, lantern_audio_clips_stun_sweetner.Length)];
-				lantern_audio_source_stun_sweetner.Play ();
+					Debug.Log ("Found available light in slot " + index);
+					burstHandle (index);
 
-				Debug.Log ("Found available light in slot " + index);
-				burstHandle (index);
-
-				Debug.Log ("Disabling light " + index);
-				lanternContentsAvailable [index] = false; // Disable burst ability
-				StartCoroutine (lightBurstCooldown (index)); // Enable after cooldown
-			} else {
-				// Play empty
-				lantern_audio_source[0].loop = false;
-				lantern_audio_source[0].Play ();
+					Debug.Log ("Disabling light " + index);
+					lanternContentsAvailable [index] = false; // Disable burst ability
+					StartCoroutine (lightBurstCooldown (index)); // Enable after cooldown
+				} else {
+					// Play empty
+					lantern_audio_source [0].loop = false;
+					lantern_audio_source [0].Play ();
+				}
 			}
 		}
 	}

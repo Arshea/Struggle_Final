@@ -6,8 +6,7 @@ public class UIManager : MonoBehaviour {
 
 	public GameObject pausePanel;
 	public bool isPaused;
-	public GameObject first_person_camera;
-
+	public Text exploration_text;
 	// Use this for initialization
 	void Start () {
 		isPaused = false;
@@ -24,6 +23,8 @@ public class UIManager : MonoBehaviour {
 			TogglePause ();
 	
 		}
+		exploration_text.text = ((int)GameManager.getGameCompletion()) + "% Explored";
+
 	}
 
 	void PauseGame (bool state) {

@@ -57,6 +57,13 @@ public class spinningScript : MonoBehaviour {
         GetComponent<Rigidbody>().isKinematic = false;
         isSpinning = false;
 		spinningTopSfxLoop.Stop ();
+		//StartCoroutine ("RemoveSpinRB");
     }
+
+	// Stop clipping through stuff
+	IEnumerator RemoveSpinRB() {
+		yield return new WaitForSeconds (2.0f);
+		this.GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll; // Don't let player push into objects & clip....
+	}
    
 }

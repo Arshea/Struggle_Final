@@ -98,7 +98,7 @@ public class MusicManager : MonoBehaviour {
 	};
 
 	private float[] narration_delays =  {
-		0.0f,
+		2.0f,
 		2.0f,
 		2.0f,
 		2.0f,
