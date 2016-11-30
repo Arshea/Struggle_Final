@@ -149,6 +149,7 @@ public class MusicManager : MonoBehaviour {
 
 	private bool main_music_trigger;
 	public static string enemy_name;
+	private float mainSourceVolInit;
 	//public static string light_name;
 	void Start() {
 
@@ -166,6 +167,7 @@ public class MusicManager : MonoBehaviour {
 
 		}
 
+		mainSourceVolInit = main_source.volume;  //Saving this init volume off to use to match volumes for the going home intro.
 		/*When the game starts, it is quiet and the first narration plays*/
 		current_narration_index = 0;
 		main_source.Stop ();
@@ -221,14 +223,13 @@ public class MusicManager : MonoBehaviour {
 
 	IEnumerator playNarrationOfIndex(int index) {
 		current_narration_index = index;
-		lowerAllVolumes ();
+		//lowerAllVolumes ();
 		narration_audio_source.clip = narrations [index].clip;
 		narration_audio_source.loop = false;
 		narration_audio_source.volume = 1.0f;
 		narration_audio_source.PlayDelayed(narrations[index].delay);
 		yield return new WaitForSeconds (narration_audio_source.clip.length);
-		restoreAllVolumes ();
-
+		//restoreAllVolumes ();
 	}
 		
 	void playNarrationOfTrigger(ObjectTriggerType _trigger) {
@@ -252,6 +253,7 @@ public class MusicManager : MonoBehaviour {
 			ambient_source.clip = light_variation[0];
 		if (lightNumber == 3) {
 			ambient_source.clip = light_variation [2];
+			ambient_source.volume = mainSourceVolInit;  //Going home intro is normalized with the going home loop which is played on main_source, so we want the volumes to be equal here.  Can't use main_source.volume since it is 0 at this point in time.
 			StartCoroutine ("playGoingHomeMusic");
 		}
 		else if(lightNumber >0)
