@@ -24,5 +24,7 @@ public class SwanAnimation : MonoBehaviour {
 		yield return new WaitForSeconds (2.0f);
 		//Debug.Log ("SwanAnimation:: Going back to the ground thanks I had fun");
 		GetComponent<Animator> ().SetTrigger ("FlyIdle");
+		MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
+		musicManager.SendMessage("playNarrationOfTrigger", ObjectTriggerType.CRANE,SendMessageOptions.DontRequireReceiver);
 	}
 }

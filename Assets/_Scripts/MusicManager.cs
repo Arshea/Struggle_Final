@@ -212,8 +212,8 @@ public class MusicManager : MonoBehaviour {
 		}
 	}
 	void restoreAllVolumes() {
-		main_source.volume = 1.0f;
-		ambient_source.volume = 1.0f;
+		main_source.volume = 0.8f;
+		ambient_source.volume = 0.8f;
 		for (int i = 0; i < lantern_stun_sources.Length; i++) {
 			lantern_stun_sources [i].volume = 0.4f;
 		}
