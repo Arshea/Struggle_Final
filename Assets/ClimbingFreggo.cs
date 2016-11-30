@@ -52,6 +52,8 @@ public class ClimbingFreggo : MonoBehaviour {
 					interaction_triggered = true;
 					StartCoroutine ("triggerCountdown");
 					//halo.enabled = true;
+					interaction_indicator.GetComponent<Animator> ().SetTrigger ("IdleRotate");
+
 					interaction_indicator.GetComponent<Renderer> ().material = indicator_materials [1];
 
 

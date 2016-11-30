@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: lambert1
+  m_Name: AnimIndActive
   m_Shader: {fileID: 4800000, guid: 4443140fbd110a7011005aba44295342, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -90,7 +90,7 @@ Material:
       second: 0
     - first:
         name: _Emission
-      second: 1.594
+      second: 1.9
     - first:
         name: _EnvironmentLight
       second: 1
@@ -136,7 +136,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.375, g: 0.5603448, b: 1, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}

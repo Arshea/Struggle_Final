@@ -10,7 +10,7 @@ public class EarpodPlayOnClick : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//if(player == null) player = GameObject.Find ("Player");
-		this.gameObject.GetComponentInParent<InteractionManager>().trigger_cooldown_time = 4.0f;
+		this.gameObject.GetComponentInParent<InteractionManager>().trigger_cooldown_time = 10.0f;
 		GetComponent<AudioSource> ().mute = true;
 	}
 

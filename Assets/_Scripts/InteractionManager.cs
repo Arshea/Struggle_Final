@@ -46,6 +46,7 @@ public class InteractionManager : MonoBehaviour {
 					interaction_triggered = true;
 					StartCoroutine ("triggerCountdown");
                     //halo.enabled = true;
+					interaction_indicator.GetComponent<Animator> ().SetTrigger ("IdleRotate");
                     interaction_indicator.GetComponent<Renderer>().material = indicator_materials[1];
                     interactive_object.SendMessage ("TriggerInteraction", SendMessageOptions.DontRequireReceiver);
 
@@ -56,6 +57,7 @@ public class InteractionManager : MonoBehaviour {
 	IEnumerator triggerCountdown() {
 		yield return new WaitForSeconds (trigger_cooldown_time);
 		if (is_retriggerable) {
+			interaction_indicator.GetComponent<Animator> ().SetTrigger ("RotateIdle");
 			interaction_indicator.GetComponent<Renderer> ().material = indicator_materials [0];
 			interaction_triggered = false;
 		} 

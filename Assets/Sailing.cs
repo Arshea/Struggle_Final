@@ -7,6 +7,10 @@ public class Sailing : MonoBehaviour {
     public GameObject end;
     public float speed = 1.0F;
 
+	public Material []indicator_materials; //0 is the dim one, 1 is the bright one
+	public GameObject interaction_indicator;
+
+
 	private Transform startMarker;
     private Transform endMarker;
     private Transform playerTransform;
@@ -34,6 +38,9 @@ public class Sailing : MonoBehaviour {
 		reachedEnd = false;
 
 		journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+
+		interaction_indicator.GetComponent<Renderer>().material = indicator_materials[0];
+
 	}
 	
 	// Update is called once per frame
@@ -55,6 +62,9 @@ public class Sailing : MonoBehaviour {
 					sailingLoopSfx.Stop ();
 					sailingStartStopSfx.clip = sailingStartStopClip [0];
 					sailingStartStopSfx.Play ();
+
+					interaction_indicator.GetComponent<Animator> ().SetTrigger ("RotateIdle");
+					interaction_indicator.GetComponent<Renderer> ().material = indicator_materials [0];
 	        	}
 			}
 			else
@@ -68,6 +78,9 @@ public class Sailing : MonoBehaviour {
 					sailingLoopSfx.Stop ();
 					sailingStartStopSfx.clip = sailingStartStopClip [0];
 					sailingStartStopSfx.Play ();
+
+					interaction_indicator.GetComponent<Animator> ().SetTrigger ("RotateIdle");
+					interaction_indicator.GetComponent<Renderer> ().material = indicator_materials [0];
 	        	}
 			}
 
@@ -89,6 +102,9 @@ public class Sailing : MonoBehaviour {
 				if(other.gameObject.CompareTag("Player") && other.transform.position.y > 2.0f)
 				{
 					Debug.Log("Start your sailing!");
+
+					interaction_indicator.GetComponent<Animator> ().SetTrigger ("IdleRotate");
+					interaction_indicator.GetComponent<Renderer>().material = indicator_materials[1];
 
 					sailing = true;
 
