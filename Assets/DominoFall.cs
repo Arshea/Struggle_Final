@@ -34,8 +34,8 @@ public class DominoFall : MonoBehaviour {
 		// Move spotlights
 		v_spotlight.transform.position = v_spotAnimPosition.transform.position;
 		v_spotlight.transform.rotation = v_spotAnimPosition.transform.rotation;
-		spotlight.transform.position = spotAnimPosition.transform.position;
-		spotlight.transform.rotation = spotAnimPosition.transform.rotation;
+		if(spotlight != null) spotlight.transform.position = spotAnimPosition.transform.position;
+		if(spotlight != null) spotlight.transform.rotation = spotAnimPosition.transform.rotation;
 
 		//Debug.Log ("Hit a domino!");
 		this.gameObject.GetComponentInParent<Animator> ().SetTrigger ("FallTrigger");

@@ -7,8 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: testH01
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_Shader: {fileID: 14000, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: EFFECT_BUMP _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 6
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -35,6 +35,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     - first:
         name: _DetailNormalMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _DetailTex
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -80,6 +86,9 @@ Material:
         name: _BumpScale
       second: 1
     - first:
+        name: _Cull
+      second: 2
+    - first:
         name: _Cutoff
       second: 0.5
     - first:
@@ -122,15 +131,21 @@ Material:
         name: _UVSec
       second: 0
     - first:
+        name: _WindQuality
+      second: 0
+    - first:
         name: _ZWrite
       second: 1
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.17571366, g: 0.20280999, b: 0.47794116, a: 1}
+      second: {r: 0.17254902, g: 0.2, b: 0.4745098, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _HueVariation
+      second: {r: 1, g: 0.5, b: 0, a: 0.1}
     - first:
         name: _SpecColor
       second: {r: 0, g: 0, b: 0, a: 1}

@@ -3664,6 +3664,7 @@ GameObject:
   - 54: {fileID: 54000010119935994}
   - 65: {fileID: 65000012903543792}
   - 114: {fileID: 114000014119567060}
+  - 114: {fileID: 114000012502792734}
   m_Layer: 0
   m_Name: Two_AfterStun
   m_TagString: Untagged
@@ -4378,6 +4379,7 @@ GameObject:
   - 54: {fileID: 54000011716442788}
   - 65: {fileID: 65000010626811408}
   - 114: {fileID: 114000012581212088}
+  - 114: {fileID: 114000010941837968}
   m_Layer: 0
   m_Name: Single_AfterStun
   m_TagString: Untagged
@@ -6305,6 +6307,7 @@ GameObject:
   - 54: {fileID: 54000010378230138}
   - 65: {fileID: 65000012952866962}
   - 114: {fileID: 114000010551899382}
+  - 114: {fileID: 114000011659539880}
   m_Layer: 0
   m_Name: Three_AfterStun
   m_TagString: Untagged
@@ -10496,10 +10499,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013378878980}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.9067551, z: -0, w: 0.42165774}
+  m_LocalPosition: {x: 88.7, y: 0, z: -65.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 130.36401, z: 0}
   m_Children:
   - {fileID: 4000012375990622}
   - {fileID: 4000012832264728}
@@ -11805,7 +11808,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013122393142}
   m_LocalRotation: {x: -0, y: 0.004133137, z: -0, w: 0.9999915}
-  m_LocalPosition: {x: 42.1, y: 0, z: -52.8}
+  m_LocalPosition: {x: 41.94, y: 0, z: -52.82}
   m_LocalScale: {x: 0.5000002, y: 0.5, z: 0.5000002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -13664,7 +13667,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012650122386}
   m_LocalRotation: {x: -0, y: -0.022766862, z: -0, w: 0.99974084}
-  m_LocalPosition: {x: 42.28, y: 0, z: -52.75}
+  m_LocalPosition: {x: 41.96, y: 0, z: -52.8}
   m_LocalScale: {x: 55.000107, y: 55, z: 55.000107}
   m_LocalEulerAnglesHint: {x: 0, y: -2.5330002, z: 0}
   m_Children:
@@ -16251,6 +16254,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3c9db5541838a48898f51ccac1344adf, type: 3}
   - {fileID: 8300000, guid: 3b7d7da7966974a9cb590416556d094a, type: 3}
   - {fileID: 8300000, guid: 5ea9fd7f0ee2e40fa8b1e1e0eda77e1b, type: 3}
+--- !u!114 &114000010941837968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012437170916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df58c92abb1c77b499f807fd9b87c55f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carpetHair: []
+  distTriggerCarpetHair: 3
+  maxAngle: 80
 --- !u!114 &114000011068088414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16287,7 +16304,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyRoot: {fileID: 1000012774703100}
   running_speed: 8
-  territory_radius: 19
+  territory_radius: 20
   enemy_health: 0
   animatedFreggo: {fileID: 1000013842329756}
   deadFreggo: {fileID: 1000011990393986}
@@ -16295,6 +16312,20 @@ MonoBehaviour:
   stunned_sound:
   - {fileID: 8300000, guid: 8d76d3810b9624c1d88a7148ae2c827c, type: 3}
   - {fileID: 8300000, guid: 4c9903434df214ab1a7df4580ba8d46e, type: 3}
+--- !u!114 &114000011659539880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013393953328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df58c92abb1c77b499f807fd9b87c55f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carpetHair: []
+  distTriggerCarpetHair: 3
+  maxAngle: 80
 --- !u!114 &114000011830803162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16309,8 +16340,9 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyRoot: {fileID: 1000011115553764}
   running_speed: 8
-  territory_radius: 18
+  territory_radius: 20
   enemy_health: 0
+  isStunned: 0
   animatedFreggo: {fileID: 1000013104735266}
   deadFreggo: {fileID: 1000012437170916}
 --- !u!114 &114000012278003540
@@ -16329,6 +16361,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3c9db5541838a48898f51ccac1344adf, type: 3}
   - {fileID: 8300000, guid: 3b7d7da7966974a9cb590416556d094a, type: 3}
   - {fileID: 8300000, guid: 5ea9fd7f0ee2e40fa8b1e1e0eda77e1b, type: 3}
+--- !u!114 &114000012502792734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011990393986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df58c92abb1c77b499f807fd9b87c55f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carpetHair: []
+  distTriggerCarpetHair: 3
+  maxAngle: 80
 --- !u!114 &114000012581212088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16371,6 +16417,7 @@ MonoBehaviour:
   running_speed: 8
   territory_radius: 12
   enemy_health: 0
+  isStunned: 0
   animatedFreggo: {fileID: 0}
   deadFreggo: {fileID: 0}
 --- !u!114 &114000013689066942
