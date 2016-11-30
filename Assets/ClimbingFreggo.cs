@@ -73,6 +73,11 @@ public class ClimbingFreggo : MonoBehaviour {
 	}
 
 	IEnumerator MoveTheFreggos() {
+		// Stop rigidbody things happening
+		for (int i = 0; i < 3; i++) {
+			freggos [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
+		}
+
 		float animationTime = 2.5f;
 		float complete = 0.0f;
 		float startTime = Time.time;
@@ -90,7 +95,9 @@ public class ClimbingFreggo : MonoBehaviour {
 		while (Time.time - startTime < animationTime) {
 			for (int i = 0; i < 3; i++) {
 				complete = (Time.time - startTime) / animationTime;
-				freggos [i].transform.position = Vector3.Lerp (freggoStartPos [i], freggoFinalPositions [i].transform.position, complete);
+				float newPosX = Mathf.Lerp (freggoStartPos [i].x, freggoFinalPositions [i].transform.position.x, complete);
+				float newPosZ = Mathf.Lerp (freggoStartPos [i].z, freggoFinalPositions [i].transform.position.z, complete);
+				freggos [i].transform.position = new Vector3 (newPosX, freggos [i].transform.position.y, newPosZ);
 				freggos [i].transform.rotation = Quaternion.Lerp (freggoStartRot [i], freggoFinalPositions [i].transform.rotation, complete);
 			
 			}
@@ -100,9 +107,7 @@ public class ClimbingFreggo : MonoBehaviour {
 
 		yield return new WaitForSeconds (0.5f);
 
-		for (int i = 0; i < 3; i++) {
-			freggos [i].GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
-		}
+
 
 		yield return null;
 	}

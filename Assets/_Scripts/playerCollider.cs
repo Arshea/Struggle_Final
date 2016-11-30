@@ -134,6 +134,13 @@ public class playerCollider : MonoBehaviour
 			hit.gameObject.GetComponent<SphereCollider>().enabled = false;
 			hit.gameObject.GetComponentInParent<BookFallScript>().SendMessage("TriggerBookFall", SendMessageOptions.DontRequireReceiver);
 		}
+		if (hit.gameObject.name == "GoodbyeTrigger")
+		{
+			Debug.Log ("Player collided with goodbye trigger");
+			hit.gameObject.GetComponent<BoxCollider>().enabled = false;
+			GameObject startEndEvents = GameObject.Find("Start_And_End_Events");
+			startEndEvents.GetComponentInParent<StartAndEndEvts>().SendMessage("Goodbye", SendMessageOptions.DontRequireReceiver);
+		}
 
 
         

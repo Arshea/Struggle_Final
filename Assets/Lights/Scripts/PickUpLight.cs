@@ -164,7 +164,7 @@ public class PickUpLight : MonoBehaviour {
 		Debug.Log("From PickUpLight.cs:: Current state is: " + GameManager.progressState);
 		if (GameManager.progressState == 4) {
 			startEndEvts.transform.SendMessage ("triggerEnding", SendMessageOptions.DontRequireReceiver);
-		}
+		} // Should probably do this through gamemanager...
 	
 
 		// Reduce spotlight

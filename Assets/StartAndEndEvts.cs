@@ -5,6 +5,8 @@ using System.Collections;
 // This is triggered from PickUpLight when GameManager returns the correct progress state
 public class StartAndEndEvts : MonoBehaviour {
 
+	public GameObject bookHouseTrigger;
+
 	private Transform[] contents;
 	private MusicManager musicManager;
 	private GameObject[] ambientLights;
@@ -13,6 +15,8 @@ public class StartAndEndEvts : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		bookHouseTrigger.SetActive (false); // Enable trigger collider when 4th light is collected
+
 		musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
 		FPController = (UnityStandardAssets.Characters.FirstPerson.FirstPersonController)GameObject.Find ("Player").GetComponent (typeof(UnityStandardAssets.Characters.FirstPerson.FirstPersonController));
 		ambientLights = GameObject.FindGameObjectsWithTag ("AmbientLight");
@@ -72,5 +76,11 @@ public class StartAndEndEvts : MonoBehaviour {
 		foreach (Transform o in contents) {
 			o.gameObject.SetActive (true);
 		}
+		bookHouseTrigger.SetActive (true);
+	}
+
+	public void Goodbye() {
+		Debug.Log ("From StartAndEndEvts:: Bye!!!! <3 \\o/");
+		// Do the ending coroutine
 	}
 }
