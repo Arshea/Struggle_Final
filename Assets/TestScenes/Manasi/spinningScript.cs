@@ -33,17 +33,19 @@ public class spinningScript : MonoBehaviour {
             Spinning();
 	}
 	void TriggerInteraction() {
-		if(isSpinning) StopSpinning ();
+		if (isSpinning) {
+			StopSpinning ();
 
-		this.gameObject.GetComponentInParent<InteractionManager> ().narration_triggered = true;
-		MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent(typeof(MusicManager));
-		musicManager.SendMessage("playNarrationOfTrigger", ObjectTriggerType.TOP,SendMessageOptions.DontRequireReceiver);
+			this.gameObject.GetComponentInParent<InteractionManager> ().narration_triggered = true;
+			MusicManager musicManager = (MusicManager)GameObject.Find ("Music_Manager").GetComponent (typeof(MusicManager));
+			musicManager.SendMessage ("playNarrationOfTrigger", ObjectTriggerType.TOP, SendMessageOptions.DontRequireReceiver);
 
-		Vector3 forceDir = transform.position - player.transform.position;
-		forceDir.y = 0.0f;
-		forceDir.Normalize ();
-		GetComponent<Rigidbody> ().AddForce (forceDir * 1000.0f);
-		spinningTopSfxHit.Play ();
+			Vector3 forceDir = transform.position - player.transform.position;
+			forceDir.y = 0.0f;
+			forceDir.Normalize ();
+			GetComponent<Rigidbody> ().AddForce (forceDir * 1000.0f);
+			spinningTopSfxHit.Play ();
+		}
 	}
     void Spinning()
     {

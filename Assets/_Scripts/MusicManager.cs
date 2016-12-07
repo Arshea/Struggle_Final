@@ -112,7 +112,7 @@ public class MusicManager : MonoBehaviour {
 		0.0f,
 		0.0f,
 
-		0.7f,
+		0.3f,
 		0.0f,
 		0.0f,
 		0.0f,

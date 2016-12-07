@@ -41,11 +41,11 @@ public class WandFlash : MonoBehaviour {
 	}
 	IEnumerator playParticleEffects() {
 		
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(1.0f);
 		wandFlash.GetComponent<ParticleSystem> ().Play ();
 		wandSfx.Play ();
-		this.transform.parent.GetComponent<Rigidbody>().AddForce(1800 * Vector3.up);
-		this.transform.parent.GetComponent<Rigidbody>().AddTorque(100000 * Vector3.right);
+		//this.transform.parent.GetComponent<Rigidbody>().AddForce(1800 * Vector3.up);
+		//this.transform.parent.GetComponent<Rigidbody>().AddTorque(100000 * Vector3.right);
 		this.gameObject.GetComponentInParent<InteractionManager> ().narration_triggered = false;
 
 

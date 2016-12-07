@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/TestScenes/Lantern/Lantern.unity
   - enabled: 1
     path: Assets/_Scenes/WorldBuilding.unity
+  - enabled: 1
+    path: Assets/Credits/Credits_Test.unity

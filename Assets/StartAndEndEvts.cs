@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 
 // This is triggered from PickUpLight when GameManager returns the correct progress state
 public class StartAndEndEvts : MonoBehaviour {
@@ -44,12 +44,12 @@ public class StartAndEndEvts : MonoBehaviour {
 		// Freeze movement
 		FPController.movementEnabled = false;
 
-		float startIntensity = 2.5f;
+		float startIntensity = 2.0f;
 		UnityStandardAssets.ImageEffects.ScreenOverlay.intensity = startIntensity;
 		float endLightIntensity = ambientLights [0].GetComponent<Light> ().intensity;
 
 		float startTime = Time.time;
-		float endTime = startTime + musicManager.narration_clips [0].length + 1.0f; // Added 1 second because it feels a bit better
+		float endTime = musicManager.narration_clips [0].length + 1.0f; // Added 1 second because it feels a bit better
 		float progress = 0.0f;
 
 
@@ -128,7 +128,7 @@ public class StartAndEndEvts : MonoBehaviour {
 			yield return null;
 		}
 
-		Application.LoadLevel("Main_Menu");
+		SceneManager.LoadScene ("Credits/Credits_Test");
 
 
 		yield return null;
