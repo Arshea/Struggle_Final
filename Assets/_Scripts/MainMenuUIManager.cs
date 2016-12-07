@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class MainMenuUIManager : MonoBehaviour {
 
 	public GameObject mainPanel;
@@ -23,6 +23,10 @@ public class MainMenuUIManager : MonoBehaviour {
 	}
 
 	public void startGame () {
-		Application.LoadLevel("_Scenes/WorldBuilding");
+		SceneManager.LoadScene("_Scenes/WorldBuilding");
+	}
+
+	public void rollCredits() {
+		SceneManager.LoadScene ("Credits/Credits_Test");
 	}
 }

@@ -32,6 +32,9 @@ public class WaterAbsorb : MonoBehaviour {
         	shrink = true;
         	waterCollider.enabled = false;
         	Debug.Log("Sponge entered water");
+			foreach (CapsuleCollider col in this.GetComponents<CapsuleCollider>()) {
+				col.enabled = false;
+			}
         }
     }
 
