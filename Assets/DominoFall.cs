@@ -9,10 +9,12 @@ public class DominoFall : MonoBehaviour {
 	public GameObject spotlight;
 	public GameObject v_spotAnimPosition; // position of vlight after the animation
 	public GameObject spotAnimPosition; // position of spot after the animation
+	private AudioSource domAudioSource;
 
 
 	// Use this for initialization
 	void Start () {
+		domAudioSource = GetComponentInParent<AudioSource> ();
 		//if(player == null) player = GameObject.Find ("Player");
 		this.gameObject.GetComponentInParent<InteractionManager>().trigger_cooldown_time = 12.458f;
 		if (player == null)
@@ -39,7 +41,9 @@ public class DominoFall : MonoBehaviour {
 
 		//Debug.Log ("Hit a domino!");
 		this.gameObject.GetComponentInParent<Animator> ().SetTrigger ("FallTrigger");
+		domAudioSource.Play ();
 		StartCoroutine ("playDominoNarration");
+
 
 	}
 	IEnumerator playDominoNarration() {
