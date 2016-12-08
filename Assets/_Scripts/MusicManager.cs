@@ -231,12 +231,27 @@ public class MusicManager : MonoBehaviour {
 		yield return new WaitForSeconds (narration_audio_source.clip.length);
 		//restoreAllVolumes ();
 	}
-		
+
+	IEnumerator fadeOutMainTheme() {
+		float init_volume = main_source.volume;
+
+		float startTime = Time.time;
+		float complete = 0.0f;
+		float endTime = 5.0f;
+		while (Time.time - startTime < endTime) {
+			complete = (Time.time - startTime) / endTime;
+			main_source.volume = Mathf.Lerp (init_volume, 0.0f, complete);
+			yield return null;
+		}
+	}
 	void playNarrationOfTrigger(ObjectTriggerType _trigger) {
 		
 		int index = searchNarrationByTrigger (_trigger);
 		if(canIPlay(index) ){
 			StartCoroutine ("playNarrationOfIndex", index);
+			if (_trigger == ObjectTriggerType.STORY_END) {
+				StartCoroutine ("fadeOutMainTheme");
+			}
 		}
 	}
 	public void playLightPickupMusic(int lightNumber) {

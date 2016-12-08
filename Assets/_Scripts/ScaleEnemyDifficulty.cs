@@ -7,6 +7,7 @@ public class ScaleEnemyDifficulty : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		freggo_types [0].SetActive (true);
 		freggo_types [1].SetActive (false);
 		freggo_types [2].SetActive (false);
 	}
